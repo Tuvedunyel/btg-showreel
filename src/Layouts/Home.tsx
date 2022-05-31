@@ -6,7 +6,7 @@ import Hexagone from "../Components/Hexagone";
 const Home: FC = () => {
 
     return (
-        <div className="container">
+        <>
             <div className="home__container">
                 <div className="row logo">
                     <img src={ logo } alt="Logo de BTG Communication"/>
@@ -38,7 +38,7 @@ const Home: FC = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -1,11 +1,11 @@
-import { FC, Suspense } from 'react';
+import { FC, Suspense, SetStateAction } from 'react';
 import { motion } from 'framer-motion';
 import arrow from '../../img/arrow.svg';
 import './style.scss'
 import { Canvas } from "@react-three/fiber";
 import FirstYearSphere from "./FirstYearSphere";
 
-const FirstYear: FC = () => {
+const FirstYear: FC< { setShowDetail: SetStateAction<boolean> } > = ( { setShowDetail } ) => {
     return (
         <div className="creationAgence">
             <motion.div initial={ { translateY: 900 } } whileInView={ { translateY: 0 } } transition={ { duration: 1 } }

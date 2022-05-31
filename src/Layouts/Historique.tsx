@@ -1,11 +1,13 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import FirstYear from "../Components/FirstYear/FirstYear";
 
-const Historique: FC = () => {
+const Historique: FC = (  ) => {
+    const [ showDetail, setShowDetail ] = useState( false );
+
     return (
-        <section className="container">
-            <FirstYear />
-        </section>
+        <>
+            { !showDetail ? <FirstYear setShowDetail={setShowDetail} /> : <h1>Show Detail</h1> }
+        </>
     );
 };
 

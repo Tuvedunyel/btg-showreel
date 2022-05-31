@@ -1,14 +1,23 @@
 import React from 'react';
-import { MeshDistortMaterial, Sphere } from "@react-three/drei";
+import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
 
 const FirstYearSphere = () => {
 
-
     return (
-        <Sphere onPointerOver={ e => console.log(e) } visible args={[1, 100, 200]} scale={2.5} >
-            <MeshDistortMaterial color="#E3775B" attach="material" distort={0.3} speed={1.5} roughness={0}/>
+        <Sphere
+            args={[1, 100, 200]} scale={2.5}
+        >
+            <MeshDistortMaterial
+                attach="material"
+                color="#E3775B"
+                speed={1.5}
+                distort={ 0.3}
+                roughness={0.2}
+            />
         </Sphere>
-    );
+
+    )
+        ;
 };
 
 export default FirstYearSphere;
