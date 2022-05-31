@@ -1,0 +1,66 @@
+.detail__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.detail__motion {
+  background: #E3775B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.white__motion {
+  background: white;
+  position: relative;
+  z-index: 2;
+}
+
+.muguet {
+  position: absolute;
+  bottom: 0;
+  left: -12%;
+}
+
+.yellow_circle {
+  background: #FCD647;
+  position: absolute;
+  right: 20%;
+  top: 7%;
+  z-index: 1;
+}
+
+.trompette {
+  transform: translate(27%, 0%) !important;
+}
+
+h2.detail__title {
+  color: black;
+  font-size: 8.4rem;
+  font-weight: 700;
+  font-family: 'Cabin', sans-serif;
+  position: absolute;
+  top: 0;
+  left: 5%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  text-align: left;
+
+  span {
+    background: white;
+    padding: 10px 20px;
+  }
+}
+
+.vague {
+  position: absolute;
+  top: 0;
+  right: -71%;
+
+}

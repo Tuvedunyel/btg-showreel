@@ -1,11 +1,11 @@
-import { FC, Suspense, SetStateAction } from 'react';
+import { FC, Suspense, SetStateAction, Dispatch } from 'react';
 import { motion } from 'framer-motion';
 import arrow from '../../img/arrow.svg';
 import './style.scss'
 import { Canvas } from "@react-three/fiber";
-import FirstYearSphere from "./FirstYearSphere";
+import { MeshDistortMaterial, Sphere } from "@react-three/drei";
 
-const FirstYear: FC< { setShowDetail: SetStateAction<boolean> } > = ( { setShowDetail } ) => {
+const FirstYear: FC< { setShowDetail: Dispatch<SetStateAction<boolean>> } > = ( { setShowDetail } ) => {
     return (
         <div className="creationAgence">
             <motion.div initial={ { translateY: 900 } } whileInView={ { translateY: 0 } } transition={ { duration: 1 } }
@@ -36,7 +36,9 @@ const FirstYear: FC< { setShowDetail: SetStateAction<boolean> } > = ( { setShowD
                                 <ambientLight intensity={ 0.5 } />
                                 <directionalLight position={ [ -2, 5, 2 ] } intensity={ 1 } />
                                 <Suspense fallback={ null }>
-                                    <FirstYearSphere />
+                                    <Sphere  args={[1, 100, 200]} scale={2.5} onClick={ () => setShowDetail(true) } >
+                                        <MeshDistortMaterial attach="material" color="#E3775B" speed={1.5} distort={ 0.3} roughness={0.2} />
+                                    </Sphere>
                                 </Suspense>
                             </Canvas>
                         </div>
