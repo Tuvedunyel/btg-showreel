@@ -8,7 +8,7 @@ import { MeshDistortMaterial, Sphere } from "@react-three/drei";
 const FirstYear: FC< { setShowDetail: Dispatch<SetStateAction<boolean>> } > = ( { setShowDetail } ) => {
     return (
         <div className="creationAgence">
-            <motion.div initial={ { translateY: 900 } } whileInView={ { translateY: 0 } } transition={ { duration: 1 } }
+            <motion.div initial={ { translateY: 900 } } animate={ { translateY: 0 } } transition={ { duration: 1 } }
                         viewport={ { once: true } } className="creationAgence__left">
                 <div className="creationAgence__left__title">
                     <h2>

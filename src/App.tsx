@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import Historique from "./Layouts/Historique";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Mame from "./Components/Mame/Mame";
 
 gsap.registerPlugin( ScrollTrigger );
 
@@ -36,6 +37,9 @@ const App = () => {
                 </div>
                 <div className="container">
                     <Historique/>
+                </div>
+                <div className="container">
+                    <Mame />
                 </div>
             </div>
         </AnimatePresence>
