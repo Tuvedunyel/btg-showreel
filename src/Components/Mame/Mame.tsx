@@ -39,7 +39,9 @@ const Mame: FC = () => {
                 <div className="pepiniere__right__cirlce-container">
                     <motion.div initial={ { width: 0, height: 0 } } whileInView={ { width: '543px', height: '543px' } }
                                 viewport={ { once: true } } transition={ { duration: 1, delay: 2 } }
-                                className="pepiniere__right__circle"></motion.div>
+                                className="pepiniere__right__circle">
+                    </motion.div>
+                    <motion.div className='masque' initial={{ opacity: 0, backgroundColor: 'transparent' }} whileInView={{ opacity: 1, backgroundColor: '#FCD647' }} transition={{ delay: 2 }}></motion.div>
                 </div>
             </div>
         </motion.div>
