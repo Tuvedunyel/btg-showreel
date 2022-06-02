@@ -132,3 +132,38 @@
     }
   }
 }
+
+.pepiniere__reveal__text {
+  position: absolute;
+  background: black;
+  color: white;
+  padding: 30px 45px;
+  font-size: 1.9rem;
+  font-weight: 300;
+  font-family: 'Exo', 'Arial', sans-serif;
+  top: 10%;
+  left: 3%;
+  z-index: 2;
+  max-width: 35%;
+
+  &::after {
+    position: absolute;
+    content: '';
+    border-right: 1px solid transparent;
+    border-left: 64px solid transparent;
+    border-top: 46px solid black;
+    bottom: -27%;
+    right: 0;
+  }
+}
+
+.hexa__container {
+  position: absolute;
+  bottom: -27%;
+  left: 5%;
+  display: flex;
+
+  .img:not(:last-of-type) {
+    margin-right: 0.4em;
+  }
+}
