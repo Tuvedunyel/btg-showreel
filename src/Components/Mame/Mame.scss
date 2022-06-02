@@ -3,10 +3,73 @@
   grid-template-columns: 0.25fr 0.75fr;
   justify-items: center;
   align-items: center;
+  overflow: hidden;
+}
+
+.pepiniere__reveal, .pepiniere {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.pepiniere__reveal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.pepiniere__reveal__whiteCircle {
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+
+  .logo-btg {
+    width: 152px;
+  }
+}
+
+.orangeCircle {
+  background: transparent;
+  border: 1px solid white;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  top: 45%;
+  right: 53%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .inner__circle {
+    background: #FF3500;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    border-radius: 50%;
+  }
+
+  &.second {
+    left: 53%;
+    right: unset;
+    top: unset;
+    bottom: 45%;
+  }
+}
+
+.pepiniere__page {
   width: 100%;
   height: 100%;
   margin: auto;
   overflow: hidden;
+  position: relative;
 }
 
 .pepiniere__right {
