@@ -1,0 +1,55 @@
+.WebMotion {
+  background: #FCD647;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.date__hexa__container {
+  display: flex;
+  gap: 0.6em;
+}
+
+.date__container {
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  align-items: center;
+  justify-content: start;
+  width: 90%;
+  margin: auto;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  height: 100%;
+}
+
+.date__left {
+  position: relative;
+  max-height: 90%;
+  width: 513px;
+
+  .creationAgence__left__border {
+    bottom: -5.4%;
+    height: 100%;
+  }
+}
+
+.codeTyping {
+  background: white;
+  color: #E3775B;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+
+  p {
+    font-size: 7.6rem;
+    font-family: 'Exo', 'Arial', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    max-width: 75%;
+    margin-inline: auto;
+  }
+}

@@ -6,6 +6,7 @@ import Historique from "./Layouts/Historique";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Mame from "./Components/Mame/Mame";
+import WebMotion from "./Components/WebMotion/WebMotion";
 
 gsap.registerPlugin( ScrollTrigger );
 
@@ -40,6 +41,9 @@ const App = () => {
                 </div>
                 <div className="container">
                     <Mame />
+                </div>
+                <div className="container">
+                    <WebMotion/>
                 </div>
             </div>
         </AnimatePresence>
