@@ -13,6 +13,7 @@ specifiers:
   gsap: ^3.10.4
   react: ^18.0.0
   react-dom: ^18.0.0
+  react-in-viewport: 1.0.0-alpha.28
   react-intersection-observer: ^9.2.0
   react-router-dom: ^6.3.0
   sass: ^1.52.1
@@ -29,6 +30,7 @@ dependencies:
   gsap: 3.10.4
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
+  react-in-viewport: 1.0.0-alpha.28_ef5jwxihqo6n7gxfmzogljlgcm
   react-intersection-observer: 9.2.0_react@18.1.0
   react-router-dom: 6.3.0_ef5jwxihqo6n7gxfmzogljlgcm
   three: 0.141.0
@@ -1061,6 +1063,12 @@ packages:
       '@babel/runtime': 7.18.3
     dev: false
 
+  /hoist-non-react-statics/3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+    dependencies:
+      react-is: 16.13.1
+    dev: false
+
   /immutable/4.1.0:
     resolution: {integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==}
     dev: true
@@ -1238,6 +1246,17 @@ packages:
       loose-envify: 1.4.0
       react: 18.1.0
       scheduler: 0.22.0
+    dev: false
+
+  /react-in-viewport/1.0.0-alpha.28_ef5jwxihqo6n7gxfmzogljlgcm:
+    resolution: {integrity: sha512-SjBVCPUIRfJb516BUev1u/dejBfI5jIcskDz4Irq2RezNG7D199eER8reRzZX+w/FLxz21rpdqRbJbagv5n37Q==}
+    peerDependencies:
+      react: ^16.8.3 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.3 || ^17.0.0 || ^18.0.0
+    dependencies:
+      hoist-non-react-statics: 3.3.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
     dev: false
 
   /react-intersection-observer/9.2.0_react@18.1.0:
