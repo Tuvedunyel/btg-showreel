@@ -4,6 +4,7 @@ import arrow from '../../img/arrow.svg';
 import './style.scss'
 import { Canvas } from "@react-three/fiber";
 import { MeshDistortMaterial, Sphere } from "@react-three/drei";
+import orangeArrow from '../../img/orange-arrow.svg'
 
 const FirstYear: FC< { setShowDetail: Dispatch<SetStateAction<boolean>> } > = ( { setShowDetail } ) => {
     return (
@@ -18,7 +19,7 @@ const FirstYear: FC< { setShowDetail: Dispatch<SetStateAction<boolean>> } > = ( 
                         <span>2</span>
                     </h2>
                     <p>Création de l'agence</p>
-                    <strong>arrow</strong>
+                    <strong className="orangeArrow"><img src={ orangeArrow } alt="Flèche orange pointant vers la droite"/></strong>
                 </div>
                 <motion.div initial={ { translateX: -100, translateY: 100, opacity: 0 } }
                             whileInView={ { translateX: 0, translateY: 0, opacity: 1 } }

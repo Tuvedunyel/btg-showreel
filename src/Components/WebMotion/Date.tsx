@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { motion } from "framer-motion";
 import Hexagone from "../Hexagone";
+import orangeArrow from '../../img/orange-arrow.svg'
 
 const Date: FC = () => {
     return (
@@ -21,7 +22,7 @@ const Date: FC = () => {
                         <span>5</span>
                     </h2>
                     <p>Intégration du web & du motion</p>
-                    <strong>arrow</strong>
+                    <strong className="orangeArrow"><img src={ orangeArrow } alt="Flèche orange pointant vers la droite"/></strong>
                 </div>
                 <motion.div initial={ { translateX: -100, translateY: 100, opacity: 0 } }
                             whileInView={ { translateX: 0, translateY: 0, opacity: 1 } }

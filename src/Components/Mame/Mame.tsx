@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import './Mame.scss';
 import Seed from "./Seed";
 import Reveal from "./Reveal";
+import orangeArrow from '../../img/orange-arrow.svg'
 
 const variants = {
     initial: {
@@ -30,7 +31,7 @@ const Mame: FC = () => {
                             <span>4</span>
                         </h2>
                         <p>Intégration de la pépinière</p>
-                        <strong>arrow</strong>
+                        <strong className="orangeArrow"><img src={ orangeArrow } alt="Flèche orange pointant vers la droite"/></strong>
                     </div>
                     <motion.div initial={ { translateX: -100, translateY: 100, opacity: 0 } }
                                 whileInView={ { translateX: 0, translateY: 0, opacity: 1 } }

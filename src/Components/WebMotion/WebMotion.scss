@@ -51,3 +51,21 @@
     margin-inline: auto;
   }
 }
+
+.blueBg {
+  background: #15185C;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yellow-circle {
+  margin: auto;
+  border-radius: 50%;
+  background: #FCD647;
+  width: 677px;
+  height: 677px;
+}
