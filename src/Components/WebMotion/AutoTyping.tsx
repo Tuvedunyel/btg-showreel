@@ -18,7 +18,6 @@ const AutoTyping: FC = () => {
             setTimeout( () => {
                 setText( text + Code[ iteration ] );
                 setIteration( iteration + 1 );
-                console.log( iteration );
             }, speed )
         }
         return text
@@ -26,11 +25,15 @@ const AutoTyping: FC = () => {
 
 
     return (
-        <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
-                    transition={ { duration: 1, delay: 2 } } className='codeTyping' ref={ codeTypingRef }>
-            <motion.p initial={ { y: 0 } } whileInView={ { y: -1880 } } viewport={ { once: true } }
-                      transition={ { duration: 35, delay: 10 } }>{ isVisible && handleWriting() }</motion.p>
-            <Animate />
+        <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { root: codeTypingRef } }
+                    transition={ { duration: 1, delay: 2 } } className='codeTyping' >
+            <div className='codeTyping__container' ref={ codeTypingRef }>
+                <motion.p className='text__codeTyping' initial={ { y: 0 } } whileInView={ { y: -1880 } }
+                          viewport={ { once: true } }
+                          transition={ { duration: 35, delay: 7 } }
+                          >{ isVisible && handleWriting() }</motion.p>
+            </div>
+            <Animate codeRef={ codeTypingRef }/>
         </motion.div>
     );
 };
