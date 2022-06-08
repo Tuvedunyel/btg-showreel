@@ -1,12 +1,12 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, RefObject, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import code from './code';
 import useOnScreen from "../../hooks/useOnScreen";
 import Animate from "./Animate";
 
 const AutoTyping: FC = () => {
-    const codeTypingRef = useRef<HTMLDivElement | null>( null )
     const Code = code;
+    const codeTypingRef = useRef<HTMLDivElement | null>( null )
     const [ text, setText ] = useState<string | null>( null );
     const [ iteration, setIteration ] = useState<number>( 0 );
     const speed = 50;
@@ -25,15 +25,15 @@ const AutoTyping: FC = () => {
 
 
     return (
-        <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { root: codeTypingRef } }
-                    transition={ { duration: 1, delay: 2 } } className='codeTyping' >
+        <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
+                    transition={ { duration: 1, delay: 2 } } className='codeTyping'>
             <div className='codeTyping__container' ref={ codeTypingRef }>
                 <motion.p className='text__codeTyping' initial={ { y: 0 } } whileInView={ { y: -1880 } }
                           viewport={ { once: true } }
                           transition={ { duration: 35, delay: 7 } }
-                          >{ isVisible && handleWriting() }</motion.p>
+                >{ isVisible && handleWriting() }</motion.p>
             </div>
-            <Animate codeRef={ codeTypingRef }/>
+            <Animate />
         </motion.div>
     );
 };

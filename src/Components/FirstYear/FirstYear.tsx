@@ -1,15 +1,36 @@
-import { FC, Suspense, SetStateAction, Dispatch } from 'react';
-import { motion } from 'framer-motion';
+import { FC, Suspense, SetStateAction, Dispatch, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import arrow from '../../img/arrow.svg';
 import './style.scss'
 import { Canvas } from "@react-three/fiber";
 import { MeshDistortMaterial, Sphere } from "@react-three/drei";
 import orangeArrow from '../../img/orange-arrow.svg'
+import { useInView } from "react-intersection-observer";
 
 const FirstYear: FC< { setShowDetail: Dispatch<SetStateAction<boolean>> } > = ( { setShowDetail } ) => {
+    const animation = useAnimation();
+    const [ ref, inView, entry ] = useInView({ threshold: 0 })
+
+    useEffect( () => {
+        if (inView) {
+            animation.start('animate')
+        } else {
+            animation.start('initial')
+        }
+    }, [ inView, animation ])
+
+    const variants = {
+        initial: {
+            translateY: 900
+        },
+        animate: {
+            translateY: 0
+        }
+    }
+
     return (
-        <div className="creationAgence">
-            <motion.div initial={ { translateY: 900 } } animate={ { translateY: 0 } } transition={ { duration: 1 } }
+        <div className="creationAgence" ref={ref} >
+            <motion.div initial='initial' animate={animation} variants={variants} transition={ { duration: 1 } }
                         viewport={ { once: true } } className="creationAgence__left">
                 <div className="creationAgence__left__title">
                     <h2>

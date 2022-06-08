@@ -1,9 +1,10 @@
-import { FC } from 'react';
-import { motion } from "framer-motion";
+import { FC, useEffect } from 'react';
+import { motion, useAnimation } from "framer-motion";
 import './Mame.scss';
 import Seed from "./Seed";
 import Reveal from "./Reveal";
 import orangeArrow from '../../img/orange-arrow.svg'
+import { useInView } from "react-intersection-observer";
 
 const variants = {
     initial: {
@@ -15,14 +16,35 @@ const variants = {
 }
 
 const Mame: FC = () => {
+    const animation = useAnimation();
+    const [ ref, inView, entry ] = useInView({ threshold: 0 })
+
+    useEffect(() => {
+        if (inView) {
+            animation.start('animate')
+        } else {
+            animation.start('initial')
+        }
+    }, [inView, animation])
+
+    const dateVariants = {
+        initial: {
+            translateY: 900
+        },
+        animate: {
+            translateY: 0
+        }
+    }
+
     return (
         <motion.div initial='initial' whileInView='whileInView' variants={ variants }
                     transition={ { duration: 1, delay: 1.5 } }
                     viewport={ { once: true } } className="pepiniere__page">
-            <motion.div className="pepiniere" initial={{ opacity: 1 }} whileInView={{ opacity: 0 }} viewport={{ once: true }} transition={{ duration: 1, delay: 8.5 }} >
-                <motion.div initial={ { translateY: 900 } } whileInView={ { translateY: 0 } }
+            <motion.div ref={ref} className="pepiniere" initial={{ opacity: 1 }} whileInView={{ opacity: 0 }} viewport={{ once: true }} transition={{ duration: 1, delay: 8.5 }} >
+                <motion.div initial={ { translateY: 900 } } animate={animation}
                             transition={ { duration: 1 } }
-                            viewport={ { once: true } } className="creationAgence__left">
+                            variants={ dateVariants }
+                            className="creationAgence__left">
                     <div className="creationAgence__left__title">
                         <h2>
                             <span>2</span>

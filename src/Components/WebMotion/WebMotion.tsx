@@ -5,8 +5,9 @@ import AutoTyping from "./AutoTyping";
 import Animate from "./Animate";
 
 const WebMotion: FC = () => {
+
     return (
-        <div className='WebMotion'>
+        <div className='WebMotion' >
             <Date />
             <AutoTyping />
         </div>
