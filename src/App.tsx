@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Mame from "./Components/Mame/Mame";
 import WebMotion from "./Components/WebMotion/WebMotion";
+import ArianeGroup from "./Components/ArianeGroup/ArianeGroup";
 
 gsap.registerPlugin( ScrollTrigger );
 
@@ -44,6 +45,9 @@ const App = () => {
                 </div>
                 <div className="container">
                     <WebMotion/>
+                </div>
+                <div className="container">
+                    <ArianeGroup />
                 </div>
             </div>
         </AnimatePresence>

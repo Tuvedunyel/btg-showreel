@@ -96,7 +96,7 @@
 
 .arrivee__bottom {
   position: absolute;
-  bottom: -130%;
+  bottom: -150%;
   left: 15%;
   display: flex;
   flex-direction: row;
@@ -175,4 +175,10 @@
   background: #FCD647;
   width: 677px;
   height: 677px;
+}
+
+.chemin {
+  position: absolute;
+  bottom: -134%;
+  right: 5%;
 }

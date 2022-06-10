@@ -38,7 +38,7 @@ const Animate: FC = () => {
             translateY: 0
         },
         animate: {
-            translateY: -1300
+            translateY: -1500
         }
     }
 
@@ -66,11 +66,11 @@ const Animate: FC = () => {
                     </div>
                     <div className="creationAgence__left__border"></div>
                 </div>
-                <div className='chemin'>
+                <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 40 }} className='chemin'>
                     <img src={ traceTop } alt="Chemin en pointiller blanc"/>
                     <img src={ orangeCross } alt="Croix orange"/>
                     <img src={ traceBottom } alt="Chemin en pointiller blanc"/>
-                </div>
+                </motion.div>
                 <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}  transition={{ duration: 1, delay: 40 }} className='arrivee__bottom'>
                     <div className="building__container">
                         <img src={ building } alt="Pictogramme d'un immeuble"/>
