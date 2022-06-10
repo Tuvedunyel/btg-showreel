@@ -3,6 +3,7 @@ import './arianeStyle.scss'
 import orangeArrow from "../../img/orange-arrow.svg";
 import arianGroupImage from '../../img/arianegroup_logo.png';
 import europeanStar from '../../img/european-star.svg';
+import { motion } from 'framer-motion'
 
 const ArianeGroup: FC = () => {
     return (
@@ -20,7 +21,7 @@ const ArianeGroup: FC = () => {
                     <section className="border-white__title"></section>
                 </div>
                 <div className="ariane__logo__container">
-                    <img src={ europeanStar } alt="Drapeau européen"  className="european__flag"/>
+                    <motion.img animate={{ rotate: [360, -360] }} transition={{ time: [ 20, 20 ], repeat: Infinity }} src={ europeanStar } alt="Drapeau européen"  className="european__flag"/>
                     <img src={ arianGroupImage } alt="Logo d'ariange Groupe" className="ariane__logo"/>
                 </div>
             </div>
