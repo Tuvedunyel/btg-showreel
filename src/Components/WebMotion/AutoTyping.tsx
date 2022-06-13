@@ -1,4 +1,4 @@
-import { FC, RefObject, useRef, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import code from './code';
 import useOnScreen from "../../hooks/useOnScreen";
