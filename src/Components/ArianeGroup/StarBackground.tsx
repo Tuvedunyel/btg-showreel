@@ -12,7 +12,6 @@ const StarBackground: FC = () => {
         let random = Math.floor( Math.random() * horizontal.length );
         let random2 = Math.floor( Math.random() * vertical.length );
         let random3 = Math.floor( Math.random() * distance.length );
-        console.log(random)
         return {
             x: horizontal[ random ],
             y: vertical[ random2 ],
