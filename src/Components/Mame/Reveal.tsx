@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Logo from '../../img/logo-btg.png'
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Hexagone from "../Hexagone";
 import LogoStart from '../../img/logo-start-.png';
 import blueMap from '../../img/blue-map.svg';
@@ -8,9 +8,10 @@ import trioBtg from '../../img/trio-btg.png';
 
 const Reveal: FC = () => {
     const troll = "Franchement, c'était mieux avant ...";
+    const animation = useAnimation();
 
     return (
-        <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
+        <motion.div initial={ { opacity: 0 } } animate={ { opacity: 1 } } viewport={ { once: true } }
                     transition={ { duration: 1, delay: 10.5 } } className='pepiniere__reveal'>
             <motion.div initial={ { width: 0, height: 0 } } whileInView={ { width: '445px', height: '445px' } }
                         viewport={ { once: true } } transition={ { duration: 1, delay: 9.5 } }

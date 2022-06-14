@@ -12,9 +12,8 @@ import traceTop from '../../img/trace-top.svg'
 import traceBottom from '../../img/trace-bottom.svg'
 import orangeCross from '../../img/orangeCross.svg'
 
-const Animate: FC = () => {
+const Animate: FC<{ inView: Boolean }> = ({ inView }) => {
     const animation = useAnimation()
-    const [ ref, inView, entry ] = useInView( { threshold: 0 } )
 
     useEffect( () => {
         if (inView) {
@@ -43,7 +42,7 @@ const Animate: FC = () => {
     }
 
     return (
-        <motion.div ref={ ref } initial="initial" animate={ animation } variants={ variants }
+        <motion.div initial="initial" animate={ animation } variants={ variants }
                     transition={ { duration: 2, delay: 35 } } className='blueBg'>
             <motion.div initial='initial' animate={ animation } variants={ containerVariants } transition={{ duration: 2, delay: 40 }} className='blueBg__container'>
                 <Canvas>

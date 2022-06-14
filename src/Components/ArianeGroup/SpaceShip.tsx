@@ -3,9 +3,9 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import SpaceShipImg from '../../img/space-ship.png'
 import MovingSpaceShip from '../../img/moving-space-ship.png'
-import SesameSpace from '../../img/sesame-space.png'
 import { Canvas } from "@react-three/fiber";
 import StarBackground from "./StarBackground";
+import Sesame from "./Sesame";
 
 const SpaceShip = () => {
     const animation = useAnimation();
@@ -26,7 +26,7 @@ const SpaceShip = () => {
             translateY: 0
         },
         animate: {
-            translateY: 900
+            translateY: 1600
         }
     }
 
@@ -35,7 +35,7 @@ const SpaceShip = () => {
             translateY: 0,
         },
         animate: {
-            translateY: -900,
+            translateY: -1600,
         }
     }
 
@@ -61,10 +61,10 @@ const SpaceShip = () => {
         <motion.div ref={ ref } initial='initial' animate={ animation } variants={ containerVariants }
                     transition={ { duration: 1, delay: 3 }}
                     className='space__ship'>
-            <motion.div initial='initial' animate={ animation } variants={ backgroundVariants } transition={{ duration: 1, delay: 5 }}
+            <motion.div initial='initial' animate={ animation } variants={ backgroundVariants } transition={{ duration: 5, delay: 5 }}
                         className="space__ship__bg">
                 <img src={ SpaceShipImg } alt="Fusée Ariane sur son lanceur" className='launcher'/>
-                <motion.div initial='initial' animate={animation} variants={translateVariants} transition={{ duration: 1, delay: 5 }} className="star__canvas__container">
+                <motion.div initial='initial' animate={animation} variants={translateVariants} transition={{ duration: 5, delay: 5 }} className="star__canvas__container">
                     { inView && (
                         <Canvas>
                             <ambientLight intensity={ 1 }/>
@@ -147,11 +147,12 @@ const SpaceShip = () => {
                         </Canvas>
                     ) }
                 </motion.div>
-                <motion.div initial='initial' animate={ animation } variants={ translateVariants } transition={{ duration: 1, delay: 5 }}
+                <motion.div initial='initial' animate={ animation } variants={ translateVariants } transition={{ duration: 5, delay: 5 }}
                             className="to__space">
                     <motion.img initial='initial' animate={ animation } variants={ movingShipVariants } transition={{ duration: 1, delay: 5 }}
                                 src={ MovingSpaceShip } alt="Fusée décollant"  className='movingStarShip' />
                 </motion.div>
+                <Sesame inView={inView} />
             </motion.div>
         </motion.div>
     );

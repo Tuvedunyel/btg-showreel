@@ -2,9 +2,9 @@ import React, { FC, useState } from 'react';
 import { Sphere } from "@react-three/drei";
 
 const StarBackground: FC = () => {
-    const horizontal = [ -4, -3, -2, -1, 0, 1, 2, 3, 4 ];
-    const vertical = [ -2, -1, 0, 1, 2 ];
-    const distance = [ -1, 0, 1, 2 ];
+    const horizontal = [ -4, -3, -2, -1, 1, 2, 3, 4 ];
+    const vertical = [ -2, -1, 1, 2 ];
+    const distance = [ -1, 1, 2 ];
     const size = [ 0.01, 0.02 ];
 
 

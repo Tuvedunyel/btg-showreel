@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import code from './code';
 import useOnScreen from "../../hooks/useOnScreen";
 import Animate from "./Animate";
+import { useInView } from "react-intersection-observer";
 
 const AutoTyping: FC = () => {
     const Code = code;
@@ -11,6 +12,7 @@ const AutoTyping: FC = () => {
     const [ iteration, setIteration ] = useState<number>( 0 );
     const speed = 50;
     const isVisible = useOnScreen( codeTypingRef )
+    const [ ref, inView, entry ] = useInView( { threshold: 0 } )
 
 
     const handleWriting = () => {
@@ -25,7 +27,7 @@ const AutoTyping: FC = () => {
 
 
     return (
-        <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
+        <motion.div ref={ref} initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
                     transition={ { duration: 1, delay: 2 } } className='codeTyping'>
             <div className='codeTyping__container' ref={ codeTypingRef }>
                 <motion.p className='text__codeTyping' initial={ { y: 0 } } whileInView={ { y: -1880 } }
@@ -33,7 +35,7 @@ const AutoTyping: FC = () => {
                           transition={ { duration: 35, delay: 7 } }
                 >{ isVisible && handleWriting() }</motion.p>
             </div>
-            <Animate />
+            <Animate inView={inView} />
         </motion.div>
     );
 };
