@@ -2,11 +2,14 @@ import { FC, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import SesameSpace from '../../img/sesame-space.png'
 import bigHexagone from '../../img/big-hexagone.svg'
-import moon from '../../img/moon.png'
 import whiteWave from '../../img/white-wave.svg'
+import Spline from "@splinetool/react-spline";
+import StarBackground from "./StarBackground";
+import { Canvas } from "@react-three/fiber";
 
 const Sesame: FC<{ inView: boolean }> = ( { inView } ) => {
     const animation = useAnimation();
+    // const moonMap = useLoader( TextureLoader, moon );
 
     const variants = {
         initial: {
@@ -36,10 +39,53 @@ const Sesame: FC<{ inView: boolean }> = ( { inView } ) => {
                 <img src={ whiteWave } alt="Vague blanche" className='top-wave'/>
                 <div className="moon__hexagone">
                     <img src={ bigHexagone } alt="Hexagone blanc" className='big__hexagone'/>
-                    <img src={ moon } alt="Lune" className='lune' />
+                    <Spline scene="https://prod.spline.design/SeqKfWuhGm1Go6Zb/scene.splinecode" />
                 </div>
                 <img src={ whiteWave } alt="Vague blanche" className='bottom-wave'/>
             </motion.div>
+            <div className="star__container__moon">
+                <Canvas>
+                    <ambientLight intensity={ 1 }/>
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                    <StarBackground />
+                </Canvas>
+
+            </div>
         </motion.div>
     );
 };

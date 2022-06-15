@@ -11,6 +11,8 @@
     "@react-spring/three": "^9.4.5",
     "@react-three/drei": "^9.11.3",
     "@react-three/fiber": "^8.0.19",
+    "@splinetool/react-spline": "^2.2.1",
+    "@splinetool/runtime": "^0.9.69",
     "framer-motion": "^6.3.4",
     "framer-motion-3d": "^6.3.6",
     "gsap": "^3.10.4",
