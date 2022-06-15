@@ -11,8 +11,8 @@ const Reveal: FC = () => {
     const animation = useAnimation();
 
     return (
-        <motion.div initial={ { opacity: 0 } } animate={ { opacity: 1 } } viewport={ { once: true } }
-                    transition={ { duration: 1, delay: 10.5 } } className='pepiniere__reveal'>
+        <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
+                    transition={ { duration: 2, delay: 11.5 } } className='pepiniere__reveal'>
             <motion.div initial={ { width: 0, height: 0 } } whileInView={ { width: '445px', height: '445px' } }
                         viewport={ { once: true } } transition={ { duration: 1, delay: 9.5 } }
                         className='orangeCircle second'>
@@ -23,7 +23,7 @@ const Reveal: FC = () => {
                         className='pepiniere__reveal__whiteCircle'>
                 <img src={ blueMap } alt="Carte blue avec un point sur la carte" className='map'/>
                 <img src={ Logo } alt="Logo BTG Communication" className='logo-btg'/>
-                <img src={ trioBtg } alt="Photo de Guillaume, Gaël et Romain" className="trioBtg"  title={troll}/>
+                <motion.img initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 9.5 }} src={ trioBtg } alt="Photo de Guillaume, Gaël et Romain" className="trioBtg"  title={troll}/>
             </motion.div>
             <motion.div initial={ { width: 0, height: 0 } } whileInView={ { width: '445px', height: '445px' } }
                         viewport={ { once: true } } transition={ { duration: 1, delay: 9.5 } }

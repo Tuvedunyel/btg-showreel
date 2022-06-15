@@ -36,11 +36,20 @@ const Mame: FC = () => {
         }
     }
 
+    const pepiniereVariants = {
+        initial: {
+            opacity: 1
+        },
+        animate: {
+            opacity: 0
+        }
+    }
+
     return (
         <motion.div initial='initial' whileInView='whileInView' variants={ variants }
                     transition={ { duration: 1, delay: 1.5 } }
                     viewport={ { once: true } } className="pepiniere__page">
-            <motion.div ref={ref} className="pepiniere" initial={{ opacity: 1 }} whileInView={{ opacity: 0 }} viewport={{ once: true }} transition={{ duration: 1, delay: 8.5 }} >
+            <motion.div ref={ref} className="pepiniere" initial='initial' animate={animation} variants={pepiniereVariants} transition={{ duration: 2, delay: 9.5 }} >
                 <motion.div initial={ { translateY: 900 } } animate={animation}
                             transition={ { duration: 1 } }
                             variants={ dateVariants }
