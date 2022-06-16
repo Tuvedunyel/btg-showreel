@@ -194,7 +194,8 @@
 
 .star__container__moon {
   height: 100%;
-  position: relative;
+  width: 100%;
+  position: absolute;
   z-index: 0;
 }
 
@@ -215,6 +216,7 @@
     transform: translate3d(4px, 0, 0);
   }
 }
+
 
 
 

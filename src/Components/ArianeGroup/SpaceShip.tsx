@@ -149,7 +149,7 @@ const SpaceShip = () => {
                 </motion.div>
                 <motion.div initial='initial' animate={ animation } variants={ translateVariants } transition={{ duration: 5, delay: 5 }}
                             className="to__space">
-                    <motion.img initial='initial' animate={ animation } variants={ movingShipVariants } transition={{ duration: 1, delay: 5 }}
+                    <motion.img initial={{ translateY: 0 }} whileInView={ { translateY: 60 }} viewport={{ once: true }} transition={{ duration: 1, delay: 5 }}
                                 src={ MovingSpaceShip } alt="Fusée décollant"  className='movingStarShip' />
                 </motion.div>
                 <Sesame inView={inView} />

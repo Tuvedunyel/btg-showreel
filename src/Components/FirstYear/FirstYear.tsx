@@ -59,7 +59,7 @@ const FirstYear: FC< { setShowDetail: Dispatch<SetStateAction<boolean>> } > = ( 
                                 <directionalLight position={ [ -2, 5, 2 ] } intensity={ 1 } />
                                 <Suspense fallback={ null }>
                                     <Sphere  args={[1, 100, 200]} scale={2.5} onClick={ () => setShowDetail(true) } >
-                                        <MeshDistortMaterial attach="material" color="#E3775B" speed={1.5} distort={ 0.3} roughness={0.2} />
+                                        <MeshDistortMaterial attach="material" color="#E3775B" speed={1.5} distort={ 0.3} roughness={0.4} />
                                     </Sphere>
                                 </Suspense>
                             </Canvas>
