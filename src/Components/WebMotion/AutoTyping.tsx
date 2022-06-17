@@ -10,7 +10,7 @@ const AutoTyping: FC = () => {
     const codeTypingRef = useRef<HTMLDivElement | null>( null )
     const [ text, setText ] = useState<string | null>( null );
     const [ iteration, setIteration ] = useState<number>( 0 );
-    const speed = 50;
+    const speed = 40;
     const isVisible = useOnScreen( codeTypingRef )
     const [ ref, inView, entry ] = useInView( { threshold: 0 } )
 
@@ -32,7 +32,7 @@ const AutoTyping: FC = () => {
             <div className='codeTyping__container' ref={ codeTypingRef }>
                 <motion.p className='text__codeTyping' initial={ { y: 0 } } whileInView={ { y: -1880 } }
                           viewport={ { once: true } }
-                          transition={ { duration: 35, delay: 7 } }
+                          transition={ { duration: 25, delay: 5 } }
                 >{ isVisible && handleWriting() }</motion.p>
             </div>
             <Animate inView={inView} />

@@ -6,6 +6,19 @@
   overflow: hidden;
 }
 
+.translate__creation {
+  align-self: end;
+  justify-self: start;
+}
+
+.ref__div {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  inset: 0;
+}
+
 .pepiniere__reveal, .pepiniere {
   position: absolute;
   inset: 0;
@@ -96,6 +109,7 @@
   justify-content: center;
   align-items: end;
   height: 100%;
+  margin: auto;
 }
 
 .pepiniere__right__cirlce-container {
