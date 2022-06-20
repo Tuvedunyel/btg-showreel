@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import hexagone from '../img/hexagone.svg';
 import { motion } from 'framer-motion';
+import whiteCube from "../img/whiteCube.svg";
 
 
-const Hexagone: FC<{ top: boolean, duration: number }> = ( { top, duration } ) => {
+const Hexagone: FC<{ top: boolean, duration: number, black?: boolean }> = ( { top, duration, black = true } ) => {
 
     return (
         <>
@@ -16,11 +17,15 @@ const Hexagone: FC<{ top: boolean, duration: number }> = ( { top, duration } ) =
                                     transition={ { duration: duration } }
                         >
                             <motion.div animate={ { translateY: [ 10, 0, 10, 0, 10, 0, 10 ] } }
-                                        viewport={{ once: true }}
+                                        viewport={ { once: true } }
                                         transition={ { delay: duration, duration: 4, repeat: Infinity } }
                                         drag
                             >
-                                <img src={ hexagone } alt="Petit hexagone noir"/>
+                                { black ? (
+                                    <img src={ hexagone } alt="Petit hexagone noir"/>
+                                ) : (
+                                    <img src={ whiteCube } alt="Petit hexagone blanc"/>
+                                ) }
                             </motion.div>
                         </motion.div>
                     )
@@ -32,9 +37,13 @@ const Hexagone: FC<{ top: boolean, duration: number }> = ( { top, duration } ) =
                                     transition={ { duration: duration } }
                         >
                             <motion.div animate={ { translateY: [ -10, 0, -10, 0, -10, 0, -10 ] } }
-                                        viewport={{ once: true }}
+                                        viewport={ { once: true } }
                                         transition={ { delay: duration, duration: 4, repeat: Infinity } } drag>
-                                <img src={ hexagone } alt="Petit hexagone noir"/>
+                                { black ? (
+                                    <img src={ hexagone } alt="Petit hexagone noir"/>
+                                ) : (
+                                    <img src={ whiteCube } alt="Petit hexagone blanc"/>
+                                ) }
                             </motion.div>
                         </motion.div>
                     )
