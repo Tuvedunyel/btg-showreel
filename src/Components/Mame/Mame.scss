@@ -199,3 +199,54 @@
     margin-right: 0.4em;
   }
 }
+
+.left-map {
+  position: absolute;
+  left: -5%;
+  bottom: -55%;
+}
+
+.pin-left {
+  position: absolute;
+  top: 51%;
+  right: 48%;
+}
+
+.right-map {
+  position: absolute;
+  right: -4%;
+  top: -38%;
+}
+
+.pin-right {
+  position: absolute;
+  top: 55%;
+  left: 46%;
+}
+
+.title-reveal {
+  position: absolute;
+  font-size: 14.1rem;
+  font-family: 'Exo', 'Arial', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  max-width: 443px;
+
+  span {
+    margin-top: 0.1em;
+  }
+  &.left {
+    top: 29%;
+    right: 21%;
+  }
+
+  &.right {
+    top: 73%;
+    right: 28%;
+  }
+}

@@ -29,7 +29,7 @@ const FirstYear: FC< { setShowDetail: Dispatch<SetStateAction<boolean>> } > = ( 
     }
 
     return (
-        <div className="creationAgence" ref={ref} >
+        <div className="creationAgence" >
             <motion.div initial='initial' animate={animation} variants={variants} transition={ { duration: 1 } }
                         viewport={ { once: true } } className="creationAgence__left">
                 <div className="creationAgence__left__title">
@@ -47,7 +47,7 @@ const FirstYear: FC< { setShowDetail: Dispatch<SetStateAction<boolean>> } > = ( 
                             transition={ { duration: 1, delay: 0.3 } }
                             className="creationAgence__left__border"></motion.div>
             </motion.div>
-            <section className="creationAgence__right">
+            <section  ref={ref} className="creationAgence__right">
 
                 <div className="creationAgence__right__title">
                     <h3 className="title_click">Cliquez ici</h3>
