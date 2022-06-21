@@ -32,7 +32,7 @@ const AutoTyping: FC = () => {
             <div className='codeTyping__container' ref={ codeTypingRef }>
                 <motion.p className='text__codeTyping' initial={ { y: 0 } } whileInView={ { y: -1880 } }
                           viewport={ { once: true } }
-                          transition={ { duration: 25, delay: 5 } }
+                          transition={ { duration: 30, delay: 6 } }
                 >{ isVisible && handleWriting() }</motion.p>
             </div>
             <Animate inView={inView} />

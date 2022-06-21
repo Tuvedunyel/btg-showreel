@@ -112,8 +112,8 @@
 }
 
 .movingStarShip {
-  animation: shake 0.8s infinite;
-  transform: translate3d(0, 0, 0);
+  animation: shakeX 0.8s infinite;
+  transform: translateX(0);
   perspective: 1000px;
   backface-visibility: hidden;
 }
@@ -214,6 +214,24 @@
 
   40%, 60% {
     transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes shakeX {
+  10%, 90% {
+    transform: translateX(-4px);
+  }
+
+  20%, 80% {
+    transform: translateX(4px);
+  }
+
+  30%, 50%, 70% {
+    transform: translateX(-4px);
+  }
+
+  40%, 60% {
+    transform: translateX(4px);
   }
 }
 

@@ -96,16 +96,18 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
                             <p>Arrivée dans les bureaux boulevard Heurteloup</p>
                         </div>
                     </div>
-                    <div className="circle__container">
+                    <motion.div initial={ { width: 0, height: 0 } } whileInView={ { width: '177px', height: '177px' } }
+                                viewport={ { once: true } } transition={ { duration: 1, delay: 25 } }
+                                className="circle__container">
                         <div className="circle"></div>
-                    </div>
+                    </motion.div>
                     <div className="cube__container">
-                        <Hexagone top={ false } duration={ 0.2 } black={false} />
-                        <Hexagone top={ false } duration={ 0.5 } black={false} />
-                        <Hexagone top={ false } duration={ 0.7 } black={false} />
-                        <Hexagone top={ false } duration={ 0.9 } black={false} />
-                        <Hexagone top={ false } duration={ 1.1 } black={false} />
-                        <Hexagone top={ false } duration={ 1.3 } black={false} />
+                        <Hexagone top={ false } duration={ 0.2 } black={ false }/>
+                        <Hexagone top={ false } duration={ 0.5 } black={ false }/>
+                        <Hexagone top={ false } duration={ 0.7 } black={ false }/>
+                        <Hexagone top={ false } duration={ 0.9 } black={ false }/>
+                        <Hexagone top={ false } duration={ 1.1 } black={ false }/>
+                        <Hexagone top={ false } duration={ 1.3 } black={ false }/>
                     </div>
                 </motion.div>
             </motion.div>

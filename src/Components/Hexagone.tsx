@@ -22,9 +22,9 @@ const Hexagone: FC<{ top: boolean, duration: number, black?: boolean }> = ( { to
                                         drag
                             >
                                 { black ? (
-                                    <img src={ hexagone } alt="Petit hexagone noir"/>
+                                    <img src={ hexagone } alt="Petit hexagone noir" className='img__no-events'/>
                                 ) : (
-                                    <img src={ whiteCube } alt="Petit hexagone blanc"/>
+                                    <img src={ whiteCube } alt="Petit hexagone blanc" className='img__no-events'/>
                                 ) }
                             </motion.div>
                         </motion.div>
@@ -40,9 +40,9 @@ const Hexagone: FC<{ top: boolean, duration: number, black?: boolean }> = ( { to
                                         viewport={ { once: true } }
                                         transition={ { delay: duration, duration: 4, repeat: Infinity } } drag>
                                 { black ? (
-                                    <img src={ hexagone } alt="Petit hexagone noir"/>
+                                    <img src={ hexagone } alt="Petit hexagone noir" className='img__no-events'/>
                                 ) : (
-                                    <img src={ whiteCube } alt="Petit hexagone blanc"/>
+                                    <img src={ whiteCube } alt="Petit hexagone blanc" className='img__no-events'/>
                                 ) }
                             </motion.div>
                         </motion.div>
