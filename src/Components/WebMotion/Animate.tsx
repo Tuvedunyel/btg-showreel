@@ -54,7 +54,7 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
 
     return (
         <motion.div initial="initial" animate={ animation } variants={ variants }
-                    transition={ { duration: 2, delay: 35 } } className='blueBg'>
+                    transition={ { duration: 2, delay: 30 } } className='blueBg'>
             <motion.div initial='initial' animate={ animation } variants={ containerVariants }
                         transition={ { duration: 2, delay: 40 } } className='blueBg__container'>
                 <motion.img initial='initial' animate={ animation } variants={ imageVariants }

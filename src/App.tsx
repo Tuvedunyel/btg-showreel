@@ -41,9 +41,6 @@ const App = () => {
                     <Historique/>
                 </div>
                 <div className="container">
-                    <Mame />
-                </div>
-                <div className="container">
                     <WebMotion/>
                 </div>
                 <div className="container">

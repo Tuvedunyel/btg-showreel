@@ -2,14 +2,19 @@ import { FC } from 'react';
 import './WebMotion.scss'
 import Date from "./Date";
 import AutoTyping from "./AutoTyping";
-import Animate from "./Animate";
+import { useInView } from "react-intersection-observer";
 
 const WebMotion: FC = () => {
+    const [ ref, inView, entry ] = useInView( { threshold: 0 } )
 
     return (
-        <div className='WebMotion' >
-            <Date />
-            <AutoTyping />
+        <div ref={ ref } className='WebMotion'>
+            { inView && (
+                <>
+                    <Date/>
+                    <AutoTyping/>
+                </>
+                ) }
         </div>
     );
 };

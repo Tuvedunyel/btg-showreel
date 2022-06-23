@@ -116,6 +116,10 @@
   height: 543px;
   width: 543px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .masque {
