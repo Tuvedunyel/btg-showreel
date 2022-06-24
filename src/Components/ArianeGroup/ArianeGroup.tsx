@@ -51,7 +51,7 @@ const ArianeGroup: FC = () => {
                     <img src={ arianGroupImage } alt="Logo d'ariange Groupe" className="ariane__logo"/>
                 </div>
             </div>
-            <SpaceShip/>
+            <SpaceShip />
         </div>
     );
 };

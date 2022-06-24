@@ -20,17 +20,15 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
     useEffect( () => {
         if (inView) {
             animation.start( 'animate' )
-        } else {
-            animation.start( 'initial' )
         }
     }, [ inView, animation ] )
 
     const variants = {
         initial: {
-            height: 0
+            opacity: 0
         },
         animate: {
-            height: '955px'
+            opacity: 1
         }
     }
 
@@ -43,22 +41,12 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
         }
     }
 
-    const containerVariants = {
-        initial: {
-            translateY: 0
-        },
-        animate: {
-            translateY: -1500
-        }
-    }
-
     return (
         <motion.div initial="initial" animate={ animation } variants={ variants }
                     transition={ { duration: 2, delay: 30 } } className='blueBg'>
-            <motion.div initial='initial' animate={ animation } variants={ containerVariants }
-                        transition={ { duration: 2, delay: 40 } } className='blueBg__container'>
+            <div className='blueBg__container'>
                 <motion.img initial='initial' animate={ animation } variants={ imageVariants }
-                            transition={ { duration: 1, delay: 40 } } src={ animateBuilding }
+                            transition={ { duration: 1, delay: 31 } } src={ animateBuilding }
                             alt="Immeuble qui se construit" className='yellow-animation'/>
                 <div className="date__left">
                     <div className="creationAgence__left__title">
@@ -75,10 +63,10 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
                     <div className="creationAgence__left__border"></div>
                 </div>
                 <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
-                            transition={ { duration: 1, delay: 40 } } className='chemin'>
+                            transition={ { duration: 1, delay: 38 } } className='chemin'>
                     <img src={ traceTop } alt="Chemin en pointiller blanc"/>
                     <img src={ orangeCross } alt="Croix orange"/>
-                    <img src={ traceBottom } alt="Chemin en pointiller blanc"/>
+                    <img src={ traceBottom } alt="Chemin en pointiller blanc" className='trace-bas'/>
                 </motion.div>
                 <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
                             transition={ { duration: 1, delay: 40 } } className='arrivee__bottom'>
@@ -110,7 +98,7 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
                         <Hexagone top={ false } duration={ 1.3 } black={ false }/>
                     </div>
                 </motion.div>
-            </motion.div>
+            </div>
         </motion.div>
     );
 };

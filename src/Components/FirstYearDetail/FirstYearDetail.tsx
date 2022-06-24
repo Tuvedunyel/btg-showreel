@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from "framer-motion";
 import Muguet from '../../img/muguet.png'
 import Trompette from '../../img/trompette.png'
-import Vague from '../../img/vague.svg'
+import Vague from '../../img/wave-white.gif'
 import './style.scss'
 import { Canvas } from "@react-three/fiber";
 import { MeshDistortMaterial, Sphere } from "@react-three/drei";
@@ -48,18 +48,6 @@ const FirstYearDetail = () => {
         animate: {
             translateY: -900
         }
-    }
-
-    const mameVariants = {
-        initial: {
-            bottom: '-100%',
-            top: 'unset'
-        },
-        animate: {
-            bottom: 'unset',
-            top: '0%'
-        }
-
     }
 
     useEffect( () => {
@@ -113,12 +101,12 @@ const FirstYearDetail = () => {
                                 transition={ { duration: 1, delay: 1.2 } } src={ Trompette }
                                 alt="Une trompette argentée"
                                 className='trompette'/>
-                    <motion.img initial={ { scale: 0 } } animate={ { scale: 1 } } className='vague' src={ Vague }/>
+                    <motion.img initial={ { scale: 0, rotate: 90 } } animate={ { scale: 1, rotate: 90 } } className='vague' src={ Vague }/>
                 </motion.div>
             </motion.div>
-            <motion.div initial='initial' animate={animation}  variants={mameVariants} transition={{ duration: 1, delay: 7.5 }} className="mame__transition">
+            <div className="mame__transition">
                 <Mame />
-            </motion.div>
+            </div>
         </section>
     );
 };

@@ -7,9 +7,10 @@ import leftMap from '../../img/map-left.svg';
 import pin from '../../img/pin.svg'
 import rightMap from '../../img/map-right.svg';
 import { useInView } from "react-intersection-observer";
+import WaterText from "./WaterText";
 
 const Reveal: FC = () => {
-    const troll = "Franchement, c'était mieux avant ...";
+    const troll = "Et sinon, lequel des BTG tu préfères ?";
     const [ref, inView, entry] = useInView({ threshold: 0 });
     const animation = useAnimation();
 
@@ -46,7 +47,8 @@ const Reveal: FC = () => {
             <motion.div initial='initial' animate={animation} variants={leftVariants} transition={{ duration: 2, delay: 10 }} className='left-map'>
                 <img src={leftMap} alt="Carte du département d'indre-et-Loire"/>
                 <img src={pin} alt="Point de géolocalisation" className='pin-left' />
-                <h3 className='title-reveal left'>Nouv-<span>elle</span></h3>
+                <WaterText title='Nouv-' classname='left' id={ [ 'water', 'text', 'text_water' ] } />
+                <WaterText title='elle' classname='left' id={ ['water1', 'text1', 'text_water1'] } />
             </motion.div>
             <motion.div ref={ref} initial={ { width: 0, height: 0 } } whileInView={ { width: '713px', height: '713px' } }
                         viewport={ { once: true } } transition={ { duration: 1, delay: 8.5 } }
@@ -70,7 +72,8 @@ const Reveal: FC = () => {
             <motion.div initial='initial' animate={animation} variants={rightVariants} transition={{ duration: 2, delay: 10 }} className='right-map'>
                 <img src={ rightMap } alt="Carte du département d'indre-et-Loire"/>
                 <img src={ pin } alt="Point de géolocalisation" className='pin-right'/>
-                <h3 className='title-reveal right'>Aven-<span>ture</span></h3>
+                <WaterText title='Aven-' classname='right' id={ ['water2', 'text2', 'text_water2'] } />
+                <WaterText title='ture' classname='right' id={ ['water3', 'text3', 'text_water3'] } />
             </motion.div>
         </motion.div>
     );

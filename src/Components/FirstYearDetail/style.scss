@@ -4,8 +4,14 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .detail__motion {
@@ -96,13 +102,15 @@
 
 .vague {
   position: absolute;
-  top: 0;
+  top: 10%;
   right: -71%;
-
+  width: 192px;
+  height: 37px;
 }
 
 .mame__transition {
   position: absolute;
+  bottom: -100%;
   width: 100%;
   height: 100%;
 }

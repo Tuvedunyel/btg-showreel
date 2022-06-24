@@ -1,7 +1,23 @@
 body {
   height: 100vh;
   overscroll-behavior: none;
+  overflow-x: hidden;
 }
+
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #FCD647; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #15185C; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #FCD647; /* creates padding around scroll thumb */
+}
+
 
 .App {
   background: #F9EEE1;

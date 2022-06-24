@@ -70,13 +70,13 @@ const FirstYear: FC<{ setShowDetail: Dispatch<SetStateAction<boolean>> }> = ( { 
                         <img src={ arrow } alt="Cliquez ici"/>
                         <div className="circle">
                             <Canvas className="canvas">
-                                <ambientLight intensity={ 0.5 }/>
-                                <directionalLight position={ [ -2, 5, 2 ] } intensity={ 1 }/>
+                                <ambientLight intensity={ 0.6 }/>
+                                <directionalLight color='#EDA694' position={ [ -2, 5, 2 ] } intensity={ 1 }/>
                                 <Suspense fallback={ null }>
                                     <Sphere args={ [ 1, 100, 200 ] } scale={ 2.5 }
                                             onClick={ () => setShowDetail( true ) }>
                                         <MeshDistortMaterial attach="material" color="#E3775B" speed={ 1.5 }
-                                                             distort={ 0.3 } roughness={ 0.4 }/>
+                                                             distort={ 0.3 } roughness={ 0.7 }/>
                                     </Sphere>
                                 </Suspense>
                             </Canvas>

@@ -23,7 +23,7 @@ const Seed: FC = () => {
             <motion.img src={ SeedFirstState } whileInView={{ opacity: [1, 0] }} transition={{ duration: 1, delay: 3.5 }} alt="Graine" />
             <motion.img src={ SeedSecondState } whileInView={{ opacity: [0, 1, 0] }} transition={{ duration: 1.5, delay: 4.5 }} alt="Graine" />
             <motion.img src={ SeedThirdState } whileInView={{ opacity: [0, 1, 0] }} transition={{ duration: 1.5, delay: 6 }} alt="Graine" />
-            <motion.img src={ SeedFourthState } whileInView={{ opacity: [0, 1] }} viewport={{ once: true }} transition={{ duration: 1, delay: 7.5  }} alt="Graine" />
+            <motion.img src={ SeedFourthState } whileInView={{ opacity: [0, 1] }} viewport={{ once: true }} transition={{ duration: 1.5, delay: 7.5  }} alt="Graine" />
         </motion.div>
     );
 };

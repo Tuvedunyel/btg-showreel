@@ -138,7 +138,6 @@
 }
 
 
-
 .seed-container {
   position: absolute;
   z-index: 2;
@@ -188,7 +187,7 @@
     border-right: 1px solid transparent;
     border-left: 64px solid transparent;
     border-top: 46px solid black;
-    bottom: -27%;
+    bottom: -26%;
     right: 0;
   }
 }
@@ -241,16 +240,45 @@
   justify-content: center;
   max-width: 443px;
 
+  &:nth-of-type(2n) {
+    margin-top: 0.8em;
+  }
+
   span {
     margin-top: 0.1em;
   }
+
   &.left {
-    top: 29%;
+    top: 20%;
     right: 21%;
   }
 
   &.right {
-    top: 73%;
+    top: 80%;
     right: 28%;
   }
+}
+
+@keyframes wave {
+  0% {
+    x: -400px;
+    y: 50px;
+
+  }
+  100% {
+    x: 0;
+    y: 50px;
+  }
+}
+
+
+.water-fill {
+  animation: wave 1s infinite linear;
+  position: relative;
+}
+
+svg .use {
+  stroke: #000000;
+  stroke-width: 3px;
+  position: relative;
 }
