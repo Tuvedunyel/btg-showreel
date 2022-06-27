@@ -30,6 +30,15 @@ const Sesame: FC<{ inView: boolean }> = ( { inView } ) => {
         }
     }
 
+    const bigMoonVariants = {
+        initial: {
+            opacity: 0
+        },
+        animate: {
+            opacity: 1
+        }
+    }
+
     useEffect( () => {
         if (inView) {
             animation.start( 'animate' );
@@ -57,9 +66,12 @@ const Sesame: FC<{ inView: boolean }> = ( { inView } ) => {
             <div className="star__container__moon">
                 <img src={starBackground} alt="Fond étoilé" className='star__background__image' />
             </div>
-            <div className="static__moon__container">
+            <motion.div initial='initial' animate={animation} variants={bigMoonVariants} transition={ {
+                duration: 2,
+                delay: 25
+            } } className="static__moon__container">
                 <NewMembers />
-            </div>
+            </motion.div>
         </motion.div>
     );
 };

@@ -237,6 +237,129 @@
   height: 100%;
 }
 
+.static__moon__container {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1D1738;
+  z-index: 100;
+  overflow: hidden;
+
+  .star__background__image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .moon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.dummy__container {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 50%;
+  margin: auto;
+  inset: 0;
+}
+
+.orange-wave {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 192px;
+  height: 37px;
+}
+
+.moon-year {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 567px;
+}
+
+.bigMoon {
+  transform: scale(6)
+}
+
+.static__moon__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.trio-employee__container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  margin: auto;
+  z-index: 101;
+  top: 27%;
+  left: -5%;
+}
+
+.trio-employee {
+  position: absolute;
+  width: 330px;
+
+  &.gregoire-cosmonaute {
+    left: 29%;
+    top: 34%;
+    width: 220px;
+  }
+
+  &.anais-cosmonaute {
+    left: 45%;
+    top: 38%;
+    width: 250px;
+  }
+
+  &.zoe-cosmonaute {
+    right: 25%;
+    top: 36%;
+    width: 235px;
+  }
+}
+
+.employee {
+  position: absolute;
+  background: white;
+  font-family: 'Exo', Arial, sans-serif;
+  padding-inline: 2.5rem;
+  font-size: 5.6rem;
+  font-weight: 900;
+
+  &.gregoire {
+    left: 19%;
+    top: 24%;
+  }
+
+  &.anais {
+    top: 28%;
+    left: 45%;
+  }
+
+  &.zoe {
+    right: 20%;
+    top: 29%;
+  }
+}
+
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-4px, 0, 0);
