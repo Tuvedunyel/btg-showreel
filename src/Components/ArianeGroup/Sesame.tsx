@@ -5,6 +5,7 @@ import bigHexagone from '../../img/big-hexagone.svg';
 import whiteWave from '../../img/wave-white.gif'
 import Spline from "@splinetool/react-spline";
 import starBackground from '../../img/etoiles.png'
+import NewMembers from "./NewMembers";
 
 const Sesame: FC<{ inView: boolean }> = ( { inView } ) => {
     const animation = useAnimation();
@@ -49,13 +50,15 @@ const Sesame: FC<{ inView: boolean }> = ( { inView } ) => {
                 <img src={ whiteWave } alt="Vague blanche" className='top-wave wave'/>
                 <motion.div initial='initial' animate={ animation } variants={ sizeVariants }
                             transition={ { duration: 1, delay: 15 } } className="moon__hexagone">
-                    <img src={ bigHexagone } alt="Hexagone blanc" className='big__hexagone'/>
                     <Spline scene="https://prod.spline.design/SeqKfWuhGm1Go6Zb/scene.splinecode"/>
                 </motion.div>
                 <img src={ whiteWave } alt="Vague blanche" className='bottom-wave wave'/>
             </motion.div>
             <div className="star__container__moon">
                 <img src={starBackground} alt="Fond étoilé" className='star__background__image' />
+            </div>
+            <div className="static__moon__container">
+                <NewMembers />
             </div>
         </motion.div>
     );

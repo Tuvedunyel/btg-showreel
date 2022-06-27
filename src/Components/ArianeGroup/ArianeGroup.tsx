@@ -41,7 +41,7 @@ const ArianeGroup: FC = () => {
                             <strong className="orangeArrow"><img src={ orangeArrow }
                                                                  alt="Flèche orange pointant vers la droite"/></strong>
                         </h2>
-                        <p>1er projet Européen</p>
+                        <p>1<sup>er</sup> projet Européen</p>
                     </section>
                     <section className="border-white__title"></section>
                 </motion.div>

@@ -41,6 +41,26 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
         }
     }
 
+    const arriveeVariants = {
+        initial: {
+            opacity: 0
+        },
+        animate: {
+            opacity: 1
+        }
+    }
+
+    const circleVariants = {
+        initial: {
+            width: 0,
+            height: 0
+        },
+        animate: {
+            width: '177px',
+            height: '177px'
+        }
+    }
+
     return (
         <motion.div initial="initial" animate={ animation } variants={ variants }
                     transition={ { duration: 2, delay: 30 } } className='blueBg'>
@@ -68,24 +88,24 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
                     <img src={ orangeCross } alt="Croix orange"/>
                     <img src={ traceBottom } alt="Chemin en pointiller blanc" className='trace-bas'/>
                 </motion.div>
-                <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
-                            transition={ { duration: 1, delay: 40 } } className='arrivee__bottom'>
+                <motion.div initial='initial' animate={animation} variants={arriveeVariants}
+                            transition={ { duration: 1, delay: 20 } } className='arrivee__bottom'>
                     <div className="building__container">
                         <img src={ building } alt="Pictogramme d'un immeuble" className='building-bottom'/>
                         <div className="building__container__text">
                             <motion.img initial={ { left: '25%', top: '2%' } }
                                         whileInView={ { left: '8%', top: '-28%' } } viewport={ { once: true } }
-                                        transition={ { duration: 1, delay: 45 } } src={ leftFlag }
+                                        transition={ { duration: 1, delay: 10 } } src={ leftFlag }
                                         alt="Drapeau blanc orienté vers la gauche"/>
                             <motion.img initial={ { right: '25%', top: '2%' } }
                                         whileInView={ { right: '8%', top: '-28%' } } viewport={ { once: true } }
-                                        transition={ { duration: 1, delay: 45 } } src={ rightFlag }
+                                        transition={ { duration: 1, delay: 10 } } src={ rightFlag }
                                         alt="Drapeau blanc orienté vers la droite"/>
                             <p>Arrivée dans les bureaux boulevard Heurteloup</p>
                         </div>
                     </div>
-                    <motion.div initial={ { width: 0, height: 0 } } whileInView={ { width: '177px', height: '177px' } }
-                                viewport={ { once: true } } transition={ { duration: 1, delay: 25 } }
+                    <motion.div initial='initial' animate={animation}
+                                variants={circleVariants} transition={ { duration: 1, delay: 25 } }
                                 className="circle__container">
                         <div className="circle"></div>
                     </motion.div>
