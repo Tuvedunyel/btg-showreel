@@ -13,12 +13,17 @@
   height: 50%;
 }
 
+.car__wrapper {
+  position: relative;
+}
+
 .racing-car__star {
   position: absolute;
   inset: 0;
   margin: auto;
   width: 100%;
   height: 100%;
+  background: url('../../img/stars.jpg') no-repeat 0 0;
 }
 
 .road {
@@ -42,4 +47,15 @@
   position: absolute;
   left: 5%;
   bottom: -2%;
+}
+
+.smoke-move {
+  position: absolute;
+  inset: 0;
+  left: -15%;
+  bottom: -2%;
+}
+
+.car__rotate-over {
+  position: relative;
 }

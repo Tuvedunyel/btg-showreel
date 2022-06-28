@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import moon from '../../img/moon.svg';
 import { motion, useAnimation } from 'framer-motion';
 import starBackground from '../../img/etoiles.png'
@@ -8,10 +8,13 @@ import orangeArrow from "../../img/orange-arrow.svg";
 import gregoire from '../../img/cosmonaute_gregoire_deux.png';
 import anais from '../../img/cosmonaute_anais_deux.png';
 import zoe from '../../img/cosmonaute_zoe_deux.png';
+import StarsBackground from "../BackToFuture/StarsBackground";
 
 const NewMembers: FC = () => {
     const animation = useAnimation();
     const [ ref, inView, entry ] = useInView( { threshold: 0 } )
+    const windowHeight = window.innerHeight;
+
 
     const moonVariants = {
         initial: {
@@ -70,7 +73,7 @@ const NewMembers: FC = () => {
     return (
         <>
             <div className="dummy__container" ref={ ref }></div>
-            <img src={ starBackground } alt="Fond étoilé" className='star__background__image'/>
+            <StarsBackground />
             <motion.section initial='initial' animate={ animation } variants={ moonVariants }
                             transition={ { duration: 2, delay: 20 } } className="moon" title="Arrivée d'Anaïs">
                 <motion.div initial='initial' animate={ animation } variants={ topVariants }
