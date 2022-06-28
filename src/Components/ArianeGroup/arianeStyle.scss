@@ -104,11 +104,21 @@
   margin: auto;
   top: unset;
   bottom: -6%;
+  left: -22%;
   animation: shake 0.8s infinite;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
   z-index: 99;
+}
+
+.smoke-one {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  bottom: -99%;
+  left: 1%;
+  z-index: 100;
 }
 
 .movingStarShip {
@@ -119,8 +129,24 @@
   margin: auto;
 }
 
+.movingStarShip__container {
+  margin: auto;
+  width: 154px;
+  height: 1000px;
+}
+
 .movingship__container {
+  position: absolute;
+  z-index: 3;
   width: 100%;
+  inset: 0;
+  margin: auto;
+  img {
+    position: absolute;
+    inset: 0;
+    bottom: -55%;
+    left: 1%;
+  }
 }
 
 .to__space {
@@ -163,7 +189,6 @@
   justify-content: center;
   align-items: center;
   background: #1D1738;
-  transform: translateY(-1600px);
 
   .moon__hexagone canvas {
     position: relative;
@@ -318,7 +343,7 @@
   width: 330px;
 
   &.gregoire-cosmonaute {
-    left: 29%;
+    left: 30%;
     top: 34%;
     width: 220px;
   }
@@ -330,7 +355,7 @@
   }
 
   &.zoe-cosmonaute {
-    right: 25%;
+    right: 29%;
     top: 36%;
     width: 235px;
   }
@@ -345,7 +370,7 @@
   font-weight: 900;
 
   &.gregoire {
-    left: 19%;
+    left: 20%;
     top: 24%;
   }
 
@@ -355,7 +380,7 @@
   }
 
   &.zoe {
-    right: 20%;
+    right: 25%;
     top: 29%;
   }
 }

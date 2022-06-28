@@ -1,36 +1,55 @@
 import { FC, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import SesameSpace from '../../img/sesame.svg';
-import bigHexagone from '../../img/big-hexagone.svg';
 import whiteWave from '../../img/wave-white.gif'
 import Spline from "@splinetool/react-spline";
 import starBackground from '../../img/etoiles.png'
 import NewMembers from "./NewMembers";
+import { useInView } from "react-intersection-observer";
 
-const Sesame: FC<{ inView: boolean }> = ( { inView } ) => {
+const Sesame: FC<{ windowHeight: number }> = ( {  windowHeight } ) => {
     const animation = useAnimation();
+    const [ ref, inView, entry ] = useInView( { threshold: 0 } );
 
     const variants = {
         initial: {
             opacity: 0,
+            translateY: -windowHeight
         },
         animate: {
             opacity: 1,
+            translateY: -windowHeight
         }
     }
 
     const sizeVariants = {
         initial: {
-            width: 0,
-            height: 0
+            opacity: 0
         },
         animate: {
-            width: '508px',
-            height: '586px'
+            opacity: 1
         }
     }
 
     const bigMoonVariants = {
+        initial: {
+            opacity: 0
+        },
+        animate: {
+            opacity: 1
+        }
+    }
+
+    const sesameLogoVariants = {
+        initial: {
+            opacity: 0
+        },
+        animate: {
+            opacity: [1, 0]
+        }
+    }
+
+    const whiteWaveVariants = {
         initial: {
             opacity: 0
         },
@@ -49,12 +68,12 @@ const Sesame: FC<{ inView: boolean }> = ( { inView } ) => {
 
 
     return (
-        <motion.div initial='initial' animate={ animation } variants={ variants }
+        <motion.div ref={ref} initial='initial' animate={ animation } variants={ variants }
                     transition={ { duration: 2, delay: 10 } } className='sesame__logo'>
-            <motion.img initial={ { opacity: 1 } } whileInView={ { opacity: 0 } } viewport={ { once: true } }
+            <motion.img initial='initial' animate={animation} variants={sesameLogoVariants}
                         transition={ { duration: 1, delay: 12 } }
                         src={ SesameSpace } alt="Logo du projet Sésame d'ariane groupe"/>
-            <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
+            <motion.div initial='initial' animate={animation} variants={whiteWaveVariants}
                         transition={ { duration: 1, delay: 12 } } className="moon__container">
                 <img src={ whiteWave } alt="Vague blanche" className='top-wave wave'/>
                 <motion.div initial='initial' animate={ animation } variants={ sizeVariants }

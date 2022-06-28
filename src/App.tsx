@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import './App.scss'
 import Home from "./Layouts/Home";
 import { AnimatePresence } from "framer-motion";
@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Mame from "./Components/Mame/Mame";
 import WebMotion from "./Components/WebMotion/WebMotion";
 import ArianeGroup from "./Components/ArianeGroup/ArianeGroup";
+import RacingCar from "./Components/BackToFuture/RacingCar";
 
 gsap.registerPlugin( ScrollTrigger );
 
@@ -45,6 +46,9 @@ const App = () => {
                 </div>
                 <div className="container">
                     <ArianeGroup />
+                </div>
+                <div className="container">
+                    <RacingCar />
                 </div>
             </div>
         </AnimatePresence>

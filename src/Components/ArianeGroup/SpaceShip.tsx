@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
-import SpaceShipImg from '../../img/space-ship.png'
+import lanceur from '../../img/lanceur.svg'
 import MovingSpaceShip from '../../img/moving-space-ship.png'
 import starBackground from '../../img/etoiles.png'
+import smoke from '../../img/smoke.png'
 import Sesame from "./Sesame";
 
 const SpaceShip = () => {
     const animation = useAnimation();
     const [ ref, inView, entry ] = useInView( { threshold: 0 } );
+    const [ windowHeight, setWindowHeight ] = useState( window.innerHeight );
 
 
     const containerVariants = {
@@ -25,7 +27,7 @@ const SpaceShip = () => {
             translateY: 0
         },
         animate: {
-            translateY: 1600
+            translateY: windowHeight
         }
     }
 
@@ -34,7 +36,7 @@ const SpaceShip = () => {
             translateY: 0,
         },
         animate: {
-            translateY: -1600,
+            translateY: -(windowHeight),
         }
     }
 
@@ -56,6 +58,24 @@ const SpaceShip = () => {
         }
     }
 
+    const shipContainerVariants = {
+        initial: {
+            translateY: 0,
+        },
+        animate: {
+            translateY: -200
+        }
+    }
+
+    const shipVariants = {
+        initial: {
+            translateY: 0
+        },
+        animate: {
+            translateY: -(windowHeight * 2),
+        }
+    }
+
 
     useEffect( () => {
         if (inView) {
@@ -74,22 +94,28 @@ const SpaceShip = () => {
                 <motion.div initial='initial' animate={ animation } variants={ backgroundVariants }
                             transition={ { duration: 5, delay: 5 } }
                             className="space__ship__bg">
-                    <img src={ SpaceShipImg } alt="Fusée Ariane sur son lanceur" className='launcher'/>
+                    <img src={ lanceur } alt="Fusée Ariane sur son lanceur" className='launcher'/>
+                    <img src={ smoke } alt="fumée de la fusée" className='smoke-one'/>
                     <div className="star__canvas__container">
                         <img src={ starBackground } alt="Fond étoilé" className='star__background__image'/>
                     </div>
-                    <motion.div initial='initial' animate={animation} variants={ opacityVariants } transition={{ duration: 1, delay: 4.9 }} className="to__space__container">
+                    <motion.div initial='initial' animate={ animation } variants={ opacityVariants }
+                                transition={ { duration: 1, delay: 4.9 } } className="to__space__container">
                         <motion.div initial='initial' animate={ animation } variants={ translateVariants }
-                                    transition={ { duration: 5, delay: 5 } }
+                                    transition={ { duration: 5 } }
                                     className="to__space">
-                            <motion.div className='movingship__container' initial={ { translateY: 260 } }
-                                        whileInView={ { translateY: -1000 } } viewport={ { once: true } }
-                                        transition={ { duration: 3, delay: 6 } }>
-                                <img src={ MovingSpaceShip } alt="Fusée décollant" className='movingStarShip'/>
-                            </motion.div>
                         </motion.div>
                     </motion.div>
-                    <Sesame inView={ inView }/>
+                    <Sesame windowHeight={ windowHeight }/>
+                </motion.div>
+                <motion.div initial='initial' animate={ animation } variants={ shipContainerVariants } transition={ {
+                    duration: 1,
+                    delay: 5
+                } } className='movingship__container'>
+                    <motion.div initial='initial' animate={ animation } variants={ shipVariants }
+                                transition={ { duration: 3, delay: 8 } } className='movingStarShip__container'>
+                        <motion.img src={ MovingSpaceShip } alt="Fusée décollant" className='movingStarShip'/>
+                    </motion.div>
                 </motion.div>
             </motion.div>
         </>

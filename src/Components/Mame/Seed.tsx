@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { motion } from 'framer-motion';
+import { FC, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import SeedFirstState from '../../img/graine-first-state.svg';
 import SeedSecondState from '../../img/graine-second-state.png';
 import SeedThirdState from '../../img/graine-third-state.png';
@@ -17,13 +17,44 @@ const variants = {
     },
 }
 
-const Seed: FC = () => {
+const Seed: FC<{ inView: boolean }> = ( { inView } ) => {
+    const animation = useAnimation();
+
+    const firstSeedVariants = {
+        animate: {
+            opacity: [ 1, 0 ]
+        }
+    }
+
+    const secondSeedVariants = {
+        animate: {
+            opacity: [ 0, 1, 0 ]
+        }
+    }
+
+    const thirdSeedVariants = {
+        animate: {
+            opacity: [ 0, 1 ]
+        }
+    }
+
+    useEffect( () => {
+        if (inView) {
+            animation.start( 'animate' )
+        }
+    }, [ animation, inView ] )
+
     return (
-        <motion.div className='seed-container' initial='initial' whileInView='whileInView' viewport={{ once: true }} transition={{ duration: 1, delay: 3 }} variants={variants} >
-            <motion.img src={ SeedFirstState } whileInView={{ opacity: [1, 0] }} transition={{ duration: 1, delay: 3.5 }} alt="Graine" />
-            <motion.img src={ SeedSecondState } whileInView={{ opacity: [0, 1, 0] }} transition={{ duration: 1.5, delay: 4.5 }} alt="Graine" />
-            <motion.img src={ SeedThirdState } whileInView={{ opacity: [0, 1, 0] }} transition={{ duration: 1.5, delay: 6 }} alt="Graine" />
-            <motion.img src={ SeedFourthState } whileInView={{ opacity: [0, 1] }} viewport={{ once: true }} transition={{ duration: 1.5, delay: 7.5  }} alt="Graine" />
+        <motion.div className='seed-container' initial='initial' whileInView='whileInView' viewport={ { once: true } }
+                    transition={ { duration: 1, delay: 3 } } variants={ variants }>
+            <motion.img src={ SeedFirstState } animate={ animation } variants={ firstSeedVariants }
+                        transition={ { duration: 1, delay: 3.5 } } alt="Graine"/>
+            <motion.img src={ SeedSecondState } animate={ animation } variants={ secondSeedVariants }
+                        transition={ { duration: 1.5, delay: 4.5 } } alt="Graine"/>
+            <motion.img src={ SeedThirdState } animate={ animation } variants={ secondSeedVariants }
+                        transition={ { duration: 1.5, delay: 6 } } alt="Graine"/>
+            <motion.img src={ SeedFourthState } animate={animation} variants={ thirdSeedVariants }
+                        transition={ { duration: 1.5, delay: 7.5 } } alt="Graine"/>
         </motion.div>
     );
 };
