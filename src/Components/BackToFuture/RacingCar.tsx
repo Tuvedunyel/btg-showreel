@@ -1,6 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import './backToFuture.scss';
-import car from '../../img/car.svg'
+import car from '../../img/voiture.svg'
+import wheel from '../../img/pneu.svg'
 import carShadow from '../../img/car-shadow.svg'
 import { motion, useAnimation } from 'framer-motion'
 import smokeCar from '../../img/car-smoke.svg'
@@ -114,7 +115,9 @@ const RacingCar: FC = () => {
                                     transition={ { duration: 2, delay: 3.5 } } className="car__rotate-over">
                             <motion.div initial='initial' animate={ animation } variants={ carLeft }
                                         transition={ { duration: 1, delay: 5.5 } } className='car__go-left'>
-                                <img src={ car } alt="delorean grise roulant sur la route"/>
+                                <img src={ car } alt="delorean grise roulant sur la route" className="carImg"/>
+                                <img src={ wheel } alt="Pneu de la voiture" className='wheel'/>
+                                <img src={ wheel } alt="Pneu de la voiture" className='wheel second'/>
                             </motion.div>
                         </motion.div>
                         <motion.div initial='initial' animate={ animation } variants={ smokeMove }

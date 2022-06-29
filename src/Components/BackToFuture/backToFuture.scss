@@ -70,3 +70,33 @@
 .car__rotate-over {
   position: relative;
 }
+
+.carImg {
+  width: 1042px;
+  height: 332px;
+}
+
+.wheel {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 55%;
+  left: 8.5%;
+  animation: rotate 0.8s infinite linear;
+
+  &.second {
+    left: unset;
+    right: 53%;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: center center;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: center center;
+  }
+}

@@ -14,7 +14,6 @@ const Road: FC<{ inView: boolean }> = ( { inView } ) => {
             setTimeout( () => {
                 setStep( step + 1 );
                 setPosX( posX + 370 )
-                console.log( posX )
                 roadContainer.current!.style.backgroundPosition = `${ posX }px 0`;
             }, 40 )
         }

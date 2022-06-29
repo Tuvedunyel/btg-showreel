@@ -133,6 +133,8 @@
   perspective: 1000px;
   backface-visibility: hidden;
   margin: auto;
+  width: 153.66px;
+  height: 727px;
 }
 
 .movingStarShip__container {
@@ -147,12 +149,34 @@
   width: 100%;
   inset: 0;
   margin: auto;
-  img {
+  .movingStarShip {
     position: absolute;
     inset: 0;
-    bottom: -55%;
+    bottom: -24%;
     left: 1%;
   }
+}
+
+.reactor-right__container, .reactor-left__container {
+  animation: shake 0.8s infinite;
+  width: 40px;
+  height: 262px;
+  position: absolute;
+  top: 72% !important;
+  bottom: unset !important;
+}
+
+.reactor-left__container {
+  left: 47.5%;
+}
+
+.reactor-right__container {
+  right: 46.5%;
+  left: unset;
+}
+
+.reactor {
+  width: 40px;
 }
 
 .to__space__container {
@@ -343,7 +367,7 @@
   width: 330px;
 
   &.gregoire-cosmonaute {
-    left: 30%;
+    left: 34%;
     top: 34%;
     width: 220px;
   }
@@ -355,7 +379,7 @@
   }
 
   &.zoe-cosmonaute {
-    right: 29%;
+    right: 30%;
     top: 36%;
     width: 235px;
   }
@@ -370,19 +394,37 @@
   font-weight: 900;
 
   &.gregoire {
-    left: 20%;
-    top: 24%;
+    left: 26%;
+    top: 29%;
   }
 
   &.anais {
-    top: 28%;
+    top: 30%;
     left: 45%;
   }
 
   &.zoe {
     right: 25%;
-    top: 29%;
+    top: 32%;
   }
+}
+
+.dynamic__smoke {
+  width: 800px;
+  height: 350.17px;
+  background: url('../../img/fumée.png') no-repeat 0 0;
+  position: absolute;
+  bottom: -12%;
+  left: 30%;
+}
+
+.reactor-fire {
+  width: 150px;
+  height: 1099.8px;
+  background: url('../../img/feu.png') no-repeat 0 0;
+  position: absolute;
+  bottom: -21%;
+  left: 46.5%;
 }
 
 @keyframes shake {

@@ -2,10 +2,13 @@ import { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import lanceur from '../../img/lanceur.svg'
-import MovingSpaceShip from '../../img/moving-space-ship.png'
+import MovingSpaceShip from '../../img/fusee.svg'
 import starBackgroundStatic from '../../img/etoiles.png'
-import smoke from '../../img/smoke.png'
+import reactorLeftImg from '../../img/left-reactor.svg';
+import reactorRightImg from '../../img/right-reactor.svg'
 import Sesame from "./Sesame";
+import ReactorFire from "./ReactorFire";
+import SmokeStarShip from "./SmokeStarShip";
 
 const SpaceShip = () => {
     const animation = useAnimation();
@@ -54,7 +57,37 @@ const SpaceShip = () => {
             translateY: 0
         },
         animate: {
-            translateY: -(windowHeight * 2),
+            translateY: -(windowHeight * 2)
+        }
+    }
+
+    const reactorLeft = {
+        initial: {
+            translateY: 0,
+            translateX: 0,
+            rotate: 0,
+            opacity: 1
+        },
+        animate: {
+            translateY: 800,
+            translateX: -400,
+            rotate: -120,
+            opacity: 0
+        }
+    }
+
+    const reactorRight = {
+        initial: {
+            translateY: 0,
+            translateX: 0,
+            rotate: 0,
+            opacity: 1
+        },
+        animate: {
+            translateY: 800,
+            translateX: 400,
+            rotate: 120,
+            opacity: 0
         }
     }
 
@@ -77,7 +110,6 @@ const SpaceShip = () => {
                             transition={ { duration: 5, delay: 5 } }
                             className="space__ship__bg">
                     <img src={ lanceur } alt="Fusée Ariane sur son lanceur" className='launcher'/>
-                    <img src={ smoke } alt="fumée de la fusée" className='smoke-one'/>
                     <div className="star__canvas__container">
                         <img src={ starBackgroundStatic } alt="Fond étoilé" className='star__background__image'/>
                     </div>
@@ -90,6 +122,20 @@ const SpaceShip = () => {
                     <motion.div initial='initial' animate={ animation } variants={ shipVariants }
                                 transition={ { duration: 3, delay: 8 } } className='movingStarShip__container'>
                         <motion.img src={ MovingSpaceShip } alt="Fusée décollant" className='movingStarShip'/>
+                        <div className="reactor-left__container">
+                            <motion.img initial='initial' animate={ animation } variants={ reactorLeft }
+                                        transition={ { duration: 2, delay: 7 } } src={ reactorLeftImg }
+                                        alt="Réacteur gauche"
+                                        className='reactor left'/>
+                        </div>
+                        <div className="reactor-right__container">
+                            <motion.img initial='initial' animate={ animation } variants={ reactorRight }
+                                        transition={ { duration: 2, delay: 7 } } src={ reactorRightImg }
+                                        alt="Réacteur droit"
+                                        className='reactor right'/>
+                        </div>
+                        {/*<SmokeStarShip inView={inView} />*/}
+                        {/*<ReactorFire inView={inView} />*/}
                     </motion.div>
                 </motion.div>
             </motion.div>
