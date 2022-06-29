@@ -2,11 +2,11 @@ import { FC, useEffect, useRef, useState } from 'react';
 import './backToFuture.scss';
 import car from '../../img/car.svg'
 import carShadow from '../../img/car-shadow.svg'
-import road from '../../img/road.svg';
 import { motion, useAnimation } from 'framer-motion'
 import smokeCar from '../../img/car-smoke.svg'
 import { useInView } from "react-intersection-observer";
 import StarsBackground from "./StarsBackground";
+import Road from "./Road";
 
 const RacingCar: FC = () => {
     const animation = useAnimation();
@@ -56,10 +56,10 @@ const RacingCar: FC = () => {
 
     const smokeCarVariants = {
         initial: {
-            opacity: 0
+            opacity: 1
         },
         animate: {
-            opacity: 1
+            opacity: 0
         }
     }
 
@@ -104,11 +104,8 @@ const RacingCar: FC = () => {
             <div ref={ ref } className="dummyref"></div>
             <motion.div initial='initial' animate={ animation } variants={ variants } transition={ { duration: 0.5 } }
                         className='racing-car__container'>
-                {/*<img src={ starBackground } alt="Ciel étoilé" className='racing-car__star'/>*/ }
-                <StarsBackground />
-                <section className="road">
-                    <img src={ road } alt="Route grise"/>
-                </section>
+                <StarsBackground inView={inView} />
+                <Road inView={inView} />
                 <motion.section initial='initial' animate={ animation } variants={ carSlideIn }
                                 transition={ { duration: 2, delay: 2 } } className="car__container">
                     <motion.div initial='initial' animate={ animation } variants={ carRotate }
@@ -121,11 +118,11 @@ const RacingCar: FC = () => {
                             </motion.div>
                         </motion.div>
                         <motion.div initial='initial' animate={ animation } variants={ smokeMove }
-                                    transition={ { duration: 10, delay: 4.5 } } className="smoke-move">
+                                    transition={ { duration: 10, delay: 5 } } className="smoke-move">
                             <motion.div initial='initial' animate={ animation } variants={ smokeVanish }
-                                        transition={ { duration: 5, delay: 5 } }>
+                                        transition={ { duration: 4, delay: 2.5 } }>
                                 <motion.img initial='initial' animate={ animation } variants={ smokeCarVariants }
-                                            transition={ { duration: 1, delay: 3 } } src={ smokeCar }
+                                            transition={ { duration: 3, delay: 4 } } src={ smokeCar }
                                             alt="Fumée des roues arrière de la voiture" className='smoke-car'/>
                             </motion.div>
                         </motion.div>

@@ -73,7 +73,7 @@ const NewMembers: FC = () => {
     return (
         <>
             <div className="dummy__container" ref={ ref }></div>
-            <StarsBackground />
+            <StarsBackground inView={inView} />
             <motion.section initial='initial' animate={ animation } variants={ moonVariants }
                             transition={ { duration: 2, delay: 20 } } className="moon" title="Arrivée d'Anaïs">
                 <motion.div initial='initial' animate={ animation } variants={ topVariants }
