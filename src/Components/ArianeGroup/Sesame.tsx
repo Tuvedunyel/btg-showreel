@@ -3,14 +3,13 @@ import { motion, useAnimation } from 'framer-motion';
 import SesameSpace from '../../img/sesame.svg';
 import whiteWave from '../../img/wave-white.gif'
 import Spline from "@splinetool/react-spline";
-import starBackground from '../../img/etoiles.png'
 import NewMembers from "./NewMembers";
 import { useInView } from "react-intersection-observer";
 import StarsBackground from "../BackToFuture/StarsBackground";
 
 const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
     const animation = useAnimation();
-    const [ ref, inView, entry ] = useInView( { threshold: 0 } );
+    const [ ref, inView ] = useInView( { threshold: 0 } );
 
     const variants = {
         initial: {
@@ -34,10 +33,12 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
 
     const bigMoonVariants = {
         initial: {
-            opacity: 0
+            opacity: 0,
+            translateY: -500
         },
         animate: {
-            opacity: 1
+            opacity: 1,
+            translateY: 0
         }
     }
 

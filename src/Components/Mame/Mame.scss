@@ -34,6 +34,13 @@
   position: relative;
 }
 
+.pepiniere__reveal__container-circle {
+  width: 713px;
+  height: 713px;
+  position: relative;
+  z-index: 1;
+}
+
 .pepiniere__reveal__whiteCircle {
   background: white;
   border-radius: 50%;
@@ -42,7 +49,9 @@
   align-items: center;
   justify-content: start;
   padding-top: 2em;
-  position: relative;
+  position: absolute;
+  inset: 0;
+  margin: auto;
   z-index: 1;
 
   .logo-btg {

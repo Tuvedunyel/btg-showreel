@@ -11,7 +11,7 @@ import WaterText from "./WaterText";
 
 const Reveal: FC = () => {
     const troll = "Et sinon, lequel des BTG tu préfères ?";
-    const [ref, inView, entry] = useInView({ threshold: 0 });
+    const [ ref, inView ] = useInView( { threshold: 0 } );
     const animation = useAnimation();
 
     const leftVariants = {
@@ -33,10 +33,10 @@ const Reveal: FC = () => {
     }
 
     useEffect( () => {
-        if ( inView ) {
-            animation.start("animate");
+        if (inView) {
+            animation.start( "animate" );
         } else {
-            animation.start("initial");
+            animation.start( "initial" );
         }
     }, [ animation, inView ] );
 
@@ -44,23 +44,31 @@ const Reveal: FC = () => {
     return (
         <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
                     transition={ { duration: 2, delay: 11.5 } } className='pepiniere__reveal'>
-            <motion.div initial='initial' animate={animation} variants={leftVariants} transition={{ duration: 2, delay: 10 }} className='left-map'>
-                <img src={leftMap} alt="Carte du département d'indre-et-Loire"/>
-                <img src={pin} alt="Point de géolocalisation" className='pin-left' />
-                <WaterText title='Nouv-' classname='left' id={ [ 'water', 'text', 'text_water' ] } />
-                <WaterText title='elle' classname='left' id={ ['water1', 'text1', 'text_water1'] } />
+            <motion.div initial='initial' animate={ animation } variants={ leftVariants }
+                        transition={ { duration: 2, delay: 10 } } className='left-map'>
+                <img src={ leftMap } alt="Carte du département d'indre-et-Loire"/>
+                <img src={ pin } alt="Point de géolocalisation" className='pin-left'/>
+                <WaterText title='Nouv-' classname='left' id={ [ 'water', 'text', 'text_water' ] }/>
+                <WaterText title='elle' classname='left' id={ [ 'water1', 'text1', 'text_water1' ] }/>
             </motion.div>
-            <motion.div ref={ref} initial={ { width: 0, height: 0 } } whileInView={ { width: '713px', height: '713px' } }
-                        viewport={ { once: true } } transition={ { duration: 1, delay: 8.5 } }
-                        className='pepiniere__reveal__whiteCircle'>
-                <img src={ Logo } alt="Logo BTG Communication" className='logo-btg'/>
-                <motion.img initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 9.5 }} src={ trioBtg } alt="Photo de Guillaume, Gaël et Romain" className="trioBtg"  title={troll}/>
-            </motion.div>
-            <motion.div className="pepiniere__reveal__text" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 9.5 }} >
+            <div className='pepiniere__reveal__container-circle'>
+                <motion.div ref={ ref } initial={ { width: 0, height: 0 } }
+                            whileInView={ { width: '713px', height: '713px' } }
+                            viewport={ { once: true } } transition={ { duration: 1, delay: 8.5 } }
+                            className='pepiniere__reveal__whiteCircle'>
+                    <img src={ Logo } alt="Logo BTG Communication" className='logo-btg'/>
+                    <motion.img initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
+                                transition={ { duration: 1, delay: 9.5 } } src={ trioBtg }
+                                alt="Photo de Guillaume, Gaël et Romain" className="trioBtg" title={ troll }/>
+                </motion.div>
+            </div>
+            <motion.div className="pepiniere__reveal__text" initial={ { opacity: 0 } } whileInView={ { opacity: 1 } }
+                        viewport={ { once: true } } transition={ { duration: 1, delay: 9.5 } }>
                 <p>Nullam sed turpis sagittis, vestibulum massa efficitur, cursus nisi. Vestibulum ac scelerisque sem.
                     Vivamus gravida pharetra consectetur. Cras quam nibh, porttitor nec nulla non, cursus commodo
                     risus.</p>
-                <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1, delay: 9.5 }} className="hexa__container">
+                <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } }
+                            transition={ { duration: 1, delay: 9.5 } } className="hexa__container">
                     <Hexagone top={ false } duration={ 0.3 }/>
                     <Hexagone top={ false } duration={ 0.6 }/>
                     <Hexagone top={ false } duration={ 0.8 }/>
@@ -69,11 +77,12 @@ const Reveal: FC = () => {
                     <Hexagone top={ false } duration={ 1.4 }/>
                 </motion.div>
             </motion.div>
-            <motion.div initial='initial' animate={animation} variants={rightVariants} transition={{ duration: 2, delay: 10 }} className='right-map'>
+            <motion.div initial='initial' animate={ animation } variants={ rightVariants }
+                        transition={ { duration: 2, delay: 10 } } className='right-map'>
                 <img src={ rightMap } alt="Carte du département d'indre-et-Loire"/>
                 <img src={ pin } alt="Point de géolocalisation" className='pin-right'/>
-                <WaterText title='Aven-' classname='right' id={ ['water2', 'text2', 'text_water2'] } />
-                <WaterText title='ture' classname='right' id={ ['water3', 'text3', 'text_water3'] } />
+                <WaterText title='Aven-' classname='right' id={ [ 'water2', 'text2', 'text_water2' ] }/>
+                <WaterText title='ture' classname='right' id={ [ 'water3', 'text3', 'text_water3' ] }/>
             </motion.div>
         </motion.div>
     );

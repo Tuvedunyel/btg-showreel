@@ -1,13 +1,9 @@
 import { FC, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion'
-import { useInView } from "react-intersection-observer";
-import { Canvas } from "@react-three/fiber";
-import { MeshDistortMaterial, Sphere } from "@react-three/drei";
 import orangeArrow from "../../img/orange-arrow.svg";
 import building from '../../img/Building2.gif';
 import rightFlag from '../../img/rightFlag.svg';
 import leftFlag from '../../img/leftFlag.svg';
-import whiteCube from '../../img/whiteCube.svg'
 import traceTop from '../../img/trace-top.svg'
 import traceBottom from '../../img/trace-bottom.svg'
 import orangeCross from '../../img/orangeCross.svg'

@@ -1,4 +1,4 @@
-import { FC, RefObject, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { motion, useAnimation } from "framer-motion";
 import Hexagone from "../Hexagone";
 import orangeArrow from '../../img/orange-arrow.svg'
@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 const Date: FC = () => {
     const animation = useAnimation()
-    const [ ref, inView, entry ] = useInView({ threshold: 0 })
+    const [ ref, inView ] = useInView({ threshold: 0 })
 
     useEffect( () => {
         if ( inView ) {

@@ -9,7 +9,7 @@ import { useInView } from "react-intersection-observer";
 
 const FirstYear: FC<{ setShowDetail: Dispatch<SetStateAction<boolean>> }> = ( { setShowDetail } ) => {
     const animation = useAnimation();
-    const [ ref, inView, entry ] = useInView( { threshold: 0 } )
+    const [ ref, inView ] = useInView( { threshold: 0 } )
 
     useEffect( () => {
         if (inView) {
@@ -21,10 +21,10 @@ const FirstYear: FC<{ setShowDetail: Dispatch<SetStateAction<boolean>> }> = ( { 
 
     const variants = {
         initial: {
-            translateY: 900
+            translateY: 1200
         },
         animate: {
-            translateY: 0
+            translateY: 130
         }
     }
 
@@ -42,9 +42,9 @@ const FirstYear: FC<{ setShowDetail: Dispatch<SetStateAction<boolean>> }> = ( { 
     return (
         <div className="creationAgence">
             <motion.div initial='initial' animate={ animation } variants={ leftSlideVariants }
-                        transition={ { duration: 1.5, delay: 2 } } className="creationAgence__left">
+                        transition={ { duration: 1.5, delay: 2 } } className="creationAgence__left ">
                 <motion.div initial='initial' animate={ animation } variants={ variants } transition={ { duration: 1 } }
-                            viewport={ { once: true } }>
+                            viewport={ { once: true } } className='firstYear__Agence'>
                     <div className="creationAgence__left__title">
                         <h2>
                             <span>2</span>

@@ -21,7 +21,7 @@ const variants = {
 
 const FirstYearDetail = () => {
     const animation = useAnimation();
-    const [ ref, inView, entry ] = useInView( { threshold: 0 } )
+    const [ ref, inView ] = useInView( { threshold: 0 } )
 
     const titleVariants = {
         initial: {

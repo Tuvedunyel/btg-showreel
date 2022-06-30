@@ -11,7 +11,7 @@ import Road from "./Road";
 
 const RacingCar: FC = () => {
     const animation = useAnimation();
-    const [ ref, inView, entry ] = useInView( { threshold: 0 } );
+    const [ ref, inView ] = useInView( { threshold: 0 } );
     const windowWidth = window.innerWidth;
 
 

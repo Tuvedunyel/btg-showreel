@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import lanceur from '../../img/lanceur.svg'
@@ -6,14 +6,14 @@ import MovingSpaceShip from '../../img/fusee.svg'
 import reactorLeftImg from '../../img/left-reactor.svg';
 import reactorRightImg from '../../img/right-reactor.svg'
 import Sesame from "./Sesame";
-import ReactorFire from "./ReactorFire";
-import SmokeStarShip from "./SmokeStarShip";
+// import ReactorFire from "./ReactorFire";
+// import SmokeStarShip from "./SmokeStarShip";
 import TransparentStars from "./TransparentStars";
 
 const SpaceShip = () => {
     const animation = useAnimation();
-    const [ ref, inView, entry ] = useInView( { threshold: 0 } );
-    const [ windowHeight, setWindowHeight ] = useState( window.innerHeight );
+    const [ ref, inView ] = useInView( { threshold: 0 } );
+    const windowHeight = window.innerHeight
 
 
     const containerVariants = {
@@ -31,15 +31,6 @@ const SpaceShip = () => {
         },
         animate: {
             translateY: windowHeight
-        }
-    }
-
-    const movingShipVariants = {
-        initial: {
-            translateY: 0,
-        },
-        animate: {
-            translateY: 60
         }
     }
 
@@ -111,7 +102,7 @@ const SpaceShip = () => {
                             className="space__ship__bg">
                     <img src={ lanceur } alt="Fusée Ariane sur son lanceur" className='launcher'/>
                     <div className="star__canvas__container">
-                        <TransparentStars inView={inView} />
+                        <TransparentStars inView={ inView }/>
                     </div>
                     <Sesame windowHeight={ windowHeight / 1.87 }/>
                 </motion.div>
@@ -119,9 +110,11 @@ const SpaceShip = () => {
                     duration: 1,
                     delay: 5
                 } } className='movingship__container'>
-                    <motion.div initial='initial' animate={ animation } variants={ shipVariants }
-                                transition={ { duration: 3, delay: 8 } } className='movingStarShip__container'>
-                        <motion.img src={ MovingSpaceShip } alt="Fusée décollant" className='movingStarShip'/>
+                    <div className='movingStarShip__container'>
+                        <motion.div initial='initial' animate={ animation } variants={ shipVariants }
+                                    transition={ { duration: 3, delay: 8 } } className='movingStrarShip__wrapper'>
+                            <img src={ MovingSpaceShip } alt="Fusée décollant" className='movingStarShip'/>
+                        </motion.div>
                         <div className="reactor-left__container">
                             <motion.img initial='initial' animate={ animation } variants={ reactorLeft }
                                         transition={ { duration: 2, delay: 7 } } src={ reactorLeftImg }
@@ -136,7 +129,7 @@ const SpaceShip = () => {
                         </div>
                         {/*<SmokeStarShip inView={inView} />*/ }
                         {/*<ReactorFire inView={inView} />*/ }
-                    </motion.div>
+                    </div>
                 </motion.div>
             </motion.div>
         </>

@@ -127,6 +127,15 @@
   z-index: 100;
 }
 
+.movingStrarShip__wrapper {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 153.66px;
+  height: 648px;
+  bottom: -9%;
+}
+
 .movingStarShip {
   animation: shakeX 0.8s infinite;
   transform: translateX(0);
@@ -167,11 +176,11 @@
 }
 
 .reactor-left__container {
-  left: 47.5%;
+  left: 47.2%;
 }
 
 .reactor-right__container {
-  right: 46.5%;
+  right: 47.2%;
   left: unset;
 }
 
@@ -220,6 +229,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 }
 
 .top-wave {
@@ -335,6 +345,11 @@
   left: 0;
   bottom: 0;
   width: 567px;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .bigMoon {

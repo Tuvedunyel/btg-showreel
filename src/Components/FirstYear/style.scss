@@ -58,6 +58,15 @@ h2 {
 
 .creationAgence__right {
   position: absolute;
+  grid-column: 2;
+}
+
+.firstYear__Agence {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 513px;
+  height: 1019px;
 }
 
 .creationAgence__left__border {

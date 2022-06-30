@@ -12,8 +12,7 @@ import StarsBackground from "../BackToFuture/StarsBackground";
 
 const NewMembers: FC = () => {
     const animation = useAnimation();
-    const [ ref, inView, entry ] = useInView( { threshold: 0 } )
-    const windowHeight = window.innerHeight;
+    const [ ref, inView ] = useInView( { threshold: 0 } )
 
 
     const moonVariants = {
@@ -30,7 +29,7 @@ const NewMembers: FC = () => {
             translateY: 900
         },
         animate: {
-            translateY: 0
+            translateY: -440
         }
     }
 
@@ -61,6 +60,15 @@ const NewMembers: FC = () => {
         }
     }
 
+    const moonYearContainer = {
+        initial: {
+            opacity: 1
+        },
+        animate: {
+            opacity: 0
+        }
+    }
+
     useEffect( () => {
         if (inView) {
             animation.start( 'animate' );
@@ -73,7 +81,7 @@ const NewMembers: FC = () => {
     return (
         <>
             <div className="dummy__container" ref={ ref }></div>
-            <StarsBackground inView={inView} />
+            <StarsBackground inView={ inView }/>
             <motion.section initial='initial' animate={ animation } variants={ moonVariants }
                             transition={ { duration: 2, delay: 20 } } className="moon" title="Arrivée d'Anaïs">
                 <motion.div initial='initial' animate={ animation } variants={ topVariants }
@@ -83,21 +91,24 @@ const NewMembers: FC = () => {
                     <motion.div initial='initial' animate={ animation } variants={ variants }
                                 transition={ { duration: 1 } } className='moon-year'
                     >
-                        <div className="creationAgence__left__title">
-                            <h2>
-                                <span>2</span>
-                                <span>0</span>
-                                <span>2</span>
-                                <span>0</span>
-                            </h2>
-                            <p>Arrivée d'Anaïs</p>
-                            <strong className="orangeArrow"><img src={ orangeArrow }
-                                                                 alt="Flèche orange pointant vers la droite"/></strong>
-                        </div>
-                        <motion.div initial={ { translateX: -100, translateY: 100, opacity: 0 } }
-                                    whileInView={ { translateX: 0, translateY: 0, opacity: 1 } }
-                                    transition={ { duration: 1, delay: 0.3 } }
-                                    className="creationAgence__left__border"></motion.div>
+                        <motion.div initial='initial' whileInView='animate' viewport={{ once: true }} variants={ moonYearContainer }
+                                    transition={ { duration: 1, delay: 2.5 } } className='moon-year__container'>
+                            <div className="creationAgence__left__title">
+                                <h2>
+                                    <span>2</span>
+                                    <span>0</span>
+                                    <span>2</span>
+                                    <span>0</span>
+                                </h2>
+                                <p>Arrivée d'Anaïs</p>
+                                <strong className="orangeArrow"><img src={ orangeArrow }
+                                                                     alt="Flèche orange pointant vers la droite"/></strong>
+                            </div>
+                            <motion.div initial={ { translateX: -100, translateY: 100, opacity: 0 } }
+                                        whileInView={ { translateX: 0, translateY: 0, opacity: 1 } }
+                                        transition={ { duration: 1, delay: 0.3 } }
+                                        className="creationAgence__left__border"></motion.div>
+                        </motion.div>
                     </motion.div>
                 </motion.div>
             </motion.section>
@@ -113,7 +124,7 @@ const NewMembers: FC = () => {
                             transition={ { duration: 1, delay: 34 } } src={ zoe }
                             alt="Zoé dans une tenue de cosmonaute" className='trio-employee zoe-cosmonaute'/>
                 <motion.h3 initial='initial' animate={ animation } variants={ teamVariants }
-                          transition={ { duration: 1, delay: 32 } } className='employee gregoire'>Grégoire
+                           transition={ { duration: 1, delay: 32 } } className='employee gregoire'>Grégoire
                 </motion.h3>
                 <motion.h3 initial='initial' animate={ animation } variants={ teamVariants }
                            transition={ { duration: 1, delay: 30 } } className='employee anais'>Anaïs
