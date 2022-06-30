@@ -4,21 +4,23 @@ import SeedFirstState from '../../img/graine-first-state.svg';
 import SeedSecondState from '../../img/graine-second-state.png';
 import SeedThirdState from '../../img/graine-third-state.png';
 import SeedFourthState from '../../img/graine-fourth-state.png';
+import { useInView } from "react-intersection-observer";
 
-const variants = {
-    initial: {
-        top: 0,
-        opacity: 0
-    },
-    whileInView: {
-        bottom: '18.5%',
-        top: 'unset',
-        opacity: 1
-    },
-}
-
-const Seed: FC<{ inView: boolean }> = ( { inView } ) => {
+const Seed: FC = () => {
     const animation = useAnimation();
+    const [ref, inView, entry] = useInView({ threshold: 0 });
+
+    const variants = {
+        initial: {
+            top: '10%',
+            opacity: 0
+        },
+        whileInView: {
+            bottom: '18.5%',
+            top: 'unset',
+            opacity: 1
+        },
+    }
 
     const firstSeedVariants = {
         animate: {
@@ -55,6 +57,7 @@ const Seed: FC<{ inView: boolean }> = ( { inView } ) => {
                         transition={ { duration: 1.5, delay: 6 } } alt="Graine"/>
             <motion.img src={ SeedFourthState } animate={animation} variants={ thirdSeedVariants }
                         transition={ { duration: 1.5, delay: 7.5 } } alt="Graine"/>
+            <div ref={ref} className='dummyref'></div>
         </motion.div>
     );
 };

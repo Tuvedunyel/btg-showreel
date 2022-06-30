@@ -61,6 +61,17 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
         }
     }
 
+    const littleCircle = {
+        initial: {
+            width: 0,
+            height: 0
+        },
+        animate: {
+            width: '140px',
+            height: '140px'
+        }
+    }
+
     return (
         <motion.div initial="initial" animate={ animation } variants={ variants }
                     transition={ { duration: 2, delay: 30 } } className='blueBg'>
@@ -88,27 +99,31 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
                     <img src={ orangeCross } alt="Croix orange"/>
                     <img src={ traceBottom } alt="Chemin en pointiller blanc" className='trace-bas'/>
                 </motion.div>
-                <motion.div initial='initial' animate={animation} variants={arriveeVariants}
+                <motion.div initial='initial' animate={ animation } variants={ arriveeVariants }
                             transition={ { duration: 1, delay: 20 } } className='arrivee__bottom'>
                     <div className="building__container">
                         <img src={ building } alt="Pictogramme d'un immeuble" className='building-bottom'/>
                         <div className="building__container__text">
                             <motion.img initial={ { left: '25%', top: '2%' } }
                                         whileInView={ { left: '8%', top: '-28%' } } viewport={ { once: true } }
-                                        transition={ { duration: 1, delay: 10 } } src={ leftFlag }
+                                        transition={ { duration: 1, delay: 2 } } src={ leftFlag }
                                         alt="Drapeau blanc orienté vers la gauche"/>
                             <motion.img initial={ { right: '25%', top: '2%' } }
                                         whileInView={ { right: '8%', top: '-28%' } } viewport={ { once: true } }
-                                        transition={ { duration: 1, delay: 10 } } src={ rightFlag }
+                                        transition={ { duration: 1, delay: 2 } } src={ rightFlag }
                                         alt="Drapeau blanc orienté vers la droite"/>
                             <p>Arrivée dans les bureaux boulevard Heurteloup</p>
                         </div>
                     </div>
-                    <motion.div initial='initial' animate={animation}
-                                variants={circleVariants} transition={ { duration: 1, delay: 25 } }
-                                className="circle__container">
-                        <div className="circle"></div>
-                    </motion.div>
+                    <div className='circle__container__center'>
+                        <motion.div initial='initial' whileInView='animate' viewport={ { once: true } }
+                                    variants={ circleVariants } transition={ { duration: 1, delay: 2.2 } }
+                                    className="circle__container">
+                            <motion.div initial='initial' whileInView='animate' viewport={ { once: true } }
+                                        variants={ littleCircle } transition={ { duration: 1, delay: 2 } }
+                                        className="circle-expand"></motion.div>
+                        </motion.div>
+                    </div>
                     <div className="cube__container">
                         <Hexagone top={ false } duration={ 0.2 } black={ false }/>
                         <Hexagone top={ false } duration={ 0.5 } black={ false }/>

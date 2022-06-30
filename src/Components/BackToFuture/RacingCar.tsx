@@ -121,7 +121,7 @@ const RacingCar: FC = () => {
                             </motion.div>
                         </motion.div>
                         <motion.div initial='initial' animate={ animation } variants={ smokeMove }
-                                    transition={ { duration: 10, delay: 5 } } className="smoke-move">
+                                    transition={ { duration: 10, delay: 5.5 } } className="smoke-move">
                             <motion.div initial='initial' animate={ animation } variants={ smokeVanish }
                                         transition={ { duration: 4, delay: 2.5 } }>
                                 <motion.img initial='initial' animate={ animation } variants={ smokeCarVariants }

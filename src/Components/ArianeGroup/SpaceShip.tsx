@@ -3,12 +3,12 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import lanceur from '../../img/lanceur.svg'
 import MovingSpaceShip from '../../img/fusee.svg'
-import starBackgroundStatic from '../../img/etoiles.png'
 import reactorLeftImg from '../../img/left-reactor.svg';
 import reactorRightImg from '../../img/right-reactor.svg'
 import Sesame from "./Sesame";
 import ReactorFire from "./ReactorFire";
 import SmokeStarShip from "./SmokeStarShip";
+import TransparentStars from "./TransparentStars";
 
 const SpaceShip = () => {
     const animation = useAnimation();
@@ -111,7 +111,7 @@ const SpaceShip = () => {
                             className="space__ship__bg">
                     <img src={ lanceur } alt="Fusée Ariane sur son lanceur" className='launcher'/>
                     <div className="star__canvas__container">
-                        <img src={ starBackgroundStatic } alt="Fond étoilé" className='star__background__image'/>
+                        <TransparentStars inView={inView} />
                     </div>
                     <Sesame windowHeight={ windowHeight / 1.87 }/>
                 </motion.div>
@@ -134,8 +134,8 @@ const SpaceShip = () => {
                                         alt="Réacteur droit"
                                         className='reactor right'/>
                         </div>
-                        {/*<SmokeStarShip inView={inView} />*/}
-                        {/*<ReactorFire inView={inView} />*/}
+                        {/*<SmokeStarShip inView={inView} />*/ }
+                        {/*<ReactorFire inView={inView} />*/ }
                     </motion.div>
                 </motion.div>
             </motion.div>

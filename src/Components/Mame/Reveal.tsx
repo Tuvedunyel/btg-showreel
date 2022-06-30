@@ -25,7 +25,7 @@ const Reveal: FC = () => {
 
     const rightVariants = {
         initial: {
-            translateY: 1300
+            translateY: 1400
         },
         animate: {
             translateY: 0,

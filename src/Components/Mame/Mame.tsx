@@ -90,7 +90,7 @@ const Mame: FC = () => {
                         </motion.div>
                     </motion.div>
                     <div className="pepiniere__right">
-                        <Seed inView={inView} />
+                        <Seed />
                         <div className="pepiniere__right__cirlce-container">
                             <motion.div initial={ { width: 0, height: 0 } }
                                         whileInView={ { width: '543px', height: '543px' } }

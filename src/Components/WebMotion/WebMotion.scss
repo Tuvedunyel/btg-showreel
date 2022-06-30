@@ -137,18 +137,27 @@
   }
 }
 
-.circle__container {
-  border: 1px solid white;
-  border-radius: 50%;
+.circle__container__center {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 177px;
+  height: 177px;
+  position: relative;
+}
 
-  .circle {
+.circle__container {
+  border: 1px solid white;
+  border-radius: 50%;
+
+  .circle-expand {
     background: #E3775B;
-    width: 80%;
-    height: 80%;
     border-radius: 50%;
+    width: 0;
+    height: 0;
+    position: absolute;
+    inset: 0;
+    margin: auto;
   }
 }
 
