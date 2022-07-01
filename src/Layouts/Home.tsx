@@ -1,7 +1,9 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import logo from '../img/logo-btg.png';
+import logoWebp from '../img/logo-btg.webp';
 import './Home.scss';
 import Hexagone from "../Components/Hexagone";
+import Image from 'react-image-webp';
 
 const Home: FC = () => {
 
@@ -9,7 +11,7 @@ const Home: FC = () => {
         <>
             <div className="home__container">
                 <div className="row logo">
-                    <img src={ logo } alt="Logo de BTG Communication"/>
+                    <Image src={ logo } webp={logoWebp} alt="Logo de BTG Communication"/>
                 </div>
                 <div className="row text__content">
                     <div className="text__content__title">

@@ -2,13 +2,17 @@ import { FC, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import SeedFirstState from '../../img/graine-first-state.svg';
 import SeedSecondState from '../../img/graine-second-state.png';
+import seedSecondStateWebp from '../../img/graine-second-state.webp';
 import SeedThirdState from '../../img/graine-third-state.png';
+import seedThirdStateWebp from '../../img/graine-third-state.webp';
 import SeedFourthState from '../../img/graine-fourth-state.png';
+import seedFourthStateWebp from '../../img/graine-fourth-state.webp';
 import { useInView } from "react-intersection-observer";
+import Image from 'react-image-webp'
 
 const Seed: FC = () => {
     const animation = useAnimation();
-    const [ ref, inView ] = useInView({ threshold: 0 });
+    const [ ref, inView ] = useInView( { threshold: 0 } );
 
     const variants = {
         initial: {
@@ -47,18 +51,25 @@ const Seed: FC = () => {
     }, [ animation, inView ] )
 
     return (
-        <motion.div className='seed-container' initial='initial' whileInView='whileInView' viewport={ { once: true } }
-                    transition={ { duration: 1, delay: 3 } } variants={ variants }>
+        <motion.section className='seed-container' initial='initial' whileInView='whileInView'
+                        viewport={ { once: true } }
+                        transition={ { duration: 1, delay: 3 } } variants={ variants }>
             <motion.img src={ SeedFirstState } animate={ animation } variants={ firstSeedVariants }
-                        transition={ { duration: 1, delay: 3.5 } } alt="Graine"/>
-            <motion.img src={ SeedSecondState } animate={ animation } variants={ secondSeedVariants }
-                        transition={ { duration: 1.5, delay: 4.5 } } alt="Graine"/>
-            <motion.img src={ SeedThirdState } animate={ animation } variants={ secondSeedVariants }
-                        transition={ { duration: 1.5, delay: 6 } } alt="Graine"/>
-            <motion.img src={ SeedFourthState } animate={animation} variants={ thirdSeedVariants }
-                        transition={ { duration: 1.5, delay: 7.5 } } alt="Graine"/>
-            <div ref={ref} className='dummyref'></div>
-        </motion.div>
+                        transition={ { duration: 1, delay: 3.5 } } alt="Graine" className='seed-img' />
+            <motion.div animate={ animation } variants={ secondSeedVariants }
+                        transition={ { duration: 1.5, delay: 4.5 } } className='seed-img' >
+                <Image src={ SeedSecondState } webp={ SeedSecondState } alt="Graine"/>
+            </motion.div>
+            <motion.div animate={ animation } variants={ secondSeedVariants }
+                        transition={ { duration: 1.5, delay: 6 } } className='seed-img' >
+                <Image src={ SeedThirdState } webp={ seedThirdStateWebp } alt="Graine"/>
+            </motion.div>
+            <motion.div animate={ animation } variants={ thirdSeedVariants }
+                        transition={ { duration: 1.5, delay: 7.5 } } className='seed-img' >
+                <Image src={ SeedFourthState } webp={seedFourthStateWebp} alt="Graine"/>
+            </motion.div>
+            <div ref={ ref } className='dummyref'></div>
+        </motion.section>
     );
 };
 

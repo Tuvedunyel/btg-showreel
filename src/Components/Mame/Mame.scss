@@ -152,12 +152,20 @@
   z-index: 2;
   width: 100%;
 
-  img {
+  img.seed-img {
+    position: absolute;
+    margin: auto;
+    left: 44%;
+  }
+
+  div.seed-img {
     position: absolute;
     margin: auto;
 
     &:first-of-type {
-      left: 44%
+      inset: 0;
+      top: unset;
+      bottom: -33px;
     }
 
     &:nth-of-type(2) {

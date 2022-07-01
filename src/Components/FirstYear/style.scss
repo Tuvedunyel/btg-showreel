@@ -91,8 +91,13 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 49px;
   flex-direction: row-reverse;
+}
+
+.arrow-click {
+  margin-right: 7.2em;
+  width: 124px;
+  height: 106px;
 }
 
 .circle {

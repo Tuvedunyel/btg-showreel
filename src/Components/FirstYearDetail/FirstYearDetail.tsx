@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from "framer-motion";
 import Muguet from '../../img/muguet.png'
-import Trompette from '../../img/trompette.png'
+import muguetWebp from '../../img/muguet.webp'
+import trompette from '../../img/trompette.png'
+import trompetteWebp from '../../img/trompette.webp'
 import Vague from '../../img/wave-white.gif'
 import './style.scss'
 import { Canvas } from "@react-three/fiber";
@@ -9,6 +11,7 @@ import { MeshDistortMaterial, Sphere } from "@react-three/drei";
 import * as THREE from 'three';
 import { useInView } from "react-intersection-observer";
 import Mame from "../Mame/Mame";
+import Image from 'react-image-webp'
 
 const variants = {
     initial: {
@@ -31,6 +34,7 @@ const FirstYearDetail = () => {
             translateY: -900
         }
     }
+
 
     const canvasVariants = {
         initial: {
@@ -75,13 +79,14 @@ const FirstYearDetail = () => {
             </motion.div>
             <motion.div className="detail__motion" initial='initial' animate='animate' variants={ variants }
                         transition={ { duration: 1, delay: 0.01 } }>
-                <motion.div initial='initial' animate={animation} variants={whiteMotion} transition={{ duration: 1, delay: 7 }} className="detail__motion__translate">
+                <motion.div initial='initial' animate={ animation } variants={ whiteMotion }
+                            transition={ { duration: 1, delay: 7 } } className="detail__motion__translate">
                     <motion.div className="white__motion" initial={ { width: 0, height: 0, borderRadius: '50%' } }
                                 animate={ { width: '804px', height: '804px' } }
                                 transition={ { duration: 1, delay: 0.5 } }>
-                        <motion.img src={ Muguet } initial={ { scale: 0 } } animate={ { scale: 1 } }
-                                    transition={ { duration: 1, delay: 1 } } alt="Bouquet de muguet"
-                                    className='muguet'/>
+                        <motion.div initial={ { scale: 0 } } animate={ { scale: 1 } } transition={ { duration: 1, delay: 1 } } className="muguet">
+                            <Image src={ Muguet } webp={ muguetWebp } alt="Bouquet de muguet" />
+                        </motion.div>
                     </motion.div>
                 </motion.div>
             </motion.div>
@@ -97,15 +102,13 @@ const FirstYearDetail = () => {
                             <MeshDistortMaterial attach="material" color="#FCD647" speed={ 1.5 } distort={ 0.15 }/>
                         </Sphere>
                     </Canvas>
-                    <motion.img initial={ { scale: 0 } } animate={ { scale: 1 } }
-                                transition={ { duration: 1, delay: 1.2 } } src={ Trompette }
-                                alt="Une trompette argentée"
-                                className='trompette'/>
-                    <motion.img initial={ { scale: 0, rotate: 90 } } animate={ { scale: 1, rotate: 90 } } className='vague' src={ Vague }/>
+                    <Image src={ trompette } webp={ trompetteWebp } alt="Une trompette argentée" className='trompette'/>
+                    <motion.img initial={ { scale: 0, rotate: 90 } } animate={ { scale: 1, rotate: 90 } }
+                                className='vague' src={ Vague }/>
                 </motion.div>
             </motion.div>
             <div className="mame__transition">
-                <Mame />
+                <Mame/>
             </div>
         </section>
     );

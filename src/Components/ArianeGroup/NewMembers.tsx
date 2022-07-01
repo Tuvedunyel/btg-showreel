@@ -83,9 +83,9 @@ const NewMembers: FC = () => {
             <div className="dummy__container" ref={ ref }></div>
             <StarsBackground inView={ inView }/>
             <motion.section initial='initial' animate={ animation } variants={ moonVariants }
-                            transition={ { duration: 2, delay: 20 } } className="moon" title="Arrivée d'Anaïs">
+                            transition={ { duration: 5, delay: 20 } } className="moon" title="Arrivée d'Anaïs">
                 <motion.div initial='initial' animate={ animation } variants={ topVariants }
-                            transition={ { duration: 2, delay: 25 } } className="static__moon__wrapper">
+                            transition={ { duration: 3, delay: 30 } } className="static__moon__wrapper">
                     <img src={ moon } alt="Illustration d'une lune" className='bigMoon'/>
                     <img src={ waveOrange } alt="Vague orange" className='orange-wave'/>
                     <motion.div initial='initial' animate={ animation } variants={ variants }
@@ -113,24 +113,24 @@ const NewMembers: FC = () => {
                 </motion.div>
             </motion.section>
             <motion.section initial='initial' animate={ animation } variants={ employeeVariants }
-                            transition={ { duration: 1, delay: 29 } } className="trio-employee__container">
+                            transition={ { duration: 1, delay: 32 } } className="trio-employee__container">
                 <motion.img initial='initial' animate={ animation } variants={ teamVariants }
-                            transition={ { duration: 1, delay: 32 } } src={ gregoire }
+                            transition={ { duration: 1, delay: 36 } } src={ gregoire }
                             alt="Grégoire dans une tenue de cosmonaute" className='trio-employee gregoire-cosmonaute'/>
                 <motion.img initial='initial' animate={ animation } variants={ teamVariants }
-                            transition={ { duration: 1, delay: 30 } } src={ anais }
+                            transition={ { duration: 1, delay: 34 } } src={ anais }
                             alt="Anaïs dans une tenue de cosmonaute" className='trio-employee anais-cosmonaute'/>
                 <motion.img initial='initial' animate={ animation } variants={ teamVariants }
-                            transition={ { duration: 1, delay: 34 } } src={ zoe }
+                            transition={ { duration: 1, delay: 38 } } src={ zoe }
                             alt="Zoé dans une tenue de cosmonaute" className='trio-employee zoe-cosmonaute'/>
                 <motion.h3 initial='initial' animate={ animation } variants={ teamVariants }
-                           transition={ { duration: 1, delay: 32 } } className='employee gregoire'>Grégoire
+                           transition={ { duration: 1, delay: 36 } } className='employee gregoire'>Grégoire
                 </motion.h3>
                 <motion.h3 initial='initial' animate={ animation } variants={ teamVariants }
-                           transition={ { duration: 1, delay: 30 } } className='employee anais'>Anaïs
+                           transition={ { duration: 1, delay: 34 } } className='employee anais'>Anaïs
                 </motion.h3>
                 <motion.h3 initial='initial' animate={ animation } variants={ teamVariants }
-                           transition={ { duration: 1, delay: 34 } } className='employee zoe'>Zoé
+                           transition={ { duration: 1, delay: 38 } } className='employee zoe'>Zoé
                 </motion.h3>
             </motion.section>
         </>

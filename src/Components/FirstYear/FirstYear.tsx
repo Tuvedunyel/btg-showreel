@@ -53,8 +53,9 @@ const FirstYear: FC<{ setShowDetail: Dispatch<SetStateAction<boolean>> }> = ( { 
                             <span>2</span>
                         </h2>
                         <p>Création de l'agence</p>
-                        <strong className="orangeArrow"><img src={ orangeArrow }
-                                                             alt="Flèche orange pointant vers la droite"/></strong>
+                        <strong className="orangeArrow">
+                            <img src={ orangeArrow } alt="Flèche orange pointant vers la droite"/>
+                        </strong>
                     </div>
                     <motion.div initial={ { translateX: -100, translateY: 100, opacity: 0 } }
                                 whileInView={ { translateX: 0, translateY: 0, opacity: 1 } }
@@ -67,8 +68,8 @@ const FirstYear: FC<{ setShowDetail: Dispatch<SetStateAction<boolean>> }> = ( { 
                 <div className="creationAgence__right__title">
                     <h3 className="title_click">Cliquez ici</h3>
                     <div className="click">
-                        <img src={ arrow } alt="Cliquez ici"/>
-                        <div className="circle">
+                        <img src={arrow} alt='Cliquez sur le cercle légèrement à gauche' className='arrow-click' />
+                        <section className="circle" title="Cliquez ici">
                             <Canvas className="canvas">
                                 <ambientLight intensity={ 0.6 }/>
                                 <directionalLight color='#EDA694' position={ [ -2, 5, 2 ] } intensity={ 1 }/>
@@ -80,7 +81,7 @@ const FirstYear: FC<{ setShowDetail: Dispatch<SetStateAction<boolean>> }> = ( { 
                                     </Sphere>
                                 </Suspense>
                             </Canvas>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </section>

@@ -67,7 +67,8 @@ const Mame: FC = () => {
                         className="pepiniere__page">
                 <motion.div className="pepiniere" initial='initial' animate={ animation }
                             variants={ pepiniereVariants } transition={ { duration: 2, delay: 8.5 } }>
-                    <motion.div initial='initial' animate={animation} variants={fadeVariants} transition={{ duration: 2, delay: 6 }} className="translate__creation">
+                    <motion.div initial='initial' animate={ animation } variants={ fadeVariants }
+                                transition={ { duration: 2, delay: 6 } } className="translate__creation">
                         <motion.div initial={ { translateY: 900 } } animate={ animation }
                                     transition={ { duration: 1, delay: 2 } }
                                     variants={ dateVariants }
@@ -90,20 +91,21 @@ const Mame: FC = () => {
                         </motion.div>
                     </motion.div>
                     <div className="pepiniere__right">
-                        <Seed />
+                        <Seed/>
                         <div className="pepiniere__right__cirlce-container">
                             <motion.div initial={ { width: 0, height: 0 } }
                                         whileInView={ { width: '543px', height: '543px' } }
                                         viewport={ { once: true } } transition={ { duration: 1, delay: 2 } }
                                         className="pepiniere__right__circle">
                             </motion.div>
-                            <motion.div className='masque' initial={ { opacity: 0, backgroundColor: 'transparent' } }
+                            <motion.div className='masque'
+                                        initial={ { opacity: 0, backgroundColor: 'transparent' } }
                                         whileInView={ { opacity: 1, backgroundColor: '#FCD647' } }
                                         transition={ { delay: 2 } }></motion.div>
                         </div>
                     </div>
                 </motion.div>
-                <Reveal />
+                <Reveal/>
             </motion.div>
         </>
     );

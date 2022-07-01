@@ -1,13 +1,16 @@
 import { FC, useEffect } from 'react';
 import Logo from '../../img/logo-btg.png'
+import logoWebp from '../../img/logo-btg.webp'
 import { motion, useAnimation } from "framer-motion";
 import Hexagone from "../Hexagone";
 import trioBtg from '../../img/trio-btg.png';
+import trioBtgWebp from '../../img/trio-btg.webp';
 import leftMap from '../../img/map-left.svg';
 import pin from '../../img/pin.svg'
 import rightMap from '../../img/map-right.svg';
 import { useInView } from "react-intersection-observer";
 import WaterText from "./WaterText";
+import Image from 'react-image-webp'
 
 const Reveal: FC = () => {
     const troll = "Et sinon, lequel des BTG tu préfères ?";
@@ -56,10 +59,12 @@ const Reveal: FC = () => {
                             whileInView={ { width: '713px', height: '713px' } }
                             viewport={ { once: true } } transition={ { duration: 1, delay: 8.5 } }
                             className='pepiniere__reveal__whiteCircle'>
-                    <img src={ Logo } alt="Logo BTG Communication" className='logo-btg'/>
-                    <motion.img initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
-                                transition={ { duration: 1, delay: 9.5 } } src={ trioBtg }
-                                alt="Photo de Guillaume, Gaël et Romain" className="trioBtg" title={ troll }/>
+                    <Image src={ Logo } webp={ logoWebp } alt="Logo BTG Communication" className='logo-btg'/>
+                    <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } }
+                         viewport={ { once: true } }
+                         transition={ { duration: 1, delay: 9.5 } }  className="trioBtg">
+                        <Image src={ trioBtg } webp={ trioBtgWebp } alt="Photo de Guillaume, Gaël et Romain" className="trioBtg" title={ troll }/>
+                    </motion.div>
                 </motion.div>
             </div>
             <motion.div className="pepiniere__reveal__text" initial={ { opacity: 0 } } whileInView={ { opacity: 1 } }
