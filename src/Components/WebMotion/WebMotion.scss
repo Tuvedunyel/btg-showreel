@@ -11,6 +11,15 @@
   gap: 0.6em;
 }
 
+.web-motion__dummy-ref {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50%;
+  height: 50px;
+  z-index: -1;
+}
+
 .date__container {
   display: grid;
   grid-template-columns: 0.35fr 0.65fr;
@@ -178,7 +187,8 @@
     height: 20px;
   }
 
-  img:not(:last-of-type) {
+  div:not(:last-of-type) {
+    display: flow-root;
     margin-right: 0.3em;
   }
 }
@@ -203,6 +213,7 @@
 }
 
 .yellow-animation {
-  width: 677px;
-  height: 677px;
+  width: 600px;
+  height: 600px;
+  margin-top: 2em;
 }

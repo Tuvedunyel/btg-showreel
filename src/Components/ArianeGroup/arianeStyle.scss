@@ -6,6 +6,15 @@
   overflow: hidden;
 }
 
+.dummy-ref__sesame {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50%;
+  height: 50px;
+  z-index: -1;
+}
+
 .arianeBg__container {
   width: 95%;
   height: 100%;

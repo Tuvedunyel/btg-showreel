@@ -8,14 +8,17 @@ const WebMotion: FC = () => {
     const [ ref, inView ] = useInView( { threshold: 0 } )
 
     return (
-        <div ref={ ref } className='WebMotion'>
-            { inView && (
-                <>
-                    <Date/>
-                    <AutoTyping/>
-                </>
+        <>
+            <div ref={ ref } className="web-motion__dummy-ref"></div>
+            <div className='WebMotion'>
+                { inView && (
+                    <>
+                        <Date/>
+                        <AutoTyping/>
+                    </>
                 ) }
-        </div>
+            </div>
+        </>
     );
 };
 

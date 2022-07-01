@@ -89,34 +89,37 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
 
 
     return (
-        <motion.div ref={ ref } initial='initial' animate={ animation } variants={ variants }
-                    transition={ { duration: 2, delay: 13 } } className='sesame__logo'>
-            <motion.div initial='initial' animate={ animation } variants={ opacityAfter }
-                        transition={ { duration: 1, delay: 18 } } className="sesame__opacity">
-                <motion.img initial='initial' animate={ animation } variants={ sesameLogoVariants }
-                            transition={ { duration: 1, delay: 15 } }
-                            src={ SesameSpace } alt="Logo du projet Sésame d'ariane groupe" className='sesameImg'/>
-            </motion.div>
-            <motion.div initial='initial' animate={ animation } variants={ whiteWaveVariants }
-                        transition={ { duration: 1, delay: 15 } } className="moon__container">
-                <img src={ whiteWave } alt="Vague blanche" className='top-wave wave'/>
-                <motion.div initial='initial' animate={ animation } variants={ sizeVariants }
-                            transition={ { duration: 1, delay: 18 } } className="moon__hexagone">
-                    <Spline scene="https://prod.spline.design/SeqKfWuhGm1Go6Zb/scene.splinecode"/>
+        <>
+            <div ref={ ref } className='dummy-ref__sesame'></div>
+            <motion.div initial='initial' animate={ animation } variants={ variants }
+                        transition={ { duration: 2, delay: 13 } } className='sesame__logo'>
+                <motion.div initial='initial' animate={ animation } variants={ opacityAfter }
+                            transition={ { duration: 1, delay: 18 } } className="sesame__opacity">
+                    <motion.img initial='initial' animate={ animation } variants={ sesameLogoVariants }
+                                transition={ { duration: 1, delay: 15 } }
+                                src={ SesameSpace } alt="Logo du projet Sésame d'ariane groupe" className='sesameImg'/>
                 </motion.div>
-                <img src={ whiteWave } alt="Vague blanche" className='bottom-wave wave'/>
+                <motion.div initial='initial' animate={ animation } variants={ whiteWaveVariants }
+                            transition={ { duration: 1, delay: 15 } } className="moon__container">
+                    <img src={ whiteWave } alt="Vague blanche" className='top-wave wave'/>
+                    <motion.div initial='initial' animate={ animation } variants={ sizeVariants }
+                                transition={ { duration: 1, delay: 18 } } className="moon__hexagone">
+                        <Spline scene="https://prod.spline.design/SeqKfWuhGm1Go6Zb/scene.splinecode"/>
+                    </motion.div>
+                    <img src={ whiteWave } alt="Vague blanche" className='bottom-wave wave'/>
+                </motion.div>
+                <motion.div initial='initial' animate={ animation } variants={ starHide }
+                            transition={ { duration: 1, delay: 12 } } className="star__container__moon">
+                    <StarsBackground inView={ inView }/>
+                </motion.div>
+                <motion.div initial='initial' animate={ animation } variants={ bigMoonVariants } transition={ {
+                    duration: 2,
+                    delay: 25
+                } } className="static__moon__container">
+                    <NewMembers/>
+                </motion.div>
             </motion.div>
-            <motion.div initial='initial' animate={ animation } variants={ starHide }
-                        transition={ { duration: 1, delay: 12 } } className="star__container__moon">
-                <StarsBackground inView={ inView }/>
-            </motion.div>
-            <motion.div initial='initial' animate={ animation } variants={ bigMoonVariants } transition={ {
-                duration: 2,
-                delay: 25
-            } } className="static__moon__container">
-                <NewMembers/>
-            </motion.div>
-        </motion.div>
+        </>
     );
 };
 

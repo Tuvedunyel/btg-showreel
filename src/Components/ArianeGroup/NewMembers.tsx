@@ -1,7 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import moon from '../../img/moon.svg';
 import { motion, useAnimation } from 'framer-motion';
-import starBackground from '../../img/etoiles.png'
 import { useInView } from "react-intersection-observer";
 import waveOrange from '../../img/wave-orange.gif';
 import orangeArrow from "../../img/orange-arrow.svg";

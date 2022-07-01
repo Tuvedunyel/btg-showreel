@@ -9,7 +9,6 @@ const WaterText: FC<{ title: string, classname: string, id: string[] }> = ( { ti
 
     return (
         <>
-            {/*<h3 className={ `title-reveal ${ classname }` }>{ title[ 0 ] } <span>{ title[ 1 ] }</span></h3>*/ }
             <svg className={`title-reveal ${classname}`} version="1.1" xmlns="http://www.w3.org/2000/svg"
                  width="574.558px" height="120px" viewBox="0 0 574.558 120" enableBackground="new 0 0 574.558 120">
                 <defs>

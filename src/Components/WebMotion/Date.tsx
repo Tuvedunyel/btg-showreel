@@ -21,7 +21,7 @@ const Date: FC = () => {
             translateY: 900
         },
         animate: {
-            translateY: 0
+            translateY: 30
         }
     }
 

@@ -21,10 +21,10 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
 
     const variants = {
         initial: {
-            opacity: 0
+            translateY: '100%'
         },
         animate: {
-            opacity: 1
+            translateY: 0
         }
     }
 
@@ -70,7 +70,7 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
 
     return (
         <motion.div initial="initial" animate={ animation } variants={ variants }
-                    transition={ { duration: 2, delay: 30 } } className='blueBg'>
+                    transition={ { duration: 2, delay: 27 } } className='blueBg'>
             <div className='blueBg__container'>
                 <motion.img initial='initial' animate={ animation } variants={ imageVariants }
                             transition={ { duration: 1, delay: 31 } } src={ animateBuilding }
