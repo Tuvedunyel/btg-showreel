@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import SesameSpace from '../../img/sesame.svg';
+import SesameSpace from '../../img/logo_sesame.png';
 import whiteWave from '../../img/wave-white.gif'
 import Spline from "@splinetool/react-spline";
 import NewMembers from "./NewMembers";
@@ -10,6 +10,9 @@ import StarsBackground from "../BackToFuture/StarsBackground";
 const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
     const animation = useAnimation();
     const [ ref, inView ] = useInView( { threshold: 0 } );
+    const [ step, setStep ] = useState( 0 );
+    const [ posY, setPosY ] = useState( 0 );
+    const sesameRef = useRef<HTMLDivElement | null>( null );
 
     const variants = {
         initial: {
@@ -42,15 +45,6 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
         }
     }
 
-    const sesameLogoVariants = {
-        initial: {
-            opacity: 0
-        },
-        animate: {
-            opacity: 1
-        }
-    }
-
     const whiteWaveVariants = {
         initial: {
             opacity: 0
@@ -78,6 +72,28 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
         }
     }
 
+    const reset = () => {
+        if (step == 21 || posY >= 12100) {
+            setStep( 0 );
+            setPosY( 0 );
+        }
+    }
+
+    const sequence = async () => {
+        await reset();
+        setTimeout( () => {
+            setStep( step + 1 )
+            setPosY( posY + 550 )
+            sesameRef.current!.style.backgroundPosition = `0 -${ posY }px`;
+        }, 45 )
+    }
+
+    useEffect( () => {
+        if (inView) {
+            sequence();
+        }
+    }, [ step, inView ] )
+
 
     useEffect( () => {
         if (inView) {
@@ -95,9 +111,7 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
                         transition={ { duration: 2, delay: 13 } } className='sesame__logo'>
                 <motion.div initial='initial' animate={ animation } variants={ opacityAfter }
                             transition={ { duration: 1, delay: 18 } } className="sesame__opacity">
-                    <motion.img initial='initial' animate={ animation } variants={ sesameLogoVariants }
-                                transition={ { duration: 1, delay: 15 } }
-                                src={ SesameSpace } alt="Logo du projet Sésame d'ariane groupe" className='sesameImg'/>
+                    <div ref={ sesameRef } className="sesameImg"></div>
                 </motion.div>
                 <motion.div initial='initial' animate={ animation } variants={ whiteWaveVariants }
                             transition={ { duration: 1, delay: 15 } } className="moon__container">

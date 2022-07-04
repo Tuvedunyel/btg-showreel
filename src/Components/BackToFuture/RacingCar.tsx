@@ -26,7 +26,7 @@ const RacingCar: FC = () => {
 
     const carSlideIn = {
         initial: {
-            translateX: -900
+            translateX: -1200
         },
         animate: {
             translateX: 500
