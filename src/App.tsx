@@ -25,7 +25,12 @@ const App = () => {
                 trigger: App.current,
                 pin: true,
                 scrub: 1,
-                snap: 1 / (gsapApp.length - 1),
+                snap: {
+                    snapTo: 1 / (gsapApp.length - 1),
+                    duration: 2,
+                    delay: 0,
+                    inertia: false
+                },
                 end: "+=" + App.current?.offsetWidth
             }
         } );
@@ -46,9 +51,6 @@ const App = () => {
                 </div>
                 <div className="container">
                     <ArianeGroup />
-                </div>
-                <div className="container">
-                    <RacingCar />
                 </div>
             </div>
         </AnimatePresence>

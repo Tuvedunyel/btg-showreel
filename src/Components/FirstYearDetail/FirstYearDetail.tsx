@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation } from "framer-motion";
-import Muguet from '../../img/muguet.png'
-import muguetWebp from '../../img/muguet.webp'
 import trompette from '../../img/trompette.png'
 import trompetteWebp from '../../img/trompette.webp'
 import Vague from '../../img/wave-white.gif'
@@ -25,6 +23,9 @@ const variants = {
 const FirstYearDetail = () => {
     const animation = useAnimation();
     const [ ref, inView ] = useInView( { threshold: 0 } )
+    const [ step, setStep ] = useState( 0 )
+    const [ posY, setPosY ] = useState( 0 )
+    const muguet = useRef<HTMLDivElement | null>( null )
 
     const titleVariants = {
         initial: {
@@ -53,6 +54,28 @@ const FirstYearDetail = () => {
             translateY: -900
         }
     }
+
+    const resetStep = () => {
+        if (step == 19 || posY >= 21600) {
+            setStep( 0 );
+            setPosY( 0 );
+        }
+    }
+
+    const sequence = async() => {
+        await resetStep()
+        if (inView) {
+            setTimeout( () => {
+                setStep( step + 1 )
+                setPosY( posY + 1080 )
+                muguet.current!.style.backgroundPosition = `0 -${ posY }px`;
+            }, 45 )
+        }
+    }
+
+    useEffect( () => {
+        sequence();
+    }, [ step, inView ] )
 
     useEffect( () => {
         if (inView) {
@@ -84,8 +107,9 @@ const FirstYearDetail = () => {
                     <motion.div className="white__motion" initial={ { width: 0, height: 0, borderRadius: '50%' } }
                                 animate={ { width: '804px', height: '804px' } }
                                 transition={ { duration: 1, delay: 0.5 } }>
-                        <motion.div initial={ { scale: 0 } } animate={ { scale: 1 } } transition={ { duration: 1, delay: 1 } } className="muguet">
-                            <Image src={ Muguet } webp={ muguetWebp } alt="Bouquet de muguet" />
+                        <motion.div initial={ { opacity: 0 } } animate={ { opacity: 1 } }
+                                    transition={ { duration: 1, delay: 1 } } className="muguet">
+                            <div ref={ muguet } className='muguet-sequence'></div>
                         </motion.div>
                     </motion.div>
                 </motion.div>

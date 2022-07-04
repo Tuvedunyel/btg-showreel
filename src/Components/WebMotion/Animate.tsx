@@ -70,10 +70,10 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
 
     return (
         <motion.div initial="initial" animate={ animation } variants={ variants }
-                    transition={ { duration: 2, delay: 27 } } className='blueBg'>
+                    transition={ { duration: 2, delay: 20 } } className='blueBg'>
             <div className='blueBg__container'>
                 <motion.img initial='initial' animate={ animation } variants={ imageVariants }
-                            transition={ { duration: 1, delay: 31 } } src={ animateBuilding }
+                            transition={ { duration: 1, delay: 24 } } src={ animateBuilding }
                             alt="Immeuble qui se construit" className='yellow-animation'/>
                 <div className="date__left">
                     <div className="creationAgence__left__title">
@@ -90,13 +90,13 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
                     <div className="creationAgence__left__border"></div>
                 </div>
                 <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
-                            transition={ { duration: 1, delay: 38 } } className='chemin'>
+                            transition={ { duration: 1, delay: 5 } } className='chemin'>
                     <img src={ traceTop } alt="Chemin en pointiller blanc"/>
                     <img src={ orangeCross } alt="Croix orange"/>
                     <img src={ traceBottom } alt="Chemin en pointiller blanc" className='trace-bas'/>
                 </motion.div>
                 <motion.div initial='initial' animate={ animation } variants={ arriveeVariants }
-                            transition={ { duration: 1, delay: 20 } } className='arrivee__bottom'>
+                            transition={ { duration: 1, delay: 5 } } className='arrivee__bottom'>
                     <div className="building__container">
                         <img src={ building } alt="Pictogramme d'un immeuble" className='building-bottom'/>
                         <div className="building__container__text">
