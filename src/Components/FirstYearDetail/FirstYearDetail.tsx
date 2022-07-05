@@ -10,6 +10,7 @@ import * as THREE from 'three';
 import { useInView } from "react-intersection-observer";
 import Mame from "../Mame/Mame";
 import Image from 'react-image-webp'
+import Muguet from "./Muguet";
 
 const variants = {
     initial: {
@@ -55,28 +56,6 @@ const FirstYearDetail = () => {
         }
     }
 
-    const resetStep = () => {
-        if (step == 19 || posY >= 21600) {
-            setStep( 0 );
-            setPosY( 0 );
-        }
-    }
-
-    const sequence = async() => {
-        await resetStep()
-        if (inView) {
-            setTimeout( () => {
-                setStep( step + 1 )
-                setPosY( posY + 1080 )
-                muguet.current!.style.backgroundPosition = `0 -${ posY }px`;
-            }, 45 )
-        }
-    }
-
-    useEffect( () => {
-        sequence();
-    }, [ step, inView ] )
-
     useEffect( () => {
         if (inView) {
             animation.start( "animate" )
@@ -107,10 +86,7 @@ const FirstYearDetail = () => {
                     <motion.div className="white__motion" initial={ { width: 0, height: 0, borderRadius: '50%' } }
                                 animate={ { width: '804px', height: '804px' } }
                                 transition={ { duration: 1, delay: 0.5 } }>
-                        <motion.div initial={ { opacity: 0 } } animate={ { opacity: 1 } }
-                                    transition={ { duration: 1, delay: 1 } } className="muguet">
-                            <div ref={ muguet } className='muguet-sequence'></div>
-                        </motion.div>
+                        <Muguet view={inView} />
                     </motion.div>
                 </motion.div>
             </motion.div>
