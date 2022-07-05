@@ -20,12 +20,12 @@ const Muguet: FC<{ view: boolean }> = ( { view } ) => {
     }
 
     const sequence = () => {
-        if (inView && step < 19 && posY < 21600) {
+        if (inView && step < 22 && posY < 24840) {
             setTimeout( () => {
                 setStep( step + 1 )
                 setPosY( posY + 1080 )
                 muguet.current!.style.backgroundPosition = `0 -${ posY }px`;
-            }, 80 )
+            }, 50 )
         }
     }
 
@@ -42,11 +42,9 @@ const Muguet: FC<{ view: boolean }> = ( { view } ) => {
     }, [ view, animation ] )
 
     return (
-        <motion.div ref={ref} initial='initial' animate={ animation } variants={ variants } transition={ { duration: 1, delay: 1 } } className="muguet" >
-            <motion.div initial={ { opacity: 0 } } animate={ { opacity: 1 } }
-                        transition={ { duration: 1, delay: 1 } }>
-                <div className='muguet-sequence' ref={ muguet }></div>
-            </motion.div>
+        <motion.div ref={ ref } initial='initial' animate={ animation } variants={ variants }
+                    transition={ { duration: 1, delay: 1 } } className="muguet">
+            <div className='muguet-sequence' ref={ muguet }></div>
         </motion.div>
     );
 };

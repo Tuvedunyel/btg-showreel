@@ -65,7 +65,7 @@
   position: absolute;
   inset: 0;
   left: -15%;
-  bottom: -2%;
+  bottom: 20%;
 }
 
 .car__rotate-over {
@@ -89,6 +89,15 @@
     left: unset;
     right: 53%;
   }
+}
+
+.smoke__car {
+  width: 446px;
+  height: 446px;
+  background: url('../../img/fumee_delorean_sequence_4.png') no-repeat 0 0;
+  position: absolute;
+  bottom: -40%;
+  left: -5%;
 }
 
 @keyframes rotate {

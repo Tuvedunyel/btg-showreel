@@ -13,6 +13,9 @@ const RacingCar: FC = () => {
     const animation = useAnimation();
     const [ ref, inView ] = useInView( { threshold: 0 } );
     const windowWidth = window.innerWidth;
+    const smokeRef = useRef<HTMLDivElement | null>(null)
+    const [ step, setStep ] = useState( 0 )
+    const [ posY, setPosY ] = useState( 0 )
 
 
     const variants = {
@@ -91,6 +94,29 @@ const RacingCar: FC = () => {
         }
     }
 
+    const reset = () => {
+        if ( step == 16 ) {
+            setStep( 0 )
+            setPosY( 0 )
+        }
+    }
+
+    const sequence = async () => {
+        await reset()
+        if ( inView ) {
+            setTimeout( () => {
+                setStep( step + 1 )
+                setPosY( posY + 446 )
+                smokeRef.current!.style.backgroundPosition = `0 -${ posY }px`;
+            }, 300)
+        }
+    }
+
+    useEffect( () => {
+        sequence()
+    }, [ inView, step ] );
+
+
     useEffect( () => {
         if (inView) {
             animation.start( 'animate' );
@@ -125,11 +151,8 @@ const RacingCar: FC = () => {
                             <motion.div initial='initial' animate={ animation } variants={ smokeMove }
                                         transition={ { duration: 10, delay: 46.5 } } className="smoke-move">
                                 <motion.div initial='initial' animate={ animation } variants={ smokeVanish }
-                                            transition={ { duration: 4, delay: 43.5 } }>
-                                    <motion.img initial='initial' animate={ animation }
-                                                variants={ smokeCarVariants }
-                                                transition={ { duration: 3, delay: 45 } } src={ smokeCar }
-                                                alt="Fumée des roues arrière de la voiture" className='smoke-car'/>
+                                            transition={ { duration: 4, delay: 40 } }>
+                                    <div ref={smokeRef} className="smoke__car"></div>
                                 </motion.div>
                             </motion.div>
                         </motion.div>
