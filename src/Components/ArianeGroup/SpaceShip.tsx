@@ -9,6 +9,8 @@ import Sesame from "./Sesame";
 // import ReactorFire from "./ReactorFire";
 // import SmokeStarShip from "./SmokeStarShip";
 import TransparentStars from "./TransparentStars";
+import SmokeStarShip from "./SmokeStarShip";
+import ReactorFire from "./ReactorFire";
 
 const SpaceShip = () => {
     const animation = useAnimation();
@@ -127,8 +129,8 @@ const SpaceShip = () => {
                                         alt="Réacteur droit"
                                         className='reactor right'/>
                         </div>
-                        {/*<SmokeStarShip inView={inView} />*/ }
-                        {/*<ReactorFire inView={inView} />*/ }
+                        <SmokeStarShip view={inView} />
+                        <ReactorFire inView={inView} />
                     </div>
                 </motion.div>
             </motion.div>
