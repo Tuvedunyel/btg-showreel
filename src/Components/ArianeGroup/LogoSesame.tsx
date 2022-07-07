@@ -29,7 +29,7 @@ const LogoSesame: FC<{ view: boolean }> = ( { view } ) => {
     }
 
     const sequence = () => {
-        if (step !== 21 || posY <= 12100) {
+        if (step !== 21) {
             setTimeout( () => {
                 setStep( step + 1 )
                 setPosY( posY + 550 )
@@ -56,7 +56,7 @@ const LogoSesame: FC<{ view: boolean }> = ( { view } ) => {
         <motion.div ref={ ref } initial='initial' animate={ animation } variants={ translateTop }
                     transition={ { duration: 1, delay: 14 } } className='sesame__translate-top'>
             <motion.div initial='initial' animate={ animation } variants={ opacityAfter }
-                        transition={ { duration: 1, delay: 18 } } className="sesame__opacity">
+                        transition={ { duration: 1, delay: 22 } } className="sesame__opacity">
                 <div ref={ sesameRef } className="sesameImg"></div>
             </motion.div>
         </motion.div>

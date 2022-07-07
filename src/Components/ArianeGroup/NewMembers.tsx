@@ -117,7 +117,7 @@ const NewMembers: FC = () => {
             <motion.div initial='initial' animate={ animation } variants={ slideSectionVariants }
                         transition={ { duration: 1, delay: 40 } } className="trio-employee__slide">
                 <motion.section initial='initial' animate={ animation } variants={ moonVariants }
-                                transition={ { duration: 5, delay: 20 } } className="moon" title="Arrivée d'Anaïs">
+                                transition={ { duration: 5, delay: 24 } } className="moon" title="Arrivée d'Anaïs">
                     <motion.div initial='initial' animate={ animation } variants={ topVariants }
                                 transition={ { duration: 3, delay: 30 } } className="static__moon__wrapper">
                         <img src={ moon } alt="Illustration d'une lune" className='bigMoon'/>
@@ -127,7 +127,7 @@ const NewMembers: FC = () => {
                         >
                             <motion.div initial='initial' whileInView='animate' viewport={ { once: true } }
                                         variants={ moonYearContainer }
-                                        transition={ { duration: 1, delay: 2.5 } } className='moon-year__container'>
+                                        transition={ { duration: 1, delay: 1.5 } } className='moon-year__container'>
                                 <div className="creationAgence__left__title">
                                     <h2>
                                         <span>2</span>
@@ -149,23 +149,23 @@ const NewMembers: FC = () => {
                 <motion.section initial='initial' animate={ animation } variants={ employeeVariants }
                                 transition={ { duration: 1, delay: 32 } } className="trio-employee__container">
                     <motion.img initial='initial' animate={ animation } variants={ teamVariants }
-                                transition={ { duration: 1, delay: 36 } } src={ gregoire }
+                                transition={ { duration: 1, delay: 35 } } src={ gregoire }
                                 alt="Grégoire dans une tenue de cosmonaute"
                                 className='trio-employee gregoire-cosmonaute'/>
                     <motion.img initial='initial' animate={ animation } variants={ teamVariants }
                                 transition={ { duration: 1, delay: 34 } } src={ anais }
                                 alt="Anaïs dans une tenue de cosmonaute" className='trio-employee anais-cosmonaute'/>
                     <motion.img initial='initial' animate={ animation } variants={ teamVariants }
-                                transition={ { duration: 1, delay: 38 } } src={ zoe } title="Zozo la fortnite"
+                                transition={ { duration: 1, delay: 36 } } src={ zoe }
                                 alt="Zoé dans une tenue de cosmonaute" className='trio-employee zoe-cosmonaute'/>
                     <motion.h3 initial='initial' animate={ animation } variants={ teamVariants }
-                               transition={ { duration: 1, delay: 36 } } className='employee gregoire'>Grégoire
+                               transition={ { duration: 1, delay: 35 } } className='employee gregoire'>Grégoire
                     </motion.h3>
                     <motion.h3 initial='initial' animate={ animation } variants={ teamVariants }
                                transition={ { duration: 1, delay: 34 } } className='employee anais'>Anaïs
                     </motion.h3>
                     <motion.h3 initial='initial' animate={ animation } variants={ teamVariants }
-                               transition={ { duration: 1, delay: 38 } } className='employee zoe'>Zoé
+                               transition={ { duration: 1, delay: 36 } } className='employee zoe'>Zoé
                     </motion.h3>
                 </motion.section>
             </motion.div>

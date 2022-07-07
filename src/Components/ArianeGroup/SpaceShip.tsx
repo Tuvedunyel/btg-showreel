@@ -116,6 +116,7 @@ const SpaceShip = () => {
                         <motion.div initial='initial' animate={ animation } variants={ shipVariants }
                                     transition={ { duration: 3, delay: 8 } } className='movingStrarShip__wrapper'>
                             <img src={ MovingSpaceShip } alt="Fusée décollant" className='movingStarShip'/>
+                            <ReactorFire inView={inView} />
                         </motion.div>
                         <div className="reactor-left__container">
                             <motion.img initial='initial' animate={ animation } variants={ reactorLeft }
@@ -130,7 +131,6 @@ const SpaceShip = () => {
                                         className='reactor right'/>
                         </div>
                         <SmokeStarShip view={inView} />
-                        <ReactorFire inView={inView} />
                     </div>
                 </motion.div>
             </motion.div>

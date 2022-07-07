@@ -10,9 +10,9 @@ const ReactorFire: FC<{ inView: boolean }> = ( { inView } ) => {
             if (step <= 15) {
                 setTimeout( () => {
                     setStep( step + 1 )
-                    setPosY( posY + 1099.8 )
+                    setPosY( posY + 550 )
                     ref.current!.style.backgroundPosition = `0 -${ posY }px`
-                }, 700 )
+                }, 600 )
             } else if (step > 15) {
                 ref.current!.style.display = 'none'
             }

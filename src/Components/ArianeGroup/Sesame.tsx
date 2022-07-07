@@ -1,6 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import SesameSpace from '../../img/logo_sesame.png';
 import whiteWave from '../../img/wave-white.gif'
 import Spline from "@splinetool/react-spline";
 import NewMembers from "./NewMembers";
@@ -80,7 +79,7 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
                             transition={ { duration: 1, delay: 15 } } className="moon__container">
                     <img src={ whiteWave } alt="Vague blanche" className='top-wave wave'/>
                     <motion.div initial='initial' animate={ animation } variants={ sizeVariants }
-                                transition={ { duration: 1, delay: 18 } } className="moon__hexagone">
+                                transition={ { duration: 1, delay: 22 } } className="moon__hexagone">
                         <Spline scene="https://prod.spline.design/SeqKfWuhGm1Go6Zb/scene.splinecode"/>
                     </motion.div>
                     <img src={ whiteWave } alt="Vague blanche" className='bottom-wave wave'/>
