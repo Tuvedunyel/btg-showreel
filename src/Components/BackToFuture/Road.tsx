@@ -5,17 +5,25 @@ const Road: FC<{ inView: boolean }> = ( { inView } ) => {
     const [ step, setStep ] = useState( 0 );
     const [ posX, setPosX ] = useState( -1800 );
 
+    const reset = () => {
+        if (step == 4 || posX >= 50) {
+            setStep( 0 );
+            setPosX( -1800 );
+        }
+    }
+
+    const sequence = async () => {
+        await reset();
+        setTimeout( () => {
+            setStep( step + 1 );
+            setPosX( posX + 370 )
+            roadContainer.current!.style.backgroundPosition = `${ posX }px 0`;
+        }, 40 )
+    }
+
     useEffect( () => {
         if (inView) {
-            if (posX == 50 || step == 4) {
-                setStep( 0 );
-                setPosX( -1800 );
-            }
-            setTimeout( () => {
-                setStep( step + 1 );
-                setPosX( posX + 370 )
-                roadContainer.current!.style.backgroundPosition = `${ posX }px 0`;
-            }, 40 )
+            sequence();
         }
     }, [ step, inView ] )
 

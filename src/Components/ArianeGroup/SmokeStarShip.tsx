@@ -15,7 +15,7 @@ const SmokeStarShip: FC<{ view: boolean }> = ( { view } ) => {
             translateY: 0
         },
         animate: {
-            translateY: '202px'
+            translateY: '204px'
         }
     }
 
@@ -35,12 +35,12 @@ const SmokeStarShip: FC<{ view: boolean }> = ( { view } ) => {
     }
 
     useEffect( () => {
-        if ( inView && step <= 16 ) {
-            setTimeout( interval, 100 )
+        if (inView && step <= 16) {
+            setTimeout( interval, 150 )
         } else if (step > 16) {
             smokeRef.current!.style.display = 'none'
         }
-    }, [step, inView])
+    }, [ step, inView ] )
 
 
     useEffect( () => {
@@ -55,7 +55,9 @@ const SmokeStarShip: FC<{ view: boolean }> = ( { view } ) => {
         <>
             { view && (
                 <>
-                    <motion.div initial='initial' animate={animation} variants={translateDiv} transition={{ duration: 1, delay: 4 }} ref={ref} className='dummy-view'></motion.div>
+                    <motion.div initial='initial' animate={ animation } variants={ translateDiv }
+                                transition={ { duration: 1, delay: 4 } } ref={ ref }
+                                className='dummy-view'></motion.div>
                     <motion.div initial='initial' animate={ animation } variants={ smokeVariants }
                                 transition={ { duration: 1, delay: 0.5 } } ref={ smokeRef }
                                 className='dynamic__smoke'></motion.div>

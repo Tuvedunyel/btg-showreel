@@ -117,11 +117,11 @@ const NewMembers: FC = () => {
             <motion.div initial='initial' animate={ animation } variants={ slideSectionVariants }
                         transition={ { duration: 1, delay: 40 } } className="trio-employee__slide">
                 <motion.section initial='initial' animate={ animation } variants={ moonVariants }
-                                transition={ { duration: 5, delay: 24 } } className="moon" title="Arrivée d'Anaïs">
+                                transition={ { duration: 5, delay: 20 } } className="moon" title="Arrivée d'Anaïs">
                     <motion.div initial='initial' animate={ animation } variants={ topVariants }
-                                transition={ { duration: 3, delay: 30 } } className="static__moon__wrapper">
+                                transition={ { duration: 3, delay: 26 } } className="static__moon__wrapper">
                         <img src={ moon } alt="Illustration d'une lune" className='bigMoon'/>
-                        <motion.img initial='initial' animate={animation} variants={waveOpacity} transition={{ duration: 1, delay: 26 }}  src={ waveOrange } alt="Vague orange" className='orange-wave'/>
+                        <motion.img initial='initial' animate={animation} variants={waveOpacity} transition={{ duration: 1, delay: 22 }}  src={ waveOrange } alt="Vague orange" className='orange-wave'/>
                         <motion.div initial='initial' animate={ animation } variants={ variants }
                                     transition={ { duration: 1 } } className='moon-year'
                         >
@@ -147,30 +147,30 @@ const NewMembers: FC = () => {
                     </motion.div>
                 </motion.section>
                 <motion.section initial='initial' animate={ animation } variants={ employeeVariants }
-                                transition={ { duration: 1, delay: 32 } } className="trio-employee__container">
+                                transition={ { duration: 1, delay: 28 } } className="trio-employee__container">
                     <motion.img initial='initial' animate={ animation } variants={ teamVariants }
-                                transition={ { duration: 1, delay: 35 } } src={ gregoire }
+                                transition={ { duration: 1, delay: 31 } } src={ gregoire }
                                 alt="Grégoire dans une tenue de cosmonaute"
                                 className='trio-employee gregoire-cosmonaute'/>
                     <motion.img initial='initial' animate={ animation } variants={ teamVariants }
-                                transition={ { duration: 1, delay: 34 } } src={ anais }
+                                transition={ { duration: 1, delay: 30 } } src={ anais }
                                 alt="Anaïs dans une tenue de cosmonaute" className='trio-employee anais-cosmonaute'/>
                     <motion.img initial='initial' animate={ animation } variants={ teamVariants }
-                                transition={ { duration: 1, delay: 36 } } src={ zoe }
+                                transition={ { duration: 1, delay: 32 } } src={ zoe }
                                 alt="Zoé dans une tenue de cosmonaute" className='trio-employee zoe-cosmonaute'/>
                     <motion.h3 initial='initial' animate={ animation } variants={ teamVariants }
-                               transition={ { duration: 1, delay: 35 } } className='employee gregoire'>Grégoire
+                               transition={ { duration: 1, delay: 31 } } className='employee gregoire'>Grégoire
                     </motion.h3>
                     <motion.h3 initial='initial' animate={ animation } variants={ teamVariants }
-                               transition={ { duration: 1, delay: 34 } } className='employee anais'>Anaïs
+                               transition={ { duration: 1, delay: 30 } } className='employee anais'>Anaïs
                     </motion.h3>
                     <motion.h3 initial='initial' animate={ animation } variants={ teamVariants }
-                               transition={ { duration: 1, delay: 36 } } className='employee zoe'>Zoé
+                               transition={ { duration: 1, delay: 32 } } className='employee zoe'>Zoé
                     </motion.h3>
                 </motion.section>
             </motion.div>
             <motion.section initial='initial' animate={ animation } variants={ roadVariants }
-                            transition={ { duration: 1, delay: 41 } } className="roadCar__container">
+                            transition={ { duration: 1, delay: 43 } } className="roadCar__container">
                 <RacingCar/>
             </motion.section>
         </>

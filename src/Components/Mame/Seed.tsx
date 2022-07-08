@@ -27,18 +27,27 @@ const Seed: FC = () => {
     }
 
     const firstSeedVariants = {
+        initial: {
+            opacity: 0
+        },
         animate: {
             opacity: [ 1, 0 ]
         }
     }
 
     const secondSeedVariants = {
+        initial: {
+            opacity: 0
+        },
         animate: {
             opacity: [ 0, 1, 0 ]
         }
     }
 
     const thirdSeedVariants = {
+        initial: {
+            opacity: 0
+        },
         animate: {
             opacity: [ 0, 1 ]
         }
@@ -47,6 +56,8 @@ const Seed: FC = () => {
     useEffect( () => {
         if (inView) {
             animation.start( 'animate' )
+        } else {
+            animation.start('initial')
         }
     }, [ animation, inView ] )
 
@@ -54,17 +65,17 @@ const Seed: FC = () => {
         <motion.section className='seed-container' initial='initial' whileInView='whileInView'
                         viewport={ { once: true } }
                         transition={ { duration: 1, delay: 3 } } variants={ variants }>
-            <motion.img src={ SeedFirstState } animate={ animation } variants={ firstSeedVariants }
+            <motion.img src={ SeedFirstState } initial='initial' animate={ animation } variants={ firstSeedVariants }
                         transition={ { duration: 1, delay: 3.5 } } alt="Graine" className='seed-img' />
-            <motion.div animate={ animation } variants={ secondSeedVariants }
+            <motion.div initial='initial' animate={ animation } variants={ secondSeedVariants }
                         transition={ { duration: 1.5, delay: 4.5 } } className='seed-img' >
                 <Image src={ SeedSecondState } webp={ SeedSecondState } alt="Graine"/>
             </motion.div>
-            <motion.div animate={ animation } variants={ secondSeedVariants }
+            <motion.div initial='initial' animate={ animation } variants={ secondSeedVariants }
                         transition={ { duration: 1.5, delay: 6 } } className='seed-img' >
                 <Image src={ SeedThirdState } webp={ seedThirdStateWebp } alt="Graine"/>
             </motion.div>
-            <motion.div animate={ animation } variants={ thirdSeedVariants }
+            <motion.div initial='initial' animate={ animation } variants={ thirdSeedVariants }
                         transition={ { duration: 1.5, delay: 7.5 } } className='seed-img' >
                 <Image src={ SeedFourthState } webp={seedFourthStateWebp} alt="Graine"/>
             </motion.div>

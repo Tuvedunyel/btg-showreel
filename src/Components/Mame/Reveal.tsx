@@ -13,7 +13,7 @@ import WaterText from "./WaterText";
 import Image from 'react-image-webp'
 
 const Reveal: FC = () => {
-    const troll = "Et sinon, lequel des BTG tu préfères ?";
+    const troll = "Les fortniteur !";
     const [ ref, inView ] = useInView( { threshold: 0 } );
     const animation = useAnimation();
 
@@ -67,12 +67,12 @@ const Reveal: FC = () => {
                     </motion.div>
                 </motion.div>
             </div>
-            <motion.div className="pepiniere__reveal__text" initial={ { opacity: 0 } } whileInView={ { opacity: 1 } }
-                        viewport={ { once: true } } transition={ { duration: 1, delay: 9.5 } }>
+            <motion.div className="pepiniere__reveal__text" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }} transition={ { duration: 1, delay: 9.5 } }>
                 <p>Nullam sed turpis sagittis, vestibulum massa efficitur, cursus nisi. Vestibulum ac scelerisque sem.
                     Vivamus gravida pharetra consectetur. Cras quam nibh, porttitor nec nulla non, cursus commodo
                     risus.</p>
-                <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } }
+                <motion.div initial={ { opacity: 0 } } whileInView={{ opacity: 1 }} viewport={{ once: true }}
                             transition={ { duration: 1, delay: 9.5 } } className="hexa__container">
                     <Hexagone top={ false } duration={ 0.3 }/>
                     <Hexagone top={ false } duration={ 0.6 }/>
