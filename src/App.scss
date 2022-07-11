@@ -26,6 +26,12 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
   flex-wrap: nowrap;
   overscroll-behavior: none;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .two {
@@ -54,11 +60,6 @@ p {
   font-size: 1.9rem;
 }
 
-.container {
-  display: flex;
-  width: 100%
-}
-
 .orangeArrow {
   margin-bottom: 2em;
   margin-top: 0.5em;
@@ -66,4 +67,10 @@ p {
 
 .img__no-events {
   pointer-events: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    height: 100%;
+  }
 }

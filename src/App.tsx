@@ -14,43 +14,58 @@ gsap.registerPlugin( ScrollTrigger );
 
 const App = () => {
     const App = useRef<HTMLDivElement | null>( null )
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
 
     useEffect( () => {
-        let gsapApp = gsap.utils.toArray( '.container' )
+        if (windowWidth > 1000) {
+            let gsapApp = gsap.utils.toArray( '.container' )
 
-        gsap.to( gsapApp, {
-            xPercent: -100 * (gsapApp.length - 1),
-            ease: "none",
-            scrollTrigger: {
-                trigger: App.current,
-                pin: true,
-                scrub: 1,
-                snap: {
-                    snapTo: 1 / (gsapApp.length - 1),
-                    duration: 2,
-                    delay: 0,
-                    inertia: false
-                },
-                end: "+=" + App.current?.offsetWidth
-            }
-        } );
-
+            gsap.to( gsapApp, {
+                xPercent: -100 * (gsapApp.length - 1),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: App.current,
+                    pin: true,
+                    scrub: 1,
+                    snap: {
+                        snapTo: 1 / (gsapApp.length - 1),
+                        duration: 2,
+                        delay: 0,
+                        inertia: false
+                    },
+                    end: "+=" + App.current?.offsetWidth
+                }
+            } );
+        }
     }, [] )
+
+    const containerStyle = {
+        width: windowWidth,
+        height: windowHeight,
+        display: 'flex'
+    }
+
+    const mobileContainerStyle = {
+        width: windowWidth,
+        height: windowHeight,
+        display: 'flex'
+    }
 
     return (
         <AnimatePresence>
             <div className="App" ref={ App }>
-                <div className="container">
+                <div style={ windowWidth > 1000 ? containerStyle : mobileContainerStyle } className="container">
                     <Home/>
                 </div>
-                <div className="container">
+                <div style={ containerStyle } className="container">
                     <Historique/>
                 </div>
-                <div className="container">
+                <div style={ containerStyle } className="container">
                     <WebMotion/>
                 </div>
-                <div className="container">
-                    <ArianeGroup />
+                <div style={ containerStyle } className="container">
+                    <ArianeGroup/>
                 </div>
             </div>
         </AnimatePresence>
