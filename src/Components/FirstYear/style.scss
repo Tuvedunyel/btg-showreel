@@ -16,6 +16,16 @@
     width: fit-content;
     height: fit-content;
   }
+
+  @media screen and (max-width: 771px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: 411px) {
+    section.circle {
+      width: 200px;
+    }
+  }
 }
 
 .creationAgence__left {
@@ -23,6 +33,17 @@
   justify-self: start;
   position: relative;
   width: 100% !important;
+
+  @media screen and (max-width: 771px) {
+    margin-top: 6em;
+    .orangeArrow {
+      transform: rotate(90deg);
+    }
+  }
+
+  @media screen and (max-width: 381px) {
+    margin-top: 0;
+  }
 }
 
 .creationAgence__left__title {
@@ -41,6 +62,10 @@
     font-weight: 300;
     font-family: 'Exo', sans-serif;
   }
+
+  @media screen and (max-width: 771px) {
+    width: 100%;
+  }
 }
 
 h2 {
@@ -54,11 +79,37 @@ h2 {
   line-height: 0.9;
   padding-top: 0.2em;
   padding-bottom: 0.3em;
+
+  @media screen and (max-width: 994px) {
+    font-size: 14.6rem;
+  }
+
+  @media screen and (max-width: 771px) {
+    flex-direction: row;
+  }
+  @media screen and (max-width: 381px) {
+    font-size: 10.6rem;
+  }
 }
 
 .creationAgence__right {
   position: absolute;
   grid-column: 2;
+
+  @media screen and (max-width: 1389px) {
+    position: initial;
+    margin-right: 0.8em;
+    justify-self: end;
+  }
+
+  @media screen and (max-width: 771px) {
+    grid-column: 1;
+    justify-self: center;
+  }
+
+  @media screen and (max-width: 381px) {
+  margin-right: 0;
+}
 }
 
 .firstYear__Agence {
@@ -66,7 +117,14 @@ h2 {
   left: 0;
   bottom: 0;
   width: 513px;
-  height: 1019px;
+
+  @media screen and (max-width: 994px) {
+    width: 313px;
+  }
+
+  @media screen and (max-width: 771px) {
+    width: 100%;
+  }
 }
 
 .creationAgence__left__border {
@@ -78,6 +136,24 @@ h2 {
   border: 1px solid black;
   border-bottom: none;
   z-index: 0;
+
+  @media screen and (max-width: 771px) {
+    width: 100%;
+    right: unset;
+    bottom: -2%;
+    border-bottom: 1px solid;
+    border-right: none;
+    border-left: none;
+  }
+}
+
+.creationAgence__right__title {
+  @media screen and (max-width: 487px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .title_click {
@@ -85,6 +161,26 @@ h2 {
   font-weight: 900;
   font-family: 'Exo', 'Arial', sans-serif;
   margin-left: 3.35em;
+
+  @media screen and (max-width: 1389px) {
+    font-size: 12.7rem;
+    margin-left: 0;
+  }
+
+  @media screen and (max-width: 1126px) {
+    font-size: 9.7rem;
+    display: inline;
+  }
+
+  @media screen and (max-width: 487px) {
+    font-size: 7.7rem;
+    text-align: center;
+    margin: auto;
+  }
+
+  @media screen and (max-width: 381px) {
+    font-size: 5.7rem;
+  }
 }
 
 .click {
@@ -98,6 +194,10 @@ h2 {
   margin-right: 7.2em;
   width: 124px;
   height: 106px;
+
+  @media screen and (max-width: 1126px) {
+    margin-right: 0;
+  }
 }
 
 .circle {

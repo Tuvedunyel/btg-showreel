@@ -1,8 +1,9 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import muguetStatic from '../../img/muguet-static.png'
 
-const Muguet: FC<{ view: boolean }> = ( { view } ) => {
+const Muguet: FC<{ view: boolean, windowWidth: number }> = ( { view, windowWidth } ) => {
     const animation = useAnimation();
     const muguet = useRef<HTMLDivElement | null>( null );
     const [ step, setStep ] = useState( 0 );
@@ -44,7 +45,13 @@ const Muguet: FC<{ view: boolean }> = ( { view } ) => {
     return (
         <motion.div ref={ ref } initial='initial' animate={ animation } variants={ variants }
                     transition={ { duration: 1, delay: 1 } } className="muguet">
-            <div className='muguet-sequence' ref={ muguet }></div>
+            {
+                windowWidth > 926 ? (
+                    <div className='muguet-sequence' ref={ muguet }></div>
+                ) : (
+                    <img src={ muguetStatic } alt="Un muguet" className='muguet-static'/>
+                )
+            }
         </motion.div>
     );
 };

@@ -10,6 +10,7 @@ import { useInView } from "react-intersection-observer";
 const FirstYear: FC<{ setShowDetail: Dispatch<SetStateAction<boolean>> }> = ( { setShowDetail } ) => {
     const animation = useAnimation();
     const [ ref, inView ] = useInView( { threshold: 0 } )
+    const windowHeight = window.innerHeight;
 
     useEffect( () => {
         if (inView) {
@@ -21,10 +22,10 @@ const FirstYear: FC<{ setShowDetail: Dispatch<SetStateAction<boolean>> }> = ( { 
 
     const variants = {
         initial: {
-            translateY: 1200
+            translateY: windowHeight * 1.5
         },
         animate: {
-            translateY: 130
+            translateY: 0
         }
     }
 
@@ -34,8 +35,10 @@ const FirstYear: FC<{ setShowDetail: Dispatch<SetStateAction<boolean>> }> = ( { 
             opacity: 1
         },
         animate: {
-            translateX: -600,
-            opacity: 0
+            // translateX: -600,
+            translateX: 0,
+            opacity: 1,
+            // opacity: 0
         }
     }
 

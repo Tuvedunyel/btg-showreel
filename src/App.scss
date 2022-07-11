@@ -40,6 +40,13 @@ h1 {
   color: white;
   text-transform: uppercase;
   width: fit-content;
+
+  @media screen and (max-width: 1132px) {
+    font-size: 6.4rem;
+  }
+  @media screen and (max-width: 528px) {
+    font-size: 4.4rem;
+  }
 }
 
 p {

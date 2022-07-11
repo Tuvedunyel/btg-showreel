@@ -33,6 +33,16 @@
   height: 100%;
 }
 
+.detail__motion__translate {
+  @media screen and (max-width: 1029px) {
+    margin-left: 5%;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-left: 0;
+  }
+}
+
 .circle__orange__detail {
   background: #E3775B;
   position: absolute;
@@ -54,6 +64,41 @@
   left: -18%;
   width: 907px;
   height: 1080px;
+
+  @media screen and (max-width: 1341px) {
+    left: -26%;
+    bottom: -138px;
+  }
+
+  @media screen and (max-width: 1061px) {
+    left: -36%;
+    bottom: -140px;
+  }
+
+  @media screen and (max-width: 973px) {
+    left: -48%;
+    bottom: -147px;
+  }
+
+  @media screen and (max-width: 926px) {
+    left: -52%;
+    bottom: -230px;
+  }
+
+  @media screen and (max-width: 782px) {
+    left: -74%;
+    bottom: -328px;
+  }
+
+  @media screen and (max-width: 479px) {
+    left: -91%;
+    bottom: -367px;
+  }
+
+  @media screen and (max-width: 355px) {
+    left: -111%;
+    bottom: -417px;
+  }
 }
 
 .muguet-sequence {
@@ -65,11 +110,92 @@
   background: url('../../img/mugets_sequence_3.png') no-repeat 0 0;
 }
 
+.muguet-static {
+  @media screen and (max-width: 926px) {
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    width: 723.5px;
+    height: 628px;
+  }
+
+  @media screen and (max-width: 782px) {
+    width: 523.5px;
+    height: 428px;
+  }
+
+  @media screen and (max-width: 558px) {
+    width: 450px;
+  }
+
+  @media screen and (max-width: 479px) {
+    width: 400px;
+    height: 350px;
+  }
+
+  @media screen and (max-width: 355px) {
+    width: 300px;
+    height: 250px;
+  }
+}
+
 .yellow__circle__translate {
   position: absolute;
   right: 20%;
   top: 7%;
   z-index: 1;
+
+  @media screen and (max-width: 1800px) {
+    right: 18%;
+    top: 3%;
+  }
+
+  @media screen and (max-width: 1664px) {
+    right: 16%;
+    top: 1%;
+  }
+
+  @media screen and (max-width: 1114px) {
+    right: 7%;
+    top: 4%;
+  }
+
+  @media screen and (max-width: 1061px) {
+    right: 12%;
+    top: 6%;
+  }
+
+  @media screen and (max-width: 1029px) {
+    right: 6%;
+  }
+
+  @media screen and (max-width: 926px) {
+    right: 12%;
+    top: 15%;
+  }
+
+  @media screen and (max-width: 815px) {
+    right: 9%;
+  }
+
+  @media screen and (max-width: 782px) {
+    right: 16%;
+    top: 26%;
+  }
+
+  @media screen and (max-width: 720px) {
+    right: 17%;
+    top: 17%;
+  }
+
+  @media screen and (max-width: 558px) {
+    right: 9%;
+    top: 20%;
+  }
+
+  @media screen and (max-width: 450px) {
+    display: none;
+  }
 }
 
 .yellow_circle {
@@ -87,6 +213,10 @@
 
 .trompette {
   transform: translate(27%, 0%) !important;
+
+  @media screen and (max-width: 1513px) {
+    transform: translate(37%, -9%) !important;
+  }
 }
 
 .detail__title {
@@ -105,8 +235,28 @@
     align-items: start;
     text-align: left;
 
+    @media screen and (max-width: 1513px) {
+      font-size: 7.4rem;
+    }
+
+    @media screen and (max-width: 1419px) {
+      font-size: 6.4rem;
+    }
+
+    @media screen and (max-width: 1114px) {
+      font-size: 4.4rem;
+    }
+
+    @media screen and (max-width: 771px) {
+      flex-direction: column;
+    }
+
     sup {
       font-size: 5rem;
+
+      @media screen and (max-width: 1114px) {
+        font-size: 3rem;
+      }
     }
 
     span {
@@ -127,6 +277,14 @@
   right: -71%;
   width: 192px;
   height: 37px;
+
+  @media screen and (max-width: 1800px) {
+    top: 32%;
+  }
+
+  @media screen and (max-width: 1114px) {
+    display: none;
+  }
 }
 
 .mame__transition {
