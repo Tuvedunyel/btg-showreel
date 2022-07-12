@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "btg-show-nx": "apps/btg-show-nx",
+    "btg-show-nx-e2e": "apps/btg-show-nx-e2e"
+  }
+}
