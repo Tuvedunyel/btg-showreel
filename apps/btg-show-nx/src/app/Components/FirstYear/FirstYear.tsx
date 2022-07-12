@@ -35,10 +35,8 @@ const FirstYear: FC<{ setShowDetail: Dispatch<SetStateAction<boolean>> }> = ( { 
             opacity: 1
         },
         animate: {
-            // translateX: -600,
-            translateX: 0,
-            opacity: 1,
-            // opacity: 0
+            translateX: -600,
+            opacity: 0
         }
     }
 

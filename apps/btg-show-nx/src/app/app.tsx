@@ -16,7 +16,6 @@ const App = () => {
     const windowHeight = window.innerHeight;
 
     useEffect( () => {
-      console.log(windowWidth)
         if (windowWidth > 1000) {
             let gsapApp = gsap.utils.toArray( '.container' )
 
@@ -57,13 +56,13 @@ const App = () => {
                 <div style={ windowWidth > 1000 ? containerStyle : mobileContainerStyle } className="container">
                     <Home/>
                 </div>
-                <div style={ containerStyle } className="container">
+                <div style={ windowWidth > 1000 ? containerStyle : mobileContainerStyle } className="container">
                     <Historique/>
                 </div>
-                <div style={ containerStyle } className="container">
+                <div style={ windowWidth > 1000 ? containerStyle : mobileContainerStyle } className="container">
                     <WebMotion/>
                 </div>
-                <div style={ containerStyle } className="container">
+                <div style={ windowWidth > 1000 ? containerStyle : mobileContainerStyle } className="container">
                     <ArianeGroup/>
                 </div>
             </div>

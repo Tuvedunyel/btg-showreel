@@ -160,6 +160,16 @@ ul {
   padding: 0;
 }
 
+::selection {
+  background: #FCD647;
+  color: #08243A;
+}
+
+::-moz-selection {
+  background: #FCD647;
+  color: #08243A;
+}
+
 body {
   height: 100vh;
   overscroll-behavior: none;
