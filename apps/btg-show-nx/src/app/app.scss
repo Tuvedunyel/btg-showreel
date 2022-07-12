@@ -1,0 +1,61 @@
+
+.App {
+  background: #F9EEE1;
+  display: flex;
+  width: 400%;
+  height: 100%;
+  flex-wrap: nowrap;
+  overscroll-behavior: none;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.two {
+  width: 100vw;
+  height: 100vh;
+}
+
+
+h1 {
+  font-family: 'Cabin', Arial, sans-serif;
+  font-size: 8.4rem;
+  color: white;
+  text-transform: uppercase;
+  width: fit-content;
+
+  @media screen and (max-width: 1132px) {
+    font-size: 6.4rem;
+  }
+  @media screen and (max-width: 528px) {
+    font-size: 4.4rem;
+  }
+}
+
+.test {
+  color: red;
+  font-size: 10rem;
+}
+
+p {
+  font-family: 'Exo', Arial, sans-serif;
+  font-size: 1.9rem;
+}
+
+.orangeArrow {
+  margin-bottom: 2em;
+  margin-top: 0.5em;
+}
+
+.img__no-events {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    height: 100%;
+  }
+}

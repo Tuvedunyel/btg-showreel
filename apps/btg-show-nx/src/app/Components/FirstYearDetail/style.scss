@@ -1,0 +1,295 @@
+.detail__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.top-inview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  margin-inline: auto;
+}
+
+.detail__motion {
+  background: #E3775B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.detail__motion__translate {
+  @media screen and (max-width: 1029px) {
+    margin-left: 5%;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-left: 0;
+  }
+}
+
+.circle__orange__detail {
+  background: #E3775B;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border: none;
+  border-radius: 100%;
+}
+
+.white__motion {
+  background: white;
+  position: relative;
+  z-index: 2;
+}
+
+.muguet {
+  position: absolute;
+  bottom: -137px;
+  left: -18%;
+  width: 907px;
+  height: 1080px;
+
+  @media screen and (max-width: 1341px) {
+    left: -26%;
+    bottom: -138px;
+  }
+
+  @media screen and (max-width: 1061px) {
+    left: -36%;
+    bottom: -140px;
+  }
+
+  @media screen and (max-width: 973px) {
+    left: -48%;
+    bottom: -147px;
+  }
+
+  @media screen and (max-width: 926px) {
+    left: -52%;
+    bottom: -230px;
+  }
+
+  @media screen and (max-width: 782px) {
+    left: -74%;
+    bottom: -328px;
+  }
+
+  @media screen and (max-width: 479px) {
+    left: -91%;
+    bottom: -367px;
+  }
+
+  @media screen and (max-width: 355px) {
+    left: -111%;
+    bottom: -417px;
+  }
+}
+
+.muguet-sequence {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background: url('../../../img/mugets_sequence_3.png') no-repeat 0 0;
+}
+
+.muguet-static {
+  @media screen and (max-width: 926px) {
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    width: 723.5px;
+    height: 628px;
+  }
+
+  @media screen and (max-width: 782px) {
+    width: 523.5px;
+    height: 428px;
+  }
+
+  @media screen and (max-width: 558px) {
+    width: 450px;
+  }
+
+  @media screen and (max-width: 479px) {
+    width: 400px;
+    height: 350px;
+  }
+
+  @media screen and (max-width: 355px) {
+    width: 300px;
+    height: 250px;
+  }
+}
+
+.yellow__circle__translate {
+  position: absolute;
+  right: 20%;
+  top: 7%;
+  z-index: 1;
+
+  @media screen and (max-width: 1800px) {
+    right: 18%;
+    top: 3%;
+  }
+
+  @media screen and (max-width: 1664px) {
+    right: 16%;
+    top: 1%;
+  }
+
+  @media screen and (max-width: 1114px) {
+    right: 7%;
+    top: 4%;
+  }
+
+  @media screen and (max-width: 1061px) {
+    right: 12%;
+    top: 6%;
+  }
+
+  @media screen and (max-width: 1029px) {
+    right: 6%;
+  }
+
+  @media screen and (max-width: 926px) {
+    right: 12%;
+    top: 15%;
+  }
+
+  @media screen and (max-width: 815px) {
+    right: 9%;
+  }
+
+  @media screen and (max-width: 782px) {
+    right: 16%;
+    top: 26%;
+  }
+
+  @media screen and (max-width: 720px) {
+    right: 17%;
+    top: 17%;
+  }
+
+  @media screen and (max-width: 558px) {
+    right: 9%;
+    top: 20%;
+  }
+
+  @media screen and (max-width: 450px) {
+    display: none;
+  }
+}
+
+.yellow_circle {
+  position: absolute;
+  right: 20%;
+  top: 7%;
+  z-index: 1;
+
+  div, canvas {
+    position: absolute !important;
+    inset: 0;
+    margin: auto;
+  }
+}
+
+.trompette {
+  transform: translate(27%, 0%) !important;
+
+  @media screen and (max-width: 1513px) {
+    transform: translate(37%, -9%) !important;
+  }
+}
+
+.detail__title {
+  position: absolute;
+  top: 0;
+  left: 1%;
+
+  h2 {
+    color: black;
+    font-size: 8.4rem;
+    font-weight: 700;
+    font-family: 'Cabin', sans-serif;
+
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    text-align: left;
+
+    @media screen and (max-width: 1513px) {
+      font-size: 7.4rem;
+    }
+
+    @media screen and (max-width: 1419px) {
+      font-size: 6.4rem;
+    }
+
+    @media screen and (max-width: 1114px) {
+      font-size: 4.4rem;
+    }
+
+    @media screen and (max-width: 771px) {
+      flex-direction: column;
+    }
+
+    sup {
+      font-size: 5rem;
+
+      @media screen and (max-width: 1114px) {
+        font-size: 3rem;
+      }
+    }
+
+    span {
+      background: white;
+      padding: 7px 20px;
+
+      &:last-of-type {
+        padding-bottom: 25px;
+      }
+    }
+  }
+}
+
+
+.vague {
+  position: absolute;
+  top: 10%;
+  right: -71%;
+  width: 192px;
+  height: 37px;
+
+  @media screen and (max-width: 1800px) {
+    top: 32%;
+  }
+
+  @media screen and (max-width: 1114px) {
+    display: none;
+  }
+}
+
+.mame__transition {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+}

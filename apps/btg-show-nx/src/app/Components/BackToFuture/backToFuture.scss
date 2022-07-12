@@ -1,0 +1,112 @@
+.racing-car__container {
+  width: 100%;
+  height: 100%;
+  background: #1D1738;
+  position: relative;
+}
+
+.dummyref {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+}
+
+.car__wrapper {
+  position: relative;
+}
+
+.racing-car__star {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background: url('../../../img/stars.jpg') no-repeat 0 0;
+}
+
+.road {
+  position: absolute;
+  background: #C9C9C9;
+  z-index: 2;
+  inset: 0;
+  top: unset;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 23%;
+}
+
+.ligne-route {
+  margin-bottom: 3em;
+  width: 100%;
+  height: 37px;
+  background: url('../../../img/traits-route.png') no-repeat -1800px 0;
+}
+
+.car__container {
+  height: fit-content;
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  top: unset;
+  bottom: 37%;
+}
+
+.car-shadow {
+  position: absolute;
+  left: 5%;
+  bottom: -2%;
+}
+
+.smoke-move {
+  position: absolute;
+  inset: 0;
+  left: -15%;
+  bottom: 20%;
+}
+
+.car__rotate-over {
+  position: relative;
+}
+
+.carImg {
+  width: 1042px;
+  height: 332px;
+}
+
+.wheel {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 55%;
+  left: 8.5%;
+  animation: rotate 0.8s infinite linear;
+
+  &.second {
+    left: unset;
+    right: 53%;
+  }
+}
+
+.smoke__car {
+  width: 446px;
+  height: 446px;
+  background: url('../../../img/fumee_delorean_sequence_4.png') no-repeat 0 0;
+  position: absolute;
+  bottom: -40%;
+  left: -5%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: center center;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: center center;
+  }
+}

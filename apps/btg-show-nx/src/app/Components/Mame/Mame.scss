@@ -1,0 +1,301 @@
+.pepiniere {
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+  justify-items: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.translate__creation {
+  align-self: end;
+  justify-self: start;
+}
+
+.ref__div {
+  position: absolute;
+  width: 90%;
+  height: 30%;
+  margin: auto;
+  inset: 0;
+}
+
+.pepiniere__reveal, .pepiniere {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.pepiniere__reveal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.pepiniere__reveal__container-circle {
+  width: 713px;
+  height: 713px;
+  position: relative;
+  z-index: 1;
+}
+
+.pepiniere__reveal__whiteCircle {
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 2em;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: 1;
+
+  .logo-btg {
+    width: 152px;
+  }
+}
+
+.trioBtg {
+  max-width: 550px;
+}
+
+.map {
+  position: absolute;
+  top: -15%;
+  right: -19%;
+}
+
+.orangeCircle {
+  background: transparent;
+  border: 1px solid white;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  top: 45%;
+  right: 53%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .inner__circle {
+    background: #FF3500;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    border-radius: 50%;
+    position: relative;
+
+    img {
+      position: absolute;
+      bottom: 15%;
+      left: 15%;
+    }
+  }
+
+  &.second {
+    left: 53%;
+    right: unset;
+    top: unset;
+    bottom: 45%;
+  }
+}
+
+.pepiniere__page {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.pepiniere__right {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 100%;
+  margin: auto;
+}
+
+.pepiniere__right__cirlce-container {
+  height: 543px;
+  width: 543px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.masque {
+  position: absolute;
+  width: 543px;
+  height: 100px;
+  bottom: 14.5%;
+  z-index: 99;
+}
+
+.pepiniere__right__circle {
+  background: white;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transform: rotateX(70deg);
+}
+
+
+.seed-container {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+
+  img.seed-img {
+    position: absolute;
+    margin: auto;
+    left: 44%;
+  }
+
+  div.seed-img {
+    position: absolute;
+    margin: auto;
+
+    &:first-of-type {
+      inset: 0;
+      top: unset;
+      bottom: -33px;
+    }
+
+    &:nth-of-type(2) {
+      top: unset !important;
+      bottom: -33px;
+    }
+
+    &:nth-of-type(3) {
+      top: unset !important;
+      bottom: -33px;
+    }
+
+    &:nth-of-type(4) {
+      top: unset !important;
+      bottom: -33px;
+    }
+  }
+}
+
+.pepiniere__reveal__text {
+  position: absolute;
+  background: black;
+  color: white;
+  padding: 30px 45px;
+  font-size: 1.9rem;
+  font-weight: 300;
+  font-family: 'Exo', 'Arial', sans-serif;
+  top: 10%;
+  left: 3%;
+  z-index: 2;
+  max-width: 35%;
+
+  &::after {
+    position: absolute;
+    content: '';
+    border-right: 1px solid transparent;
+    border-left: 64px solid transparent;
+    border-top: 46px solid black;
+    bottom: -26%;
+    right: 0;
+  }
+}
+
+.hexa__container {
+  position: absolute;
+  bottom: -27%;
+  left: 5%;
+  display: flex;
+
+  .img:not(:last-of-type) {
+    margin-right: 0.4em;
+  }
+}
+
+.left-map {
+  position: absolute;
+  left: -5%;
+  bottom: -55%;
+}
+
+.pin-left {
+  position: absolute;
+  top: 51%;
+  right: 48%;
+}
+
+.right-map {
+  position: absolute;
+  right: -4%;
+  top: -38%;
+}
+
+.pin-right {
+  position: absolute;
+  top: 55%;
+  left: 46%;
+}
+
+.title-reveal {
+  position: absolute;
+  font-size: 14.1rem;
+  font-family: 'Exo', 'Arial', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  max-width: 443px;
+
+  &:nth-of-type(2n) {
+    margin-top: 0.8em;
+  }
+
+  span {
+    margin-top: 0.1em;
+  }
+
+  &.left {
+    top: 20%;
+    right: 21%;
+  }
+
+  &.right {
+    top: 80%;
+    right: 28%;
+  }
+}
+
+@keyframes wave {
+  0% {
+    x: -400px;
+    y: 50px;
+
+  }
+  100% {
+    x: 0;
+    y: 50px;
+  }
+}
+
+
+.water-fill {
+  animation: wave 1.4s infinite linear;
+  position: relative;
+}
+
+svg .use {
+  stroke: #000000;
+  stroke-width: 3px;
+  position: relative;
+}

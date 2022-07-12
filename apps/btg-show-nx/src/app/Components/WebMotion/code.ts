@@ -1,0 +1,3 @@
+const code = "{ user: [{ userName: 'btg-communication', userPassword: 'agence_communication_tours', userMail: 'contact@btg-communication.fr' }, { userName: 'Romain', userPassword: 'motionDesign' }, { userName: 'Gaël', userPassword: 'GraphistePrint' }, { userName: 'Guillaume', userPassword: 'DesignerWeb' } ], articles: { title: 'BTG Communication, agence de communication à 360°', author: 'Btg Communication' } }"
+
+export default code

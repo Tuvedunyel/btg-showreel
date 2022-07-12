@@ -9,10 +9,20 @@
   },
   "private": true,
   "dependencies": {
+    "@react-spring/three": "^9.4.5",
+    "@react-three/drei": "^9.17.1",
+    "@react-three/fiber": "^8.1.0",
+    "@splinetool/react-spline": "^2.2.1",
+    "@splinetool/runtime": "^0.9.76",
     "core-js": "^3.6.5",
+    "framer-motion": "^6.4.3",
+    "gsap": "^3.10.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-image-webp": "^0.8.0",
+    "react-intersection-observer": "^9.3.5",
     "regenerator-runtime": "0.13.7",
+    "three": "^0.142.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
@@ -30,6 +40,7 @@
     "@types/node": "16.11.7",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
+    "@types/three": "^0.141.0",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "babel-jest": "27.5.1",

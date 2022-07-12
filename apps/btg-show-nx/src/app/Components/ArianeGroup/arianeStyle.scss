@@ -1,0 +1,529 @@
+.arianeBg {
+  width: 100%;
+  height: 100%;
+  background: #15185C;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.dummy-ref__sesame {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50%;
+  height: 50px;
+  z-index: -1;
+}
+
+.arianeBg__container {
+  width: 95%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.arianeBg__container__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .title {
+    background: white;
+    padding-block: 3.1rem;
+    width: 979px;
+    text-align: center;
+  }
+
+
+  h2 {
+    flex-direction: row;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-top: 0;
+    line-height: 1;
+    position: relative;
+  }
+
+  strong {
+    margin-top: 0;
+    margin-bottom: 0;
+    transform: rotate(90deg);
+    margin-left: 6.76rem;
+    position: absolute;
+    right: 14%;
+  }
+}
+
+.border-white__title {
+  position: absolute;
+  border: 1px solid white;
+  z-index: 0;
+  bottom: -5%;
+  right: -2%;
+  width: 98%;
+  height: 278px;
+}
+
+.border-top {
+  border-left: 10px solid;
+  border-right: 10px solid;
+  border-color: white;
+  height: 70px;
+  width: 855px;
+}
+
+.ariane__logo__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6.7rem;
+}
+
+.ariane__logo {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.space__ship {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.space__ship__bg {
+  background: linear-gradient(180deg, rgba(29,23,56,1) 0%, rgba(21,24,92,1) 50%, rgba(86,168,170,1) 100%);
+  width: 100%;
+  height: 200%;
+  position: absolute;
+  bottom: 0;
+}
+
+.sesameImg {
+  position: relative;
+  z-index: 2;
+  height: 550px;
+  width: 550px;
+  background: url('../../../img/logo_sesame.png') no-repeat 0 0;
+}
+
+.launcher {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  top: unset;
+  bottom: 0;
+  left: -22%;
+  animation: shake 0.8s infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  z-index: 99;
+}
+
+.smoke-one {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  bottom: -99%;
+  left: 1%;
+  z-index: 100;
+}
+
+.movingStrarShip__wrapper {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 153.66px;
+  height: 648px;
+  bottom: -9%;
+}
+
+.movingStarShip {
+  animation: shakeX 0.8s infinite;
+  transform: translateX(0);
+  perspective: 1000px;
+  backface-visibility: hidden;
+  margin: auto;
+  width: 153.66px;
+  height: 648px;
+}
+
+.movingStarShip__container {
+  margin: auto;
+  width: 154px;
+  height: 1000px;
+}
+
+.movingship__container {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  inset: 0;
+  margin: auto;
+  .movingStarShip {
+    position: absolute;
+    inset: 0;
+    bottom: -32%;
+    left: 1%;
+  }
+}
+
+.reactor-right__container, .reactor-left__container {
+  animation: shake 0.8s infinite;
+  width: 40px;
+  height: 200px;
+  position: absolute;
+  top: 72% !important;
+  bottom: unset !important;
+}
+
+.reactor-left__container {
+  left: 47.2%;
+}
+
+.reactor-right__container {
+  right: 47.2%;
+  left: unset;
+}
+
+.reactor {
+  width: 40px;
+}
+
+.to__space__container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  margin: auto;
+  z-index: 2;
+}
+
+.star__canvas__container {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.sesame__logo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .moon__hexagone canvas {
+    position: relative;
+    z-index: 99;
+  }
+}
+
+.moon__container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.top-wave {
+  position: absolute;
+  top: 8%;
+  right: 5%;
+}
+
+.moon__hexagone {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.big__hexagone {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  margin: auto;
+}
+
+.null__container {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  background: transparent;
+  border: none;
+  pointer-events: none;
+  z-index: 100
+}
+
+.bottom-wave {
+  position: absolute;
+  bottom: 8%;
+  left: 5%;
+}
+
+.star__container__moon {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.wave {
+  width: 192px;
+  height: 37px;
+}
+
+.star__background__image {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background: url('../../../img/stars.jpg') no-repeat 0 0;
+}
+
+.star__canvas__container .star__background__image {
+  background: none;
+}
+
+.static__moon__container {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  overflow: hidden;
+
+  .star__background__image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .moon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.dummy__container {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 50%;
+  margin: auto;
+  inset: 0;
+}
+
+.orange-wave {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 192px;
+  height: 37px;
+}
+
+.moon-year {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 567px;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.bigMoon {
+  transform: scale(6)
+}
+
+.static__moon__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.trio-employee__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.trio-employee__container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  margin: auto;
+  z-index: 101;
+  top: 27%;
+  left: -5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trio-employee {
+  position: absolute;
+  width: 330px;
+
+  &.gregoire-cosmonaute {
+    left: 34%;
+    top: 34%;
+    width: 220px;
+  }
+
+  &.anais-cosmonaute {
+    left: 45%;
+    top: 38%;
+    width: 250px;
+  }
+
+  &.zoe-cosmonaute {
+    right: 30%;
+    top: 36%;
+    width: 235px;
+  }
+}
+
+.employee {
+  position: absolute;
+  background: white;
+  font-family: 'Exo', Arial, sans-serif;
+  padding-inline: 2.5rem;
+  font-size: 5.6rem;
+  font-weight: 900;
+
+  &.gregoire {
+    left: 26%;
+    top: 29%;
+  }
+
+  &.anais {
+    top: 30%;
+    left: 45%;
+  }
+
+  &.zoe {
+    right: 25%;
+    top: 32%;
+  }
+}
+
+.dynamic__smoke {
+  width: 800px;
+  height: 350.17px;
+  background: url('../../../img/fumée.png') no-repeat 0 0;
+  position: absolute;
+  bottom: -12%;
+  left: 30%;
+}
+
+.reactor-fire {
+  width: 150px;
+  height: 550px;
+  background: url('../../../img/feu_fusee.png') no-repeat 0 0;
+  position: absolute;
+  bottom: -98%;
+  left: 2%;
+}
+
+.transparent-stars {
+  width: 100%;
+  height: 100%;
+  background: url('../../../img/stars-deux.png') no-repeat 0 0;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.roadCar__container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.dummy-view {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(4px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes shakeX {
+  10%, 90% {
+    transform: translateX(-4px);
+  }
+
+  20%, 80% {
+    transform: translateX(4px);
+  }
+
+  30%, 50%, 70% {
+    transform: translateX(-4px);
+  }
+
+  40%, 60% {
+    transform: translateX(4px);
+  }
+}
+
+
+
+
