@@ -10,6 +10,8 @@ import { useInView } from "react-intersection-observer";
 const Mame: FC = () => {
   const animation = useAnimation();
   const [ ref, inView ] = useInView( { threshold: 0 } );
+  const windowHeight = window.innerHeight;
+  const windowWidth = window.innerWidth;
 
   useEffect( () => {
     if (inView) {
@@ -28,12 +30,26 @@ const Mame: FC = () => {
     }
   };
 
-  const dateVariants = {
+  const dateVariants = windowWidth > 1000 ? {
     initial: {
       translateY: 900
     },
     animate: {
       translateY: 0
+    }
+  } : windowWidth > 771 ? {
+    initial: {
+      translateY: windowHeight
+    },
+    animate: {
+      translateY: -windowHeight * 0.3
+    }
+  } : {
+    initial: {
+      translateY: windowHeight
+    },
+    animate: {
+      translateY: -windowHeight * 0.35
     }
   };
 
@@ -53,13 +69,40 @@ const Mame: FC = () => {
       width: "100%"
     },
     animate: {
-      opacity: 1,
-      // translateX: -600,
-      translateX: 0,
-      width: "100%"
-      // width: 0,
+      opacity: 0,
+      translateX: -600,
+      width: "100%",
     }
   };
+
+  const rightCircleSize = windowWidth > 583 ? {
+    initial: {
+      width: 0,
+      height: 0
+    },
+    animate: {
+      width: '543px',
+      height: '543px'
+    }
+  } : windowWidth > 468 ? {
+    initial : {
+      width: 0,
+      height: 0
+    },
+    animate: {
+      width: '443px',
+      height: '443px'
+    }
+  } : {
+    initial: {
+      width: 0,
+      height: 0
+    },
+    animate: {
+      width: '300px',
+      height: '300px'
+    }
+  }
 
   return (
     <>
@@ -71,7 +114,7 @@ const Mame: FC = () => {
                     variants={ pepiniereVariants } transition={ { duration: 2, delay: 8.5 } }>
           <motion.div initial="initial" animate={ animation } variants={ fadeVariants }
                       transition={ { duration: 2, delay: 6 } } className="translate__creation">
-            <motion.div initial={ { translateY: 900 } } animate={ animation }
+            <motion.div initial="initial" animate={ animation }
                         transition={ { duration: 1, delay: 2 } }
                         variants={ dateVariants }
                         className="creationAgence__left">
@@ -95,9 +138,9 @@ const Mame: FC = () => {
           <div className="pepiniere__right">
             <Seed />
             <div className="pepiniere__right__cirlce-container">
-              <motion.div initial={ { width: 0, height: 0 } }
-                          whileInView={ { width: "543px", height: "543px" } }
-                          viewport={ { once: true } } transition={ { duration: 1, delay: 2 } }
+              <motion.div initial='initial'
+                          whileInView='animate'
+                          variants={rightCircleSize} transition={ { duration: 1, delay: 2 } }
                           className="pepiniere__right__circle">
               </motion.div>
               <motion.div className="masque"
@@ -107,7 +150,7 @@ const Mame: FC = () => {
             </div>
           </div>
         </motion.div>
-        {/*<Reveal />*/ }
+        <Reveal />
       </motion.div>
     </>
   );

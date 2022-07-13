@@ -49,7 +49,7 @@ const Seed: FC = () => {
             opacity: 0
         },
         animate: {
-            opacity: [ 0, 1 ]
+            opacity: [ 0, 1, 0 ]
         }
     }
 
