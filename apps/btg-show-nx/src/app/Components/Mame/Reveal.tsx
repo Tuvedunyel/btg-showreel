@@ -16,6 +16,7 @@ const Reveal: FC = () => {
     const troll = "Les fortniteur !";
     const [ ref, inView ] = useInView( { threshold: 0 } );
     const animation = useAnimation();
+    const windowWidth = window.innerWidth;
 
     const leftVariants = {
         initial: {
@@ -33,6 +34,44 @@ const Reveal: FC = () => {
         animate: {
             translateY: 0,
         }
+    }
+
+    const whiteCircleSize = windowWidth > 1300 ? {
+      initial: {
+        width: '0px',
+        height: '0px'
+      },
+      animate: {
+        width: '713px',
+        height: '713px'
+      }
+    } : windowWidth > 900 ? {
+      initial: {
+        width: 0,
+        height: 0
+      },
+      animate: {
+        width: '513px',
+        height: '513px'
+      }
+    } : windowWidth > 420 ? {
+      initial: {
+        width: 0,
+        height: 0
+      },
+      animate: {
+        width: '413px',
+        height: '413px'
+      }
+    } : {
+      initial: {
+        width: 0,
+        height: 0
+      },
+      animate: {
+        width: '313px',
+        height: '313px'
+      }
     }
 
     useEffect( () => {
@@ -55,9 +94,9 @@ const Reveal: FC = () => {
                 <WaterText title='elle' classname='left' id={ [ 'water1', 'text1', 'text_water1' ] }/>
             </motion.div>
             <div className='pepiniere__reveal__container-circle'>
-                <motion.div ref={ ref } initial={ { width: 0, height: 0 } }
-                            whileInView={ { width: '713px', height: '713px' } }
-                            viewport={ { once: true } } transition={ { duration: 1, delay: 8.5 } }
+                <motion.div ref={ ref } initial='initial'
+                            whileInView='animate'
+                            variants={whiteCircleSize} transition={ { duration: 1, delay: 8.5 } }
                             className='pepiniere__reveal__whiteCircle'>
                     <Image src={ Logo } webp={ logoWebp } alt="Logo BTG Communication" className='logo-btg'/>
                     <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } }

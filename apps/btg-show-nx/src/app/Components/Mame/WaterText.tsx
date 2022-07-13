@@ -4,7 +4,7 @@ const WaterText: FC<{ title: string, classname: string, id: string[] }> = ( { ti
   const [ currentTitle, setCurrentTitle ] = useState<string | null>( null );
   const windowWidth = window.innerWidth;
 
-  const svgWidth = windowWidth > 1500 ? '574.558px' : windowWidth > 1400 ? '374.558px' : '274.558px';
+  const svgWidth = windowWidth > 1500 ? '574.558px' : windowWidth > 1400 ? '374.558px' : windowWidth > 500 ? '274.558px' : '200px';
 
   useEffect( () => {
     setCurrentTitle( title );

@@ -30,6 +30,15 @@ const Mame: FC = () => {
     }
   };
 
+  const pepinereVanish = {
+    initial: {
+      opacity: 1
+    },
+    animate: {
+      opacity: 0
+    }
+  }
+
   const dateVariants = windowWidth > 1000 ? {
     initial: {
       translateY: 900
@@ -71,7 +80,7 @@ const Mame: FC = () => {
     animate: {
       opacity: 0,
       translateX: -600,
-      width: "100%",
+      width: "100%"
     }
   };
 
@@ -81,17 +90,17 @@ const Mame: FC = () => {
       height: 0
     },
     animate: {
-      width: '543px',
-      height: '543px'
+      width: "543px",
+      height: "543px"
     }
   } : windowWidth > 468 ? {
-    initial : {
+    initial: {
       width: 0,
       height: 0
     },
     animate: {
-      width: '443px',
-      height: '443px'
+      width: "443px",
+      height: "443px"
     }
   } : {
     initial: {
@@ -99,10 +108,10 @@ const Mame: FC = () => {
       height: 0
     },
     animate: {
-      width: '300px',
-      height: '300px'
+      width: "300px",
+      height: "300px"
     }
-  }
+  };
 
   return (
     <>
@@ -135,12 +144,13 @@ const Mame: FC = () => {
                           className="creationAgence__left__border"></motion.div>
             </motion.div>
           </motion.div>
-          <div className="pepiniere__right">
+          <motion.div initial="initial" whileInView="animate" viewport={ { once: true } } variants={ pepinereVanish }
+                      transition={ { duration: 1, delay: 11 } } className="pepiniere__right">
             <Seed />
             <div className="pepiniere__right__cirlce-container">
-              <motion.div initial='initial'
-                          whileInView='animate'
-                          variants={rightCircleSize} transition={ { duration: 1, delay: 2 } }
+              <motion.div initial="initial"
+                          whileInView="animate"
+                          variants={ rightCircleSize } transition={ { duration: 1, delay: 2 } }
                           className="pepiniere__right__circle">
               </motion.div>
               <motion.div className="masque"
@@ -148,7 +158,7 @@ const Mame: FC = () => {
                           whileInView={ { opacity: 1, backgroundColor: "#FCD647" } }
                           transition={ { delay: 2 } }></motion.div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
         <Reveal />
       </motion.div>
