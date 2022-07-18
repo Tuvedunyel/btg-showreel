@@ -91,8 +91,8 @@ const Animate: FC<{ inView: Boolean }> = ( { inView } ) => {
                 </div>
                 <motion.div initial={ { opacity: 0 } } whileInView={ { opacity: 1 } } viewport={ { once: true } }
                             transition={ { duration: 1, delay: 5 } } className='chemin'>
-                    <img src={ traceTop } alt="Chemin en pointiller blanc"/>
-                    <img src={ orangeCross } alt="Croix orange"/>
+                    <img src={ traceTop } alt="Chemin en pointiller blanc" className='traceTop'/>
+                    <img src={ orangeCross } alt="Croix orange" className='chemin__red-cross' />
                     <img src={ traceBottom } alt="Chemin en pointiller blanc" className='trace-bas'/>
                 </motion.div>
                 <motion.div initial='initial' animate={ animation } variants={ arriveeVariants }

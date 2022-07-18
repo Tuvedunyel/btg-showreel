@@ -4,11 +4,21 @@
   height: 100%;
   overflow-x: hidden;
   position: relative;
+
+  h2 {
+    @media screen and (max-height: 886px) {
+      font-size: 16.6rem;
+    }
+  }
 }
 
 .date__hexa__container {
   display: flex;
   gap: 0.6em;
+
+  @media screen and (max-width: 898px) {
+    display: none;
+  }
 }
 
 .web-motion__dummy-ref {
@@ -30,12 +40,58 @@
   height: 100%;
   position: absolute;
   inset: 0;
+
+  @media screen and (max-width: 898px) {
+    width: 100%;
+    margin: unset;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  h2 {
+    @media screen and (max-width: 771px) {
+      flex-direction: column;
+    }
+  }
+
+  .creationAgence__left__border {
+    @media screen and (max-width: 771px) {
+      border-bottom: unset;
+      border-right: 1px solid;
+      right: -5%;
+    }
+  }
+}
+
+.traceTop {
+  @media screen and (max-width: 1500px) {
+    width: 845px;
+    position: absolute;
+    top: -187%;
+    right: 8%;
+  }
 }
 
 .date__left {
   position: relative;
   max-height: 90%;
   width: 513px;
+
+  @media screen and (max-width: 598px) {
+    width: 413px;
+  }
+
+  @media screen and (max-width: 482px) {
+    width: 313px;
+  }
+
+  @media screen and (max-width: 368px) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 342px) {
+    width: 250px;
+  }
 
   .creationAgence__left__border {
     bottom: -5.4%;
@@ -112,6 +168,14 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 1600px) {
+    left: 6%;
+  }
+
+  @media screen and (max-width: 1500px) {
+    bottom: -124%;
+  }
 }
 
 .building__container {
@@ -170,10 +234,24 @@
   }
 }
 
+.chemin__red-cross {
+  @media screen and (max-width: 1500px) {
+    position: relative;
+    left: -81px;
+    bottom: 371px;
+  }
+}
+
 .trace-bas {
   position: relative;
   bottom: -34px;
   left: 32px;
+
+  @media screen and (max-width: 1500px) {
+    width: 843px;
+    left: -39px;
+    top: -304px;
+  }
 }
 
 .cube__container {
@@ -205,6 +283,10 @@
   position: absolute;
   bottom: -134%;
   right: 5%;
+
+  @media screen and (max-width: 1700px) {
+    right: -1%;
+  }
 }
 
 .building-bottom {

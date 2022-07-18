@@ -12,9 +12,11 @@ const StarsBackground: FC<{ inView: boolean }> = ( { inView } ) => {
                 setPosY( 0 );
             }
             setTimeout( () => {
+              if (starsBackgroundContainer.current) {
                 setStep( step + 1 );
                 setPosY( posY + 1080 )
-                starsBackgroundContainer.current!.style.backgroundPosition = `0 -${ posY }px`;
+                starsBackgroundContainer.current.style.backgroundPosition = `0 -${ posY }px`;
+              }
             }, 200 )
         }
     }, [ step, inView ] )

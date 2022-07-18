@@ -13,7 +13,7 @@ const WebMotion: FC = () => {
             <div className='WebMotion'>
                 { inView && (
                     <>
-                        <Date/>
+                        <Date view={inView} />
                         <AutoTyping/>
                     </>
                 ) }
