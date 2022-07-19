@@ -229,6 +229,10 @@
   backface-visibility: hidden;
   perspective: 1000px;
   z-index: 99;
+
+  @media screen and (max-width: 650px) {
+    display: none;
+  }
 }
 
 .smoke-one {
@@ -300,6 +304,27 @@
     @media screen and (max-width: 1210px) {
       left: 40%;
     }
+
+    @media screen and (max-width: 1110px) {
+      left: 45%;
+    }
+
+    @media screen and (max-width: 1000px) {
+      left: 55%;
+    }
+
+    @media screen and (max-width: 900px) {
+      left: 65%;
+    }
+
+    @media screen and (max-width: 750px) {
+      left: 75%;
+    }
+
+    @media screen and (max-width: 650px) {
+      right: 0;
+      left: 0;
+    }
   }
 }
 
@@ -342,6 +367,32 @@
   @media screen and (max-width: 1210px) {
     left: 50.5%;
   }
+
+  @media screen and (max-width: 1110px) {
+    left: 51.5%;
+  }
+
+  @media screen and (max-width: 1000px) {
+    left: 52.5%;
+  }
+
+  @media screen and(max-width: 900px) {
+    left: 54.5%;
+  }
+
+  @media screen and (max-width: 750px) {
+    left: 57.5%;
+  }
+
+  @media screen and (max-width: 650px) {
+    left: -13%;
+    right: 0;
+    margin: auto;
+  }
+
+  @media screen and (max-width: 400px) {
+    left: -19%;
+  }
 }
 
 .reactor-right__container {
@@ -374,6 +425,36 @@
 
   @media screen and (max-width: 1210px) {
     right: 39.8%;
+  }
+
+  @media screen and (max-width: 1110px) {
+    right: 38.8%;
+  }
+
+  @media screen and (max-width: 1000px) {
+    right: 35.8%;
+  }
+
+  @media screen and (max-width: 900px) {
+    right: 31.8%;
+  }
+
+  @media screen and (max-width: 800px) {
+    right: 29.8%;
+  }
+
+  @media screen and (max-width: 750px) {
+    right: 26.8%;
+  }
+
+  @media screen and (max-width: 650px) {
+    right: -13%;
+    left: 0;
+    margin: auto;
+  }
+
+  @media screen and (max-width: 400px) {
+    right: -19%;
   }
 }
 
