@@ -37,6 +37,26 @@
     padding-block: 3.1rem;
     width: 979px;
     text-align: center;
+
+    @media screen and (max-width: 1041px) {
+      width: 749px;
+    }
+
+    @media screen and (max-width: 813px) {
+      width: 649px;
+    }
+
+    @media screen and (max-width: 699px) {
+      width: 549px;
+    }
+
+    @media screen and (max-width: 593px) {
+      width: 349px;
+    }
+
+    @media screen and (max-width: 383px) {
+      width: 300px;
+    }
   }
 
 
@@ -48,6 +68,26 @@
     margin-top: 0;
     line-height: 1;
     position: relative;
+
+    @media screen and (max-width: 1041px) {
+      font-size: 15rem;
+    }
+
+    @media screen and (max-width: 813px) {
+      font-size: 10rem;
+    }
+
+    @media screen and (max-width: 699px) {
+      font-size: 9rem;
+    }
+
+    @media screen and (max-width: 593px) {
+      font-size: 7rem;
+    }
+
+    @media screen and (max-width: 383px) {
+      font-size: 6rem;
+    }
   }
 
   strong {
@@ -57,6 +97,11 @@
     margin-left: 6.76rem;
     position: absolute;
     right: 14%;
+
+    @media screen and (max-width: 593px) {
+      right: 8%;
+      width: 50px;
+    }
   }
 }
 
@@ -68,6 +113,22 @@
   right: -2%;
   width: 98%;
   height: 278px;
+
+  @media screen and (max-width: 1041px) {
+    height: 226px;
+  }
+
+  @media screen and (max-width: 813px) {
+    height: 193px;
+  }
+
+  @media screen and (max-width: 699px) {
+    height: 171px;
+  }
+
+  @media screen and (max-width: 383px) {
+    height: 146px;
+  }
 }
 
 .border-top {
@@ -76,6 +137,34 @@
   border-color: white;
   height: 70px;
   width: 855px;
+
+  @media screen and (max-width: 1041px) {
+    width: 655px;
+  }
+
+  @media screen and (max-width: 813px) {
+    width: 545px;
+  }
+
+  @media screen and (max-width: 699px) {
+    width: 445px;
+  }
+
+  @media screen and (max-width: 593px) {
+    width: 345px;
+  }
+
+  @media screen and (max-width: 593px) {
+    width: 245px;
+  }
+
+  @media screen and (max-width: 493px) {
+    height: 48px;
+  }
+
+  @media screen and (max-width: 383px) {
+    height: 32px;
+  }
 }
 
 .ariane__logo__container {
@@ -84,12 +173,24 @@
   align-items: center;
   justify-content: center;
   margin-top: 6.7rem;
+
+  @media screen and (max-width: 593px) {
+    max-width: 400px;
+  }
+
+  @media screen and (max-width: 493px) {
+    max-width: 300px;
+  }
 }
 
 .ariane__logo {
   position: absolute;
   inset: 0;
   margin: auto;
+
+  @media screen and (max-width: 493px) {
+    width: 150px;
+  }
 }
 
 .space__ship {

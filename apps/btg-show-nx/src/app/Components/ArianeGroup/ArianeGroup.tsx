@@ -58,7 +58,7 @@ const ArianeGroup: FC = () => {
                     </>
                 ) }
             </div>
-            <SpaceShip/>
+            {/*<SpaceShip/>*/}
         </div>
     );
 };
