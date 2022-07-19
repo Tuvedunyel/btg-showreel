@@ -32,7 +32,8 @@ const SpaceShip = () => {
             translateY: 0
         },
         animate: {
-            translateY: windowHeight
+            // translateY: windowHeight
+          translateY: 0
         }
     }
 
@@ -41,7 +42,8 @@ const SpaceShip = () => {
             translateY: 0,
         },
         animate: {
-            translateY: -200
+            // translateY: -200
+          translateY: 0,
         }
     }
 
@@ -50,7 +52,8 @@ const SpaceShip = () => {
             translateY: 0
         },
         animate: {
-            translateY: -(windowHeight * 2)
+            // translateY: -(windowHeight * 2)
+          translateY: 0
         }
     }
 
@@ -62,10 +65,14 @@ const SpaceShip = () => {
             opacity: 1
         },
         animate: {
-            translateY: 800,
-            translateX: -400,
-            rotate: -120,
-            opacity: 0
+            // translateY: 800,
+            // translateX: -400,
+            // rotate: -120,
+            // opacity: 0
+          translateY: 0,
+          translateX: 0,
+          rotate: 0,
+          opacity: 1
         }
     }
 
@@ -77,10 +84,14 @@ const SpaceShip = () => {
             opacity: 1
         },
         animate: {
-            translateY: 800,
-            translateX: 400,
-            rotate: 120,
-            opacity: 0
+            // translateY: 800,
+            // translateX: 400,
+            // rotate: 120,
+            // opacity: 0
+          translateY: 0,
+          translateX: 0,
+          rotate: 0,
+          opacity: 1
         }
     }
 
@@ -106,7 +117,7 @@ const SpaceShip = () => {
                     <div className="star__canvas__container">
                         <TransparentStars inView={ inView }/>
                     </div>
-                    <Sesame windowHeight={ windowHeight / 1.87 }/>
+                    {/*<Sesame windowHeight={ windowHeight / 1.87 }/>*/}
                 </motion.div>
                 <motion.div initial='initial' animate={ animation } variants={ shipContainerVariants } transition={ {
                     duration: 1,
@@ -130,7 +141,7 @@ const SpaceShip = () => {
                                         alt="Réacteur droit"
                                         className='reactor right'/>
                         </div>
-                        <SmokeStarShip view={inView} />
+                        {/*<SmokeStarShip view={inView} />*/}
                     </div>
                 </motion.div>
             </motion.div>
