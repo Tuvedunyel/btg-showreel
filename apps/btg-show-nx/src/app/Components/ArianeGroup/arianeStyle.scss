@@ -716,6 +716,38 @@
   position: absolute;
   bottom: -12%;
   left: 30%;
+
+  @media screen and (max-width: 1800px) {
+    left: 29%;
+  }
+
+  @media screen and (max-width: 1750px) {
+    left: 28%;
+  }
+
+  @media screen and (max-width: 1700px) {
+    left: 27%;
+  }
+
+  @media screen and (max-width: 1550px) {
+    left: 26%;
+  }
+
+  @media screen and (max-width: 1400px) {
+    left: 25%;
+  }
+
+  @media screen and (max-width: 1350px) {
+    left: 24%;
+  }
+
+  @media screen and (max-width: 1250px) {
+    left: 23%;
+  }
+
+  @media screen and (max-width: 1150px) {
+    left: 22%;
+  }
 }
 
 .reactor-fire {
