@@ -725,6 +725,51 @@
   position: absolute;
   bottom: -98%;
   left: 2%;
+
+  @media screen and (max-width: 1666px) {
+    left: 8%;
+  }
+
+  @media screen and (max-width: 1553px) {
+    left: 15%;
+  }
+
+  @media screen and (max-width: 1471px) {
+    left: 20%;
+  }
+
+  @media screen and (max-width: 1399px) {
+    left: 25%;
+  }
+
+  @media screen and (max-width: 1310px) {
+    left: 32%;
+  }
+
+  @media screen and (max-width: 1210px) {
+    left: 40%;
+  }
+
+  @media screen and (max-width: 1110px) {
+    left: 45%;
+  }
+
+  @media screen and (max-width: 1000px) {
+    left: 55%;
+  }
+
+  @media screen and (max-width: 900px) {
+    left: 65%;
+  }
+
+  @media screen and (max-width: 750px) {
+    left: 75%;
+  }
+
+  @media screen and (max-width: 650px) {
+    right: 0;
+    left: 0;
+  }
 }
 
 .transparent-stars {
