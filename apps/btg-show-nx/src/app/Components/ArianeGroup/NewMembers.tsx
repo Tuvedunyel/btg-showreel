@@ -39,8 +39,7 @@ const NewMembers: FC = () => {
             translateY: 0
         },
         animate: {
-          translateY: 0
-            // translateY: '339%'
+            translateY: '339%'
         }
     }
 
@@ -49,8 +48,7 @@ const NewMembers: FC = () => {
             opacity: 0
         },
         animate: {
-            opacity: 0
-            // opacity: 1
+            opacity: 1
         }
     }
 
@@ -59,8 +57,7 @@ const NewMembers: FC = () => {
             opacity: 0
         },
         animate: {
-          opacity: 0
-            // opacity: 1
+            opacity: 1
         }
     }
 
@@ -69,8 +66,7 @@ const NewMembers: FC = () => {
             opacity: 1
         },
         animate: {
-          opacity: 1
-            // opacity: 0
+            opacity: 0
         }
     }
 

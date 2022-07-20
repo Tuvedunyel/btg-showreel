@@ -736,18 +736,88 @@
     left: 34%;
     top: 34%;
     width: 220px;
+
+    @media screen and (max-width: 1600px) {
+      left: 30%;
+    }
+
+    @media screen and (max-width: 1300px) {
+      left: 24%;
+    }
+
+    @media screen and (max-width: 850px) {
+      left: 10%;
+    }
+
+    @media screen and (max-width: 500px) {
+      left: 2%;
+      top: 33%;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 200px;
+      top: 36%;
+    }
   }
 
   &.anais-cosmonaute {
     left: 45%;
     top: 38%;
     width: 250px;
+
+    @media screen and (max-width: 850px) {
+      left: 40%;
+    }
+
+    @media screen and (max-width: 650px) {
+      top: 47%;
+      z-index: 139;
+    }
+
+    @media screen and (max-width: 450px) {
+      left: 31%;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 200px;
+      top: 51%;
+    }
   }
 
   &.zoe-cosmonaute {
     right: 30%;
     top: 36%;
     width: 235px;
+
+    @media screen and (max-width: 1600px) {
+      right: 25%;
+    }
+
+    @media screen and (max-width: 1300px) {
+      right: 18%;
+    }
+    @media screen and (max-width: 1050px) {
+      right: 11%;
+    }
+
+    @media screen and (max-width: 850px) {
+      right: 2%;
+    }
+
+
+    @media screen and (max-width: 500px) {
+      top: 35%;
+      right: -2%;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 200px;
+      right: -6%;
+    }
+
+    @media screen and (max-width: 320px) {
+      top: 41%;
+    }
   }
 }
 
@@ -759,19 +829,97 @@
   font-size: 5.6rem;
   font-weight: 900;
 
+  @media screen and (max-width: 800px) {
+    font-size: 3.6rem;
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 2.4rem;
+  }
+
   &.gregoire {
     left: 26%;
     top: 29%;
+
+    @media screen and (max-width: 1600px) {
+      left: 20%;
+    }
+
+    @media screen and (max-width: 1300px) {
+      left: 15%;
+    }
+
+    @media screen and (max-width: 1050px) {
+      left: 9%;
+    }
+
+    @media screen and (max-width: 850px) {
+      left: 8%;
+    }
+
+    @media screen and (max-width: 400px) {
+      top: 33%;
+      left: 12%;
+    }
   }
 
   &.anais {
     top: 30%;
     left: 45%;
+
+    @media screen and (max-width: 850px) {
+      top: 32%;
+      left: 39%;
+    }
+
+    @media screen and (max-width: 800px) {
+      top: 34%;
+      left: 42%;
+    }
+
+    @media screen and (max-width: 650px) {
+      top: 43%;
+    }
+
+    @media screen and (max-width: 450px) {
+      left: 36%;
+    }
+
+    @media screen and (max-width: 400px) {
+      top: 48%;
+      left: 35%;
+    }
   }
 
   &.zoe {
     right: 25%;
     top: 32%;
+
+    @media screen and (max-width: 1600px) {
+      right: 21%;
+    }
+
+    @media screen and (max-width: 1300px) {
+      right: 13%;
+    }
+
+    @media screen and (max-width: 1050px) {
+      right: 7%;
+    }
+
+    @media screen and (max-width: 850px) {
+      top: 31%;
+      right: 4%;
+    }
+
+    @media screen and (max-width: 800px) {
+      top: 33%;
+    }
+
+    @media screen and (max-width: 320px) {
+      top: 39%;
+    }
+
   }
 }
 
