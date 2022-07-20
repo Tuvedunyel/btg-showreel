@@ -1,6 +1,7 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import sesameSvg from "../../../img/sesame.svg";
 
 const LogoSesame: FC<{ view: boolean }> = ( { view } ) => {
   const animation = useAnimation();
@@ -9,6 +10,7 @@ const LogoSesame: FC<{ view: boolean }> = ( { view } ) => {
   const sesameRef = useRef<HTMLDivElement | null>( null );
   const [ ref, inView ] = useInView( { threshold: 0 } );
   const windowHeight = window.innerHeight;
+  const windowWidth = window.innerWidth;
 
   const opacityAfter = {
     initial: {
@@ -32,9 +34,11 @@ const LogoSesame: FC<{ view: boolean }> = ( { view } ) => {
   const sequence = () => {
     if (step !== 21) {
       setTimeout( () => {
-        setStep( step + 1 );
-        setPosY( posY + 550 );
-        sesameRef.current!.style.backgroundPosition = `0 -${ posY }px`;
+        if (sesameRef.current) {
+          setStep( step + 1 );
+          setPosY( posY + 550 );
+          sesameRef.current.style.backgroundPosition = `0 -${ posY }px`;
+        }
       }, 80 );
     }
   };
@@ -58,7 +62,16 @@ const LogoSesame: FC<{ view: boolean }> = ( { view } ) => {
                 transition={ { duration: 1, delay: 14 } } className="sesame__translate-top">
       <motion.div initial="initial" animate={ animation } variants={ opacityAfter }
                   transition={ { duration: 1, delay: 22 } } className="sesame__opacity">
-        <div ref={ sesameRef } className="sesameImg"></div>
+        { windowWidth > 550 ? (
+          <div ref={ sesameRef } className="sesameImg"></div>
+        ) : (
+          <div className="sesame-logo">
+            <img src={ sesameSvg } alt="Sésame Space logo" className="sesame-logo__static" />
+            <h2 className='sesame__title'>
+              Sesame
+            </h2>
+          </div>
+        ) }
       </motion.div>
     </motion.div>
   );
