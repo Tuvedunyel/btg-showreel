@@ -39,7 +39,8 @@ const NewMembers: FC = () => {
             translateY: 0
         },
         animate: {
-            translateY: '339%'
+          translateY: 0
+            // translateY: '339%'
         }
     }
 
@@ -48,7 +49,8 @@ const NewMembers: FC = () => {
             opacity: 0
         },
         animate: {
-            opacity: 1
+            opacity: 0
+            // opacity: 1
         }
     }
 
@@ -57,7 +59,8 @@ const NewMembers: FC = () => {
             opacity: 0
         },
         animate: {
-            opacity: 1
+          opacity: 0
+            // opacity: 1
         }
     }
 
@@ -66,7 +69,8 @@ const NewMembers: FC = () => {
             opacity: 1
         },
         animate: {
-            opacity: 0
+          opacity: 1
+            // opacity: 0
         }
     }
 
@@ -76,8 +80,10 @@ const NewMembers: FC = () => {
             translateY: windowHeight
         },
         animate: {
-            opacity: 1,
-            translateY: 0
+          opacity: 0,
+          translateY: windowHeight
+            // opacity: 1,
+            // translateY: 0
         }
     }
 
@@ -87,8 +93,10 @@ const NewMembers: FC = () => {
             translateY: 0
         },
         animate: {
-            opacity: 0,
-            translateY: windowHeight
+          opacity: 1,
+          translateY: 0
+            // opacity: 0,
+            // translateY: windowHeight
         }
     }
 

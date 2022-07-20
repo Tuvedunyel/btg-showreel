@@ -136,7 +136,7 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
           duration: 2,
           delay: 25
         } } className="static__moon__container">
-          {/*<NewMembers />*/}
+          <NewMembers />
         </motion.div>
       </motion.div>
     </>
