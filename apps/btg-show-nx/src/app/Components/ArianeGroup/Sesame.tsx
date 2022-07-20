@@ -38,6 +38,7 @@ const SphereMesh = () => {
 const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
   const animation = useAnimation();
   const [ ref, inView ] = useInView( { threshold: 0 } );
+  const windowWidth = window.innerWidth;
 
   const variants = {
     initial: {
@@ -55,8 +56,7 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
       opacity: 0
     },
     animate: {
-      opacity: 0,
-      // opacity: 1
+      opacity: 1
     }
   };
 
@@ -79,6 +79,17 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
       opacity: 1
     }
   };
+
+  const canvasSize = windowWidth > 500 ? {
+    width: 600,
+    height: 600
+  } : windowWidth > 400 ? {
+    width: 400,
+    height: 400
+  } : {
+    width: 300,
+    height: 300
+  }
 
   const starHide = {
     initial: {
@@ -109,7 +120,7 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
           <img src={ whiteWave } alt="Vague blanche" className="top-wave wave" />
           <motion.div initial="initial" animate={ animation } variants={ sizeVariants }
                       transition={ { duration: 1, delay: 22 } } className="moon__hexagone">
-            <Canvas style={ { width: 600, height: 600 } }>
+            <Canvas style={ canvasSize }>
               <Suspense>
                 <SphereMesh />
               </Suspense>

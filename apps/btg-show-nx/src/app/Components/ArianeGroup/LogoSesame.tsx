@@ -17,8 +17,7 @@ const LogoSesame: FC<{ view: boolean }> = ( { view } ) => {
       opacity: 1
     },
     animate: {
-      // opacity: 0
-      opacity: 1
+      opacity: 0
     }
   };
 
