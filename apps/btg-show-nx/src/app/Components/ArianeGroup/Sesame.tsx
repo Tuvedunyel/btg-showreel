@@ -55,7 +55,8 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
       opacity: 0
     },
     animate: {
-      opacity: 1
+      opacity: 0,
+      // opacity: 1
     }
   };
 
@@ -124,7 +125,7 @@ const Sesame: FC<{ windowHeight: number }> = ( { windowHeight } ) => {
           duration: 2,
           delay: 25
         } } className="static__moon__container">
-          <NewMembers />
+          {/*<NewMembers />*/}
         </motion.div>
       </motion.div>
     </>
